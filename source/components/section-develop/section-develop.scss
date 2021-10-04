@@ -1,0 +1,415 @@
+.develop {
+	max-width: 1920px;
+	margin: 0 auto;
+	&__wrap {
+		position: relative;
+		background: #000;
+	}
+
+	&__list {
+		position: relative;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	&__item {
+		position: relative;
+		cursor: pointer;
+		padding: 20px 50px 50px 50px;
+		border: 1px solid #333;
+		transition: background-color 0.5s ease;
+		margin-right: -1px;
+		z-index: 10;
+		overflow: hidden;
+		&::before {
+			content: "";
+			position: absolute;
+			top: -13%;
+			left: 49%;
+			width: 1px;
+			height: 125%;
+			background-color: #fff;
+			transform: rotate(-34.3deg);
+			opacity: 0;
+		}
+		&.active {
+			background-color: #1a1a1a;
+			& .develop__word {
+				opacity: 1;
+			}
+
+			// & .develop__name {
+			//   opacity: 0;
+			// }
+
+			& .develop__number {
+				color: #fff;
+			}
+
+			&::before {
+				opacity: 0.3;
+			}
+
+			& .develop__background {
+				animation: 0.7s ease 0s 1 normal forwards running animOpacity;
+			}
+
+			& .line {
+				opacity: 1;
+			}
+
+			& .line__top-group {
+				transform: translateX(-25%);
+				& .line__top-one {
+					height: 3px;
+				}
+
+				& .line__top-two {
+					height: 3px;
+				}
+			}
+
+			& .line__bottom-group {
+				transform: translateX(25%);
+				& .line__bottom-one {
+					height: 3px;
+				}
+
+				& .line__bottom-two {
+					height: 3px;
+				}
+			}
+
+			& .line__left-group {
+				transform: translateY(25%);
+				& .line__left-one {
+					width: 3px;
+				}
+
+				& .line__left-two {
+					width: 3px;
+				}
+			}
+
+			& .line__right-group {
+				transform: translateY(-25%);
+				& .line__right-one {
+					width: 3px;
+				}
+
+				& .line__right-two {
+					width: 3px;
+				}
+			}
+		}
+	}
+
+	&__number {
+		display: inline-block;
+		padding-bottom: 15px;
+		margin-bottom: 15px;
+		font-family: "Exo20-Bold";
+		font-weight: 400;
+		font-style: normal;
+		color: #fff;
+		border-bottom: 1px solid #fff;
+	}
+
+	&__name {
+		font-family: "Exo20-Bold";
+		font-weight: 700;
+		font-style: normal;
+		font-size: 23px;
+		color: #fff;
+		margin-bottom: 60px;
+	}
+
+	&__word {
+		opacity: 0;
+		// text-align: center;
+		// font-family: "Exo20-Bold";
+		// font-weight: 700;
+		// line-height: 100%;
+		// font-style: normal;
+		// font-size: 500px;
+		// color: #fff;
+
+		text-align: center;
+		padding: 25px 50px;
+
+		transition: opacity 1s ease;
+
+		// @include adaptiv-font(500, 60);
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			max-height: 350px;
+		}
+	}
+
+	&__background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+	}
+}
+
+.line {
+	position: relative;
+	// top: 25%;
+	// left: 10%;
+	// width: 80%;
+	// height: 65%;
+	overflow: hidden;
+	opacity: 0;
+
+	transition: opacity 0.1s ease;
+
+	&__top-group {
+		position: absolute;
+		top: 0;
+		width: 300%;
+		height: 1px;
+		transition: all 0.5s ease-in-out 0.1s;
+	}
+
+	&__top-one {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: calc(100% / 3);
+		height: 1px;
+		background: #fff;
+	}
+
+	&__top-two {
+		width: calc(100% / 3);
+		position: absolute;
+		top: 0;
+		left: calc(100% / 2);
+		height: 1px;
+		background: #fff;
+	}
+
+	&__bottom-group {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 300%;
+		height: 1px;
+		transition: all 0.5s ease-in-out 0.1s;
+	}
+
+	&__bottom-one {
+		position: absolute;
+		bottom: 0;
+		right: calc(100% / 2);
+		width: calc(100% / 3);
+		height: 1px;
+		background: #fff;
+	}
+
+	&__bottom-two {
+		width: calc(100% / 3);
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		height: 1px;
+		background: #fff;
+	}
+
+	&__left-group {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 300%;
+		width: 1px;
+		transition: all 0.5s ease-in-out 0.1s;
+	}
+
+	&__left-one {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: calc(100% / 3);
+		width: 1px;
+		background: #fff;
+	}
+
+	&__left-two {
+		position: absolute;
+		bottom: calc(100% / 2);
+		left: 0;
+		height: calc(100% / 3);
+		width: 1px;
+		background: #fff;
+	}
+
+	&__right-group {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 300%;
+		width: 1px;
+		transition: all 0.5s ease-in-out 0.1s;
+	}
+
+	&__right-one {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: calc(100% / 3);
+		width: 1px;
+		background: #fff;
+	}
+
+	&__right-two {
+		position: absolute;
+		top: calc(100% / 2);
+		right: 0;
+		height: calc(100% / 3);
+		width: 1px;
+		background: #fff;
+	}
+
+	// position: absolute;
+	// top: 0;
+	// left: 0;
+	// width: 80%;
+	// height: 80%;
+	// margin: 50px 0 0 50px;
+	// position: absolute;
+	// top: 25%;
+	// left: 10%;
+	// width: 80%;
+	// height: 65%;
+
+	// & .x {
+	//   height: 1px;
+	//   width: 0%;
+	//   background-color: #fff;
+	// }
+
+	// & .y {
+	//   height: 0%;
+	//   width: 1px;
+	//   background-color: #fff;
+	// }
+
+	// &__top.top {
+	//   position: absolute;
+	//   width: 15px;
+	//   top: 0;
+	//   // left: 0;
+	// }
+
+	// &__left.left {
+	//   position: absolute;
+	//   // bottom: 0;
+	//   left: 0;
+	// }
+
+	// &__right.right {
+	//   position: absolute;
+	//   // top: 0;
+	//   right: 0;
+	// }
+
+	// &__bottom.bottom {
+	//   position: absolute;
+	//   // right: 0;
+	//   bottom: 0;
+	// }
+}
+
+@keyframes animOpacity-1 {
+	0% {
+		opacity: 1;
+		// transform: scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		// transform: scale(0.98);
+	}
+}
+
+@keyframes animOpacity-2 {
+	0% {
+		opacity: 0;
+		// transform: scale(0.98);
+	}
+
+	100% {
+		opacity: 1;
+		// transform: scale(1);
+	}
+}
+
+@keyframes animScale-1 {
+	0% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(0.98);
+	}
+}
+
+@keyframes animScale-2 {
+	0% {
+		transform: scale(0.98);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+@media (max-width: 1300px) {
+	.develop {
+		&__list {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		&__word {
+			& img {
+				max-height: 250px;
+			}
+		}
+
+		&__name {
+			@include adaptiv-font(23, 12);
+		}
+	}
+}
+
+@media (max-width: 1170px) {
+	.develop {
+		&__item {
+			padding: 20px 20px 50px 20px;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.develop {
+		&__item {
+			padding: 10px;
+		}
+
+		&__word {
+			& img {
+				max-height: 200px;
+			}
+		}
+
+		&__name {
+			margin-bottom: 20px;
+		}
+	}
+}

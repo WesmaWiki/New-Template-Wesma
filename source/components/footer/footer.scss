@@ -1,0 +1,166 @@
+.page-footer {
+	position: relative;
+	padding: 60px 0;
+	padding-top: 100px;
+	background: #e9ebf7;
+
+	&__icon-top {
+		cursor: pointer;
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, 0);
+		bottom: -10px;
+		& svg {
+		}
+
+		&-text {
+			position: absolute;
+			top: 155px;
+			left: 50%;
+			transform: translate(-50%, 0);
+
+			color: #fff;
+
+			z-index: 10;
+
+			transition: all 0.5s ease;
+		}
+	}
+}
+
+@media (max-width: 1170px) {
+	.page-footer {
+		&__icon-top {
+			left: 50% !important;
+			&-text {
+				top: 55px !important;
+			}
+		}
+	}
+}
+
+.footer-inner {
+	display: grid;
+	grid-template-columns: 0.75fr 1fr 1fr;
+	grid-gap: 110px;
+}
+
+.footer-inner__item {
+	&:first-child {
+		justify-self: end;
+		text-align: end;
+	}
+}
+
+.footer-inner__item .logo {
+	margin-bottom: 15px;
+	text-align: left;
+}
+
+.footer-inner__title {
+	display: block;
+	margin-bottom: 20px;
+	font-size: 12px;
+	color: #c3c8de;
+}
+
+.footer-inner__block {
+	padding: 30px 0;
+	border-top: 1px solid #c3c8de;
+}
+
+.footer-inner__link {
+	display: inline-block;
+	margin-right: 15px;
+	font-size: 16px;
+	line-height: 24px;
+	color: #000;
+}
+
+.footer-inner__link:hover {
+	color: $green;
+}
+
+.footer-inner__link--email {
+	text-decoration: underline;
+}
+
+.footer-inner__link--email:hover {
+	text-decoration: none;
+}
+
+.footer-inner__address {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 40px;
+}
+
+.footer-inner__address-title {
+	font-size: 16px;
+	line-height: 18px;
+	color: #000;
+}
+
+.footer-inner__address-info {
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+@media (max-width: 1170px) {
+	.footer-inner {
+		grid-gap: 50px;
+	}
+	.footer-inner__address {
+		grid-template-columns: 1fr;
+		grid-gap: 20px;
+	}
+}
+
+@media (max-width: 900px) {
+	.footer-inner {
+		grid-template-columns: 1fr 1fr;
+		&__item {
+			&:first-child {
+				justify-self: center;
+				text-align: center;
+				grid-column: span 2;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.footer-inner {
+		grid-gap: 30px;
+		&__block {
+			padding: 10px 0;
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.footer-inner {
+		grid-template-columns: 1fr;
+		grid-gap: 20px;
+		&__item {
+			&:first-child {
+				grid-column: span 1;
+			}
+		}
+	}
+}
+
+.copyright {
+	font-size: 12px;
+	color: #c3c8de;
+}
+
+.privacy-link {
+	font-size: 12px;
+	color: #c3c8de;
+	text-decoration: underline;
+}
+
+.privacy-link:hover {
+	text-decoration: none;
+}

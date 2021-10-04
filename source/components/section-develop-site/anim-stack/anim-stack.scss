@@ -1,0 +1,81 @@
+//////@at-root
+.card-directions-stack__container {
+	display: none;
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	&.play {
+		display: block;
+	}
+}
+[data-id] {
+	position: absolute;
+	top: 0;
+	/*   border: 1px solid #f55; */
+	transform-origin: 0% 0%;
+	font-size: 25px;
+	margin: 0;
+	padding: 0;
+	top: 100px;
+	line-height: 1;
+	color: #333;
+}
+[data-id="1"] {
+	top: 0;
+	left: 50px;
+	font-size: 90px;
+	height: 70px;
+	line-height: 70px;
+}
+[data-id="2"] {
+	top: 3px;
+	left: 80px;
+	font-size: 27px;
+	letter-spacing: 1px;
+}
+[data-id="3"] {
+	top: 30px;
+	left: 80px;
+	font-size: 40px;
+	letter-spacing: 1px;
+}
+[data-id="4"] {
+	top: 74px;
+	left: 265px;
+	font-size: 36px;
+	transform: rotate(90deg);
+	background: #333;
+	color: #fff;
+	padding: 0px 4px;
+}
+[data-id="5"] {
+	top: 74px;
+	left: 229px;
+	transform: rotate(90deg);
+	font-size: 35px;
+}
+[data-id="6"] {
+	top: 72px;
+	right: 110px;
+	font-size: 25px;
+}
+[data-id="7"] {
+	top: 97px;
+	right: 110px;
+	font-size: 40px;
+}
+[data-id="8"] {
+	top: 134px;
+	right: 110px;
+	font-size: 35px;
+}
+[data-id="9"] {
+	top: 167px;
+	right: 110px;
+	font-size: 35px;
+}
+[data-id="10"] {
+	top: 200px;
+	right: 110px;
+	font-size: 35px;
+}

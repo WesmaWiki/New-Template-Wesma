@@ -1,0 +1,263 @@
+@import "../section-order-form/radio";
+@import "../section-order-form/check";
+
+.form-container {
+	position: relative;
+	width: 100%;
+	max-width: 1525px;
+	margin: 0 auto;
+	margin-top: -50px;
+	margin-bottom: -50px;
+	padding: 90px 140px;
+	background-color: #fff;
+	border-radius: 50px;
+	z-index: 2;
+}
+
+@media (max-width: 1600px) {
+	.form-container {
+		padding: 90px 100px;
+	}
+}
+
+@media (max-width: 1300px) {
+	.form-container {
+		padding: 90px 60px;
+	}
+}
+
+@media (max-width: 768px) {
+	.form-container {
+		padding: 60px 0px;
+	}
+}
+
+.input,
+.textarea {
+	border-radius: 20px;
+	border: 0;
+	box-sizing: border-box;
+	color: #000;
+	font-size: 16px;
+	height: 100%;
+	outline: 0;
+	padding: 4px 20px 0;
+	width: 100%;
+	border: 1px solid $dark;
+}
+
+.input {
+	&.error {
+		color: red;
+		border-color: red;
+	}
+.textarea
+	&.error {
+		color: red;
+    	border-color: red;
+	}
+}
+
+.textarea {
+	height: 390px;
+	resize: none;
+}
+
+.cut {
+	background-color: transparent;
+	border-radius: 10px;
+	height: 20px;
+	left: 0;
+	position: absolute;
+	top: -20px;
+	transform: translateY(0);
+	transition: transform 200ms;
+	width: 50%;
+}
+
+.cut-short {
+	width: 50px;
+}
+
+.input.active-placeholder ~ .cut,
+.input:not(:placeholder-shown) ~ .cut,
+.textarea.active-placeholder ~ .cut {
+	transform: translateY(8px);
+}
+
+.placeholder {
+	color: #65657b;
+	font-family: sans-serif;
+	left: 20px;
+	font-size: 16px;
+	line-height: 14px;
+	pointer-events: none;
+	position: absolute;
+	transform-origin: 0 50%;
+	transition: transform 200ms, color 200ms;
+	top: 20px;
+}
+
+.input.active-placeholder ~ .placeholder,
+.input:not(:placeholder-shown) ~ .placeholder,
+.textarea.active-placeholder ~ .placeholder {
+	transform: translateY(-30px) translateX(10px) scale(0.75);
+}
+
+.input:not(:placeholder-shown) ~ .placeholder {
+	color: #808097;
+}
+
+.input.active-placeholder ~ .placeholder,
+.textarea.active-placeholder ~ .placeholder {
+	color: #fff;
+}
+
+.input.active-placeholder ~ .cut,
+.textarea.active-placeholder ~ .cut {
+	background-color: $green;
+}
+
+.input-box {
+	cursor: pointer;
+	position: relative;
+	display: block;
+	width: 100%;
+	padding-left: 50px;
+
+	&:hover {
+		& .input-box__button {
+			border-color: #000;
+		}
+
+		&::before {
+			transform: rotate(180deg);
+		}
+	}
+}
+
+.input-box .input-box__button {
+	display: inline-block;
+	margin-bottom: 15px;
+	color: #000;
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: 400;
+	outline: none !important;
+	background: transparent;
+	border: none;
+	box-sizing: border-box;
+	cursor: pointer;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+
+	border-bottom: 1px solid transparent;
+}
+
+.input-box .input-box__text {
+	display: block;
+}
+
+.input-box input[type="file"] {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	display: none;
+}
+
+.input-box::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 32px;
+	height: 32px;
+	background-image: url("../img/paperclip.png");
+	background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	transition: all 0.3s ease;
+}
+
+@media (max-width: 1170px) {
+	.textarea {
+		height: 300px;
+	}
+}
+
+@media (max-width: 768px) {
+	.textarea {
+		height: 200px;
+	}
+}
+
+.contact-form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.contact-form__item {
+	flex-basis: 48%;
+}
+
+.contact-form__list-item {
+	margin-bottom: 30px;
+}
+
+.contact-form__list-input {
+	position: relative;
+	height: 50px;
+}
+
+.contact-form__list-textarea {
+	position: relative;
+}
+
+.contact-form__btn {
+	display: flex;
+	justify-content: center;
+}
+
+@media (max-width: 1170px) {
+	.contact-form {
+		&__item {
+			flex-basis: 100%;
+			&:first-child {
+				margin-bottom: 30px;
+			}
+		}
+	}
+}
+
+.application {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.application__item {
+	position: relative;
+	flex-basis: 49%;
+}
+
+.application__title {
+	flex-basis: 100%;
+	margin-bottom: 20px;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 1.5;
+	color: #000000;
+}
+
+@media (max-width: 600px) {
+	.application__item {
+		flex-basis: 100%;
+		&:last-child {
+			margin-top: 20px;
+		}
+	}
+}

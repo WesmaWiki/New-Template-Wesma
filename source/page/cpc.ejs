@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="full">
+        <% include ../components/floating-menu/floating-menu.ejs %>
+
+            <% var classNameHeader='' ; %>
+                <% include ../components/header/header.ejs %>
+
+                    <main class="page-main">
+
+                        <% include ../components/section-advertisement/section-advertisement.ejs %>
+
+                            <% include ../components/section-unique-service/section-unique-service.ejs %>
+
+                                <% include ../components/section-service-ad/section-service-ad.ejs %>
+
+                                    <% include ../components/section-ad-advantages/section-ad-advantages.ejs %>
+
+                                        <% include ../components/section-certificate/section-certificate.ejs %>
+
+                                            <% include ../components/section-people-cert/section-people-cert.ejs %>
+
+                                                <% include ../components/section-history/section-history.ejs %>
+
+                                                    <% include ../components/section-questions/section-questions.ejs %>
+
+                                                        <% include
+                                                            ../components/section-privileges/section-privileges.ejs %>
+
+                                                            <% include ../components/block-text/block-text.ejs %>
+
+                                                                <% include ../components/section-trust/section-trust.ejs
+                                                                    %>
+
+                                                                    <% include
+                                                                        ../components/section-ourClients/section-ourClients.ejs
+                                                                        %>
+
+                                                                        <% include
+                                                                            ../components/section-order-form/section-order-form.ejs
+                                                                            %>
+
+                    </main>
+                    <% include ../components/footer/footer.ejs %>
+    </div>
+</body>
+
+</html>

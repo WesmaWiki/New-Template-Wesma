@@ -1,0 +1,46 @@
+.breadcrumbs {
+	position: relative;
+	padding: 35px 0;
+	z-index: 100;
+	&__list {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		position: relative;
+		font-family: "Exo20-Regular";
+		font-size: 14px;
+		line-height: 120%;
+		margin-right: 30px;
+		& a {
+			position: relative;
+			color: #333333;
+			border-bottom: 1px solid #333333;
+			transition: all 0.3s ease;
+			&:hover {
+				border-color: transparent;
+			}
+		}
+
+		& span {
+			color: #aaaaaa;
+		}
+
+		&::before {
+			content: "/";
+			position: absolute;
+			top: 50%;
+			transform: translate(0, -50%);
+			right: -20px;
+		}
+
+		&:last-child {
+			margin-right: 0;
+			&::before {
+				content: none;
+			}
+		}
+	}
+}

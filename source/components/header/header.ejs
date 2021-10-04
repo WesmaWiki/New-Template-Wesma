@@ -1,0 +1,59 @@
+<header class="page-header <%= classNameHeader %>">
+    <div class="wrapper">
+        <div class="page-header__pc-menu pc-menu ">
+            <div class="pc-menu__log-group">
+                <div class="logo">
+                    <img src="./img/logo.png" alt="" width="210">
+                </div>
+                <div class="name">
+                    Digital-агентство полного цикла
+                </div>
+            </div>
+
+            <a class="phone-link" href="tel:84951182474">+7(495)118-24-74</a>
+
+            <a class="email-link" href="mailto:manager@wesma.ru">manager@wesma.ru</a>
+
+            <div class="btn-magic-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="goo">
+                    <defs>
+                        <filter id="goo">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                                result="goo" />
+                            <feComposite in="SourceGraphic" in2="goo" />
+                        </filter>
+                    </defs>
+                </svg>
+                <span class="bubble-container">
+                    <a href="#" class="button button-bubble ">
+                        Заказать звонок
+                    </a>
+                    <span class="button-bubble__effect-container">
+                        <span class="circle top-left"></span>
+                        <span class="circle top-left"></span>
+                        <span class="circle top-left"></span>
+
+                        <span class="button effect-button "></span>
+
+                        <span class="circle bottom-right"></span>
+                        <span class="circle bottom-right"></span>
+                        <span class="circle bottom-right"></span>
+                    </span>
+                </span>
+            </div>
+        </div>
+
+        <div class="page-header__mobmenu mobmenu">
+            <svg class="mobmenu__ham ham hamRotate ham8 js-ham" viewBox="0 0 100 100" height="50" width="50">
+                <path class="line-ham top"
+                    d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+                <path class="line-ham middle" d="m 30,50 h 40" />
+                <path class="line-ham bottom"
+                    d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
+            </svg>
+
+            <div class="mobmenu__phone"><a href="#tel:74951182474">+7 (495) 118-24-74</a></div>
+        </div>
+    </div>
+</header>
