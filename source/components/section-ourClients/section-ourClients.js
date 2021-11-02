@@ -1,28 +1,3 @@
-// import $ from "jquery";
-
-// $(document).ready(function () {
-// 	$(".ourClients .imgItem").each(function (index, val) {
-// 		if (index > 13) $(val).fadeOut();
-// 	});
-
-// 	$(".clickMore").on("click", function (e) {
-// 		e.preventDefault();
-// 		$(".ourClients .imgItem").each(function (index, val) {
-// 			if (index > 13) {
-// 				$(val).fadeToggle().delay(500);
-// 			}
-// 		});
-
-// 		$(this).toggleClass("pushBut");
-
-// 		if ($(this).hasClass("pushBut")) {
-// 			$(this).find("a").text("Скрыть");
-// 		} else {
-// 			$(this).find("a").text("еще");
-// 		}
-// 	});
-// });
-
 document.addEventListener(
 	"DOMContentLoaded",
 	function () {

@@ -19,6 +19,8 @@
 	top: 100px;
 	line-height: 1;
 	color: #333;
+
+	white-space: nowrap;
 }
 [data-id="1"] {
 	top: 0;
@@ -52,7 +54,7 @@
 	top: 74px;
 	left: 229px;
 	transform: rotate(90deg);
-	font-size: 35px;
+	font-size: 30px;
 }
 [data-id="6"] {
 	top: 72px;
@@ -62,7 +64,7 @@
 [data-id="7"] {
 	top: 97px;
 	right: 110px;
-	font-size: 40px;
+	font-size: 35px;
 }
 [data-id="8"] {
 	top: 134px;
@@ -75,7 +77,97 @@
 	font-size: 35px;
 }
 [data-id="10"] {
-	top: 200px;
+	top: 210px;
 	right: 110px;
-	font-size: 35px;
+	font-size: 28px;
+}
+
+[data-id="11"] {
+	top: 250px;
+	right: 110px;
+	font-size: 28px;
+}
+
+@media (max-width: 1600px) {
+	[data-id="2"] {
+		@include adaptiv-font(27, 20);
+	}
+
+	[data-id="3"] {
+		@include adaptiv-font(40, 32);
+	}
+
+	[data-id="4"] {
+		@include adaptiv-font(36, 28);
+	}
+
+	[data-id="5"] {
+		@include adaptiv-font(30, 22);
+	}
+
+	[data-id="6"] {
+		@include adaptiv-font(25, 18);
+	}
+
+	[data-id="7"] {
+		@include adaptiv-font(35, 26);
+	}
+
+	[data-id="8"] {
+		@include adaptiv-font(35, 26);
+	}
+
+	[data-id="9"] {
+		@include adaptiv-font(35, 26);
+	}
+
+	[data-id="10"] {
+		@include adaptiv-font(28, 21);
+	}
+
+	[data-id="11"] {
+		@include adaptiv-font(28, 21);
+	}
+}
+
+@media (max-width: 768px) {
+	[data-id="2"] {
+		top: 3px;
+	}
+
+	[data-id="3"] {
+		top: 20px;
+	}
+
+	[data-id="4"] {
+		top: 60px;
+	}
+
+	[data-id="5"] {
+		top: 60px;
+	}
+
+	[data-id="6"] {
+		top: 60px;
+	}
+
+	[data-id="7"] {
+		top: 80px;
+	}
+
+	[data-id="8"] {
+		top: 115px;
+	}
+
+	[data-id="9"] {
+		top: 150px;
+	}
+
+	[data-id="10"] {
+		top: 190px;
+	}
+
+	[data-id="11"] {
+		top: 225px;
+	}
 }

@@ -10,8 +10,9 @@ body {
 	line-height: 16px;
 	color: $grey;
 	font-family: $EFont;
-	overflow-x: hidden;
+
 	&.open-modal {
+		overflow-x: hidden;
 		overflow-y: hidden;
 	}
 }

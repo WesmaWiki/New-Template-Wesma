@@ -1,4 +1,4 @@
-import match from "../../js/app";
+import { match } from "../../js/module/match";
 
 document.addEventListener(
 	"DOMContentLoaded",
@@ -6,6 +6,8 @@ document.addEventListener(
 		let menu = document.querySelector(".main-menu");
 
 		if (menu != null) {
+			let cursorCoord;
+
 			function lockTopMenu() {
 				let documentScroll = pageYOffset;
 				if (documentScroll > 1) {
@@ -18,35 +20,54 @@ document.addEventListener(
 			function lockTopMenuRightBlock() {
 				let documentScroll = pageYOffset;
 				if (documentScroll > 1) {
-					if (menu.querySelector(".main-menu__right-block-icon").classList.contains("active")) {
+					if (menu.querySelector(".main-menu__right-block-icon").classList.contains("active") && cursorCoord > 300) {
 						menu.querySelector(".button-close").beginElement();
+						menu.querySelector(".main-menu__right-block-icon") ? menu.querySelector(".main-menu__right-block-icon").classList.remove("active") : null;
 					}
 					menu.classList.add("locked");
-					menu.querySelector(".main-menu__right-block-icon") ? menu.querySelector(".main-menu__right-block-icon").classList.remove("active") : null;
 				} else {
-					menu.querySelector(".main-menu__right-block-icon") ? menu.querySelector(".main-menu__right-block-icon").classList.add("active") : null;
-					menu.querySelector(".button-open").beginElement();
+					if (!menu.querySelector(".main-menu__right-block-icon").classList.contains("active")) {
+						menu.querySelector(".main-menu__right-block-icon") ? menu.querySelector(".main-menu__right-block-icon").classList.add("active") : null;
+						menu.querySelector(".button-open").beginElement();
+					}
 				}
 			}
 
 			let timer;
 
-			function menuEnter() {
-				if (!menu.querySelector(".main-menu__right-block-icon").classList.contains("active")) {
-					menu.querySelector(".button-open").beginElement();
+			// function menuEnter() {
+			// 	if (!menu.querySelector(".main-menu__right-block-icon").classList.contains("active")) {
+			// 		menu.querySelector(".button-open").beginElement();
 
-					timer = setTimeout(() => {
+			// 		timer = setTimeout(() => {
+			// 			menu.querySelector(".main-menu__right-block-icon") ? menu.querySelector(".main-menu__right-block-icon").classList.add("active") : null;
+			// 		}, 100);
+			// 	}
+			// }
+
+			// function menuLeave() {
+			// 	menu.querySelector(".button-close").beginElement();
+
+			// 	menu.querySelector(".main-menu__right-block-icon") ? menu.querySelector(".main-menu__right-block-icon").classList.remove("active") : null;
+
+			// 	clearTimeout(timer);
+			// }
+
+			function showMenu(e) {
+				cursorCoord = e.clientX;
+				if (cursorCoord < 300) {
+					if (!menu.querySelector(".main-menu__right-block-icon").classList.contains("active")) {
+						menu.querySelector(".button-open").beginElement();
+
 						menu.querySelector(".main-menu__right-block-icon") ? menu.querySelector(".main-menu__right-block-icon").classList.add("active") : null;
-					}, 100);
+					}
+				} else {
+					if (menu.querySelector(".main-menu__right-block-icon").classList.contains("active") && !window.pageYOffset == 0) {
+						menu.querySelector(".button-close").beginElement();
+
+						menu.querySelector(".main-menu__right-block-icon") ? menu.querySelector(".main-menu__right-block-icon").classList.remove("active") : null;
+					}
 				}
-			}
-
-			function menuLeave() {
-				menu.querySelector(".button-close").beginElement();
-
-				menu.querySelector(".main-menu__right-block-icon") ? menu.querySelector(".main-menu__right-block-icon").classList.remove("active") : null;
-
-				clearTimeout(timer);
 			}
 
 			function openMenu() {
@@ -82,9 +103,11 @@ document.addEventListener(
 						document.addEventListener("scroll", lockTopMenu);
 					}
 
-					menu.addEventListener("mouseenter", menuEnter);
+					window.addEventListener("mousemove", showMenu);
 
-					menu.addEventListener("mouseleave", menuLeave);
+					// menu.addEventListener("mouseenter", menuEnter);
+
+					// menu.addEventListener("mouseleave", menuLeave);
 
 					document.addEventListener("mousemove", moveMenuRightBlock);
 				} else {
@@ -98,9 +121,11 @@ document.addEventListener(
 						document.removeEventListener("scroll", lockTopMenu);
 					}
 
-					menu.removeEventListener("mouseenter", menuEnter);
+					// menu.removeEventListener("mouseenter", menuEnter);
 
-					menu.removeEventListener("mouseleave", menuLeave);
+					// menu.removeEventListener("mouseleave", menuLeave);
+
+					window.removeEventListener("mousemove", showMenu);
 
 					document.removeEventListener("mousemove", moveMenuRightBlock);
 

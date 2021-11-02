@@ -1,0 +1,174 @@
+.work {
+	position: relative;
+	&__wrap {
+		padding: 50px 0 50px;
+	}
+
+	&__title {
+		margin-bottom: 50px;
+	}
+
+	&__subtitle {
+		margin-bottom: 50px;
+		font-size: 23px;
+		line-height: 160%;
+		text-transform: uppercase;
+		color: #aaaaaa;
+	}
+
+	&__row {
+		display: grid;
+		grid-template-columns: 1fr 0.625fr;
+		gap: 20px;
+	}
+
+	&__column {
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 80px;
+		padding-left: 30px;
+	}
+
+	&__item {
+	}
+
+	&__anim {
+	}
+
+	&__group {
+		padding: 60px;
+		background: #ffffff;
+		border: 1px dashed #e9ebf7;
+	}
+
+	&__name {
+		margin-bottom: 30px;
+		font-family: $ESemibold;
+		font-weight: bold;
+		font-size: 27px;
+		line-height: 120%;
+		color: #333333;
+	}
+
+	&__text {
+		font-size: 16px;
+		line-height: 140%;
+
+		& ul li {
+			&:not(:last-child) {
+				margin-bottom: 5px;
+			}
+		}
+	}
+}
+
+.card-work {
+	&__icon {
+		margin-bottom: 30px;
+	}
+
+	&__name {
+		margin-bottom: 30px;
+		font-family: $ESemibold;
+		font-weight: bold;
+		font-size: 27px;
+		line-height: 120%;
+		color: #333333;
+	}
+
+	&__text {
+		font-size: 16px;
+		line-height: 140%;
+
+		& ul li {
+			&:not(:last-child) {
+				margin-bottom: 5px;
+			}
+		}
+	}
+}
+
+@media (max-width: 1600px) {
+	.work {
+		&__subtitle {
+			@include adaptiv-font(23, 16);
+		}
+
+		&__name {
+			@include adaptiv-font(27, 22);
+		}
+	}
+
+	.card-work {
+		&__name {
+			@include adaptiv-font(27, 22);
+		}
+	}
+}
+
+@media (max-width: 1400px) {
+	.work {
+		&__list {
+			gap: 30px;
+		}
+	}
+}
+
+@media (max-width: 1170px) {
+	.work {
+		&__wrap {
+			padding: 20px 0;
+		}
+
+		&__row {
+			grid-template-columns: 1fr;
+		}
+
+		&__title {
+			margin-bottom: 20px;
+		}
+
+		&__subtitle {
+			margin-bottom: 20px;
+		}
+
+		&__list {
+			padding-left: 0;
+		}
+
+		&__name {
+			margin-bottom: 15px;
+		}
+
+		&__anim {
+			max-width: 300px;
+			margin: 0 auto;
+		}
+
+		&__group {
+			padding: 15px;
+			text-align: center;
+		}
+	}
+
+	.card-work {
+		&__icon {
+			margin-bottom: 15px;
+		}
+
+		&__name {
+			margin-bottom: 15px;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.work {
+		&__list {
+			grid-template-columns: 1fr;
+		}
+	}
+}

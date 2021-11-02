@@ -35,6 +35,13 @@
 		height: 30px;
 	}
 
+	& .logo {
+		margin-bottom: 0;
+		& img {
+			max-block-size: 35px;
+		}
+	}
+
 	&__phone {
 		& a {
 			display: block;
@@ -50,6 +57,14 @@
 @media (max-width: 1170px) {
 	.mobmenu {
 		display: flex;
+	}
+}
+
+@media (max-width: 600px) {
+	.mobmenu {
+		& .logo {
+			display: none;
+		}
 	}
 }
 

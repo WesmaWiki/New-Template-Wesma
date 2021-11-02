@@ -1,5 +1,6 @@
 import Scene from "scenejs";
 import { kineticFrame, typing } from "@scenejs/effects";
+import { match } from "../../../js/module/match";
 
 let arrScene = Array.prototype.slice.call(document.querySelectorAll(".card-directions-stack__container"));
 
@@ -37,9 +38,9 @@ if (arrScene != null) {
 		move(0, 0, 90, 115, 0, 1.3);
 		move(1, 1, 90, 115, 0, 1.1);
 		move(2, 3, 0, -10, 0, 1);
-		move(4, 4.5, -30, -100, -90, 1.2);
-		move(5.5, 6, -52, -18, -90, 1.1);
-		move(7, 7.5, 30, 45, 0, 1.2);
+		move(4, 4.5, -30, 0, -90, 1);
+		move(5.5, 6, -52, 0, -90, 1);
+		move(7, 7.5, 0, 45, 0, 1.2);
 		move(8.5, 9, 10, 30, 0, 1.3);
 		move(10, 12, 0, 0, 0, 1);
 
@@ -68,7 +69,15 @@ if (arrScene != null) {
 		palyScene.forEach((element, index, array) => {
 			element.addEventListener("click", () => {
 				element.style.display = "none";
+
+				if (match[2].matches) {
+					arrScene[index].closest(".card-directions__column").style.minHeight = "250px";
+				} else {
+					arrScene[index].closest(".card-directions__column").style.minHeight = "300px";
+				}
+
 				arrScene[index].classList.add("play");
+				console.log(arrSceneItem[index]);
 				arrSceneItem[index].play();
 			});
 		});

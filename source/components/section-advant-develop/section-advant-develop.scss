@@ -1,0 +1,102 @@
+.advant-develop {
+	&__wrap {
+		padding: 40px 0;
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: 1fr 1fr 0.8fr;
+		gap: 70px;
+	}
+
+	&__item {
+	}
+}
+
+.card-advant-develop {
+	display: flex;
+	&__number {
+		margin-right: 30px;
+		font-family: "Exo20-SemiBold", "Arial", sans-serif;
+		font-weight: bold;
+		font-size: 100px;
+		line-height: 120%;
+		color: #010101;
+	}
+
+	&__group {
+	}
+
+	&__name {
+		margin-bottom: 20px;
+		font-family: "Exo20-SemiBold", "Arial", sans-serif;
+		font-weight: bold;
+		font-size: 27px;
+		line-height: 120%;
+		color: #010101;
+	}
+
+	&__text {
+		font-family: "Exo20-Regular", "Arial", sans-serif;
+		font-size: 18px;
+		line-height: 140%;
+		color: #010101;
+		& a {
+			color: #010101;
+			border-bottom: 1px solid #010101;
+			transition: all 0.3s ease;
+			&:hover {
+				border-color: transparent;
+			}
+		}
+	}
+}
+
+@media (max-width: 1600px) {
+	.card-advant-develop {
+		&__name {
+			@include adaptiv-font(27, 20);
+		}
+
+		&__number {
+			@include adaptiv-font(100, 36);
+		}
+
+		&__text {
+			@include adaptiv-font(18, 14);
+		}
+	}
+}
+
+@media (max-width: 1400px) {
+	.advant-develop {
+		&__list {
+			gap: 30px;
+		}
+	}
+
+	.card-advant-develop {
+		flex-direction: column;
+
+		&__number {
+			margin-right: 0;
+			margin-bottom: 15px;
+		}
+	}
+}
+
+@media (max-width: 1170px) {
+	.advant-develop {
+		&__wrap {
+			padding: 20px 0;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.advant-develop {
+		&__list {
+			grid-template-columns: 1fr;
+		}
+	}
+}

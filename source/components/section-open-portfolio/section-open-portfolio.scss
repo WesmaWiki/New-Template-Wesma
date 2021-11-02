@@ -1,0 +1,47 @@
+.open-portfolio {
+	position: relative;
+	margin-bottom: 150px;
+	background: #000;
+	&__wrap {
+		position: relative;
+		padding: 70px 0 80px 0;
+		text-align: center;
+		z-index: 16;
+	}
+
+	&__group-link {
+	}
+
+	&__link {
+		font-family: $ESemibold;
+		font-weight: bold;
+		font-size: 27px;
+		line-height: 140%;
+		color: #ffffff;
+		border-bottom: 2px solid #fff;
+	}
+
+	&__lord-icon {
+		width: 100px;
+		height: 100px;
+	}
+
+	&__group {
+	}
+
+	& .bubbles {
+		top: initial;
+		bottom: 0;
+		z-index: 15;
+		transform: rotate(180deg);
+	}
+}
+
+@media (max-width: 1170px) {
+	.open-portfolio {
+		margin-bottom: 100px;
+		&__wrap {
+			padding: 20px 0;
+		}
+	}
+}

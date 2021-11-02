@@ -1,4 +1,4 @@
-import match from "../../js/app";
+import { match } from "../../js/module/match";
 
 document.addEventListener(
 	"DOMContentLoaded",

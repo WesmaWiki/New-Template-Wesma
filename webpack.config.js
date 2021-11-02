@@ -16,6 +16,7 @@ function generateHtmlPlugins(templateDir) {
 			template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
 			minify: false,
 			inject: "body",
+			chunks: ["app", `${name}`],
 		});
 	});
 }
@@ -23,7 +24,14 @@ function generateHtmlPlugins(templateDir) {
 const htmlPlugins = generateHtmlPlugins("./source/page");
 
 module.exports = {
-	entry: ["./source/js/app.js", "./source/scss/main.scss"],
+	entry: {
+		app: ["./source/js/app.js", "./source/scss/main.scss"],
+		index: "./source/js/index.js",
+		company: "./source/js/company.js",
+		cpc: "./source/js/cpc.js",
+		"develop-site": "./source/js/develop-site.js",
+		"support-site": "./source/js/support-site.js",
+	},
 
 	mode: "development",
 
@@ -92,13 +100,13 @@ module.exports = {
 	output: {
 		path: path.join(__dirname, "build"),
 		publicPath: "",
-		filename: "js/script.js",
+		filename: "js/[name].js",
 	},
 
 	plugins: [
 		new MiniCssExtractPlugin({
-			filename: "css/style.min.css",
-			chunkFilename: "[id].css",
+			filename: "css/app.css",
+			// chunkFilename: "[id].css",
 		}),
 		new CopyWebpackPlugin({
 			patterns: [

@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
-import match from "../../js/app";
+import { match } from "../../js/module/match";
 
 document.addEventListener(
 	"DOMContentLoaded",
@@ -143,10 +143,10 @@ document.addEventListener(
 					}
 				}
 				var s3d_model = document.querySelector("[data-3dmodel]"),
-					v3d_model = '/manager/templates/new-wesma/3d/gltf/new-model-2.gltf';
-					if(s3d_model !== null) {
-						v3d_model = s3d_model.getAttribute('data-3dmodel');
-					}
+					v3d_model = "/manager/templates/new-wesma/3d/gltf/new-model-2.gltf";
+				if (s3d_model !== null) {
+					v3d_model = s3d_model.getAttribute("data-3dmodel");
+				}
 				function loadScene() {
 					// Instantiate a loader
 					let loader = new GLTFLoader();

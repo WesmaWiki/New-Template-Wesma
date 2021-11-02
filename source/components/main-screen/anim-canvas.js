@@ -1,5 +1,5 @@
 // import titleAnim from "../modules/title-animation";
-import match from "../../js/app";
+import { match } from "../../js/module/match";
 // canvas
 if (document.getElementById("canvas") != null) {
 	window.onload = function () {

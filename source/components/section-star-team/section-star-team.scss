@@ -1,0 +1,294 @@
+@import "./solar-system.scss";
+
+.star-team {
+	margin: 70px 0;
+
+	&__wrap {
+	}
+
+	&__row {
+		display: grid;
+		grid-template-columns: 0.7fr 1fr 0.5fr;
+		gap: 50px;
+	}
+
+	&__column {
+		&:last-child {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	&__title {
+		margin-bottom: 30px;
+		font-family: $ESemibold;
+		font-weight: bold;
+		font-size: 27px;
+		line-height: 140%;
+		color: #000000;
+		& span {
+			color: #43bea2;
+		}
+	}
+
+	&__group {
+		padding: 20px 50px;
+		margin-bottom: 30px;
+		border-radius: 30px;
+		border: 1px solid #e9ebf7;
+	}
+
+	&__subtitle {
+		margin-bottom: 15px;
+		font-family: $ESemibold;
+		font-weight: bold;
+		font-size: 14px;
+		line-height: 140%;
+		color: #43bea2;
+		text-align: center;
+	}
+
+	&__text {
+		font-size: 12px;
+		line-height: 16px;
+		text-align: center;
+		color: #aaaaaa;
+	}
+
+	&__person {
+		margin-bottom: 30px;
+	}
+
+	&__time {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+	}
+}
+
+.person-star-team {
+	&__list {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		column-gap: 30px;
+		row-gap: 20px;
+	}
+
+	&__item {
+		font-size: 14px;
+		line-height: 14px;
+		color: #000000;
+	}
+
+	&__title {
+		margin-bottom: 20px;
+		font-size: 14px;
+		line-height: 14px;
+		color: #aaaaaa;
+	}
+}
+
+.time-star-team {
+	&__title {
+		position: relative;
+		margin-bottom: 10px;
+		font-family: $ESemibold;
+		font-weight: bold;
+		font-size: 36px;
+		line-height: 140%;
+		text-align: right;
+		color: #adb1ca;
+	}
+
+	&__price {
+		padding: 60px 0;
+		white-space: nowrap;
+		font-family: $ESemibold;
+		font-weight: bold;
+		font-size: 100px;
+		line-height: 140%;
+		text-align: right;
+		color: #43bea2;
+	}
+
+	&__text {
+		position: relative;
+		font-size: 14px;
+		line-height: 24px;
+		text-align: right;
+		color: #adb1ca;
+	}
+
+	&__group-bg {
+		position: relative;
+
+		&.--bg-one {
+			&::before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 300px;
+				height: 180px;
+				background: url("../img/image-bg-star-team-1.svg") no-repeat;
+				z-index: 0;
+			}
+		}
+
+		&.--bg-two {
+			&::before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 35%;
+				transform: translate(-50%, -50%);
+				width: 600px;
+				height: 260px;
+				background: url("../img/image-bg-star-team-2.svg") no-repeat;
+				z-index: 0;
+			}
+		}
+	}
+}
+
+@media (max-width: 1600px) {
+	.star-team {
+		&__title {
+			@include adaptiv-font(30, 18);
+		}
+	}
+
+	.time-star-team {
+		&__title {
+			@include adaptiv-font(36, 20);
+		}
+
+		&__price {
+			@include adaptiv-font(100, 30);
+		}
+	}
+}
+
+@media (max-width: 1400px) {
+	.time-star-team {
+		&__price {
+			padding: 30px 0;
+		}
+	}
+
+	.star-team {
+		&__group {
+			padding: 15px;
+		}
+	}
+
+	.person-star-team {
+		&__list {
+			grid-template-columns: 1fr 1fr;
+			column-gap: 20px;
+		}
+	}
+}
+
+@media (max-width: 1170px) {
+	.star-team {
+		margin: 40px 0;
+		&__row {
+			grid-template-columns: 1fr 1fr;
+			align-items: center;
+			gap: 20px;
+		}
+
+		&__column {
+			&:nth-child(2) {
+				padding-right: 55px;
+			}
+
+			&:last-child {
+				grid-column: span 2;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+	}
+
+	.time-star-team {
+		&__price {
+			padding: 0;
+			margin: 0 40px;
+		}
+
+		&__group-bg {
+			&.--bg-one {
+				&::before {
+					content: none;
+				}
+			}
+
+			&.--bg-two {
+				&::before {
+					content: none;
+				}
+			}
+		}
+
+		&__title {
+			text-align: center;
+		}
+
+		&__text {
+			text-align: center;
+		}
+	}
+}
+
+@media (max-width: 1170px) and (min-width: 768px) {
+	.star-team {
+		&__time {
+			flex-direction: row;
+			align-items: center;
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	.star-team {
+		&__column {
+			&:nth-child(2) {
+				padding-right: 40px;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.star-team {
+		&__row {
+			grid-template-columns: 1fr;
+		}
+
+		&__column {
+			&:last-child {
+				grid-column: initial;
+			}
+
+			&:nth-child(2) {
+				padding-right: 0;
+				max-width: 400px;
+				margin: 0 auto;
+				width: 100%;
+			}
+		}
+
+		&__time {
+			align-items: center;
+		}
+	}
+
+	.time-star-team {
+		&__price {
+			margin: 0;
+		}
+	}
+}

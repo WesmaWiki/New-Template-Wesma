@@ -1,8 +1,7 @@
 import Swiper from "swiper/bundle";
-import "swiper/swiper-bundle.css";
+// import "swiper/swiper-bundle.css";
 
-
-function swiperTrust() {
+export function swiperTrust() {
 	let tabTrust = Array.prototype.slice.call(document.querySelectorAll(".section-trust__tab-content"));
 
 	if (tabTrust != null) {
@@ -86,4 +85,4 @@ function swiperTrust() {
 	}
 }
 
-export default swiperTrust;
+swiperTrust();

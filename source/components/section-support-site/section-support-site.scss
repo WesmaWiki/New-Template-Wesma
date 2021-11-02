@@ -1,0 +1,93 @@
+@import "./anim-style.scss";
+
+.main-screen-support {
+	&__wrap {
+		padding-bottom: 60px;
+	}
+
+	&__row {
+		display: grid;
+		grid-template-columns: 1fr 0.7fr;
+		gap: 100px;
+	}
+
+	&__title {
+	}
+
+	&__subtitle {
+		margin-bottom: 30px;
+		font-size: 23px;
+		line-height: 140%;
+		color: #aaaaaa;
+	}
+
+	&__price {
+		margin-bottom: 30px;
+		font-family: $ESemibold;
+		font-weight: bold;
+		font-size: 27px;
+		line-height: 140%;
+		color: #000000;
+		& span {
+			font-size: 40px;
+		}
+	}
+
+	&__text {
+		margin-bottom: 30px;
+		font-size: 15px;
+		line-height: 160%;
+		color: #333333;
+	}
+
+	&__group-anim {
+		position: relative;
+		height: 100%;
+		width: 100%;
+		min-height: 400px;
+	}
+}
+
+@media (max-width: 1600px) {
+	.main-screen-support {
+		&__subtitle {
+			@include adaptiv-font(23, 16);
+		}
+
+		&__price {
+			@include adaptiv-font(27, 18);
+			& span {
+				@include adaptiv-font(40, 24);
+			}
+		}
+	}
+}
+
+@media (max-width: 1170px) {
+	.main-screen-support {
+		&__wrap {
+			padding-bottom: 20px;
+		}
+
+		&__row {
+			grid-template-columns: 1fr;
+			gap: 10px;
+		}
+
+		&__group-info {
+			text-align: center;
+		}
+
+		&__subtitle {
+			margin-bottom: 20px;
+		}
+
+		&__price {
+			margin-bottom: 20px;
+		}
+
+		&__text {
+			margin-bottom: 20px;
+		}
+	}
+}
