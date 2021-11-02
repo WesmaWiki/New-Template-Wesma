@@ -37,7 +37,7 @@ document.addEventListener("click", function (e) {
 	let element = e.target,
 		body = document.body,
 		scrollAnim = element.getAttribute('data-scroll-to-anim'),
-		scrollAnimParent = element.closest('[data-scroll-to-anim]');
+		scrollAnimParent = element.closest('[data-scroll-to-anim]') != null ? element.closest('[data-scroll-to-anim]').getAttribute('data-scroll-to-anim') : null;
 	if (element.closest(".popupImageLink")) {
 		let link = element.closest(".popupImageLink").getAttribute('data-href');
 		if (link != null) {
@@ -212,6 +212,23 @@ export const fadeOut = (element, duration, remove, lock_body) => {
 document.addEventListener(
 	"DOMContentLoaded",
 	function () {
+		let hiddenHref = document.querySelectorAll('[data-hidden-href]');
+		if (hiddenHref != null && hiddenHref.length) {
+			hiddenHref.forEach(function(link) {
+				let href = link.getAttribute('data-hidden-href'),
+					l_class = link.getAttribute('class'),
+					html = link.innerHTML;
+				if (href != '') {
+					let n_link = document.createElement("a");
+					n_link.innerHTML = html;
+					n_link.setAttribute('href', href);
+					n_link.setAttribute('target', '_blank');
+					if (l_class != null)
+						n_link.setAttribute('class', l_class);
+    				link.replaceWith(n_link);
+				}
+			});
+		}
 		phoneMask();
 	},
 	false
