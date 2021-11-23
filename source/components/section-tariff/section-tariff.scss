@@ -1,5 +1,14 @@
 .tariff {
-	background: url("../img/image-bg-tariff.png") no-repeat;
+	background: url("../img/image-bg-tariff.png") no-repeat center bottom;
+
+	&.--optimization {
+		background: none;
+
+		& .tariff__sign {
+			margin-bottom: 0;
+		}
+	}
+
 	&__wrap {
 		padding: 60px 0 60px 0;
 	}
@@ -134,6 +143,14 @@
 
 @media (max-width: 1170px) {
 	.tariff {
+		background: none;
+
+		&.--optimization {
+			& .tariff__wrap {
+				padding: 20px 0 20px 0;
+			}
+		}
+
 		&__wrap {
 			padding: 20px 0 60px 0;
 		}

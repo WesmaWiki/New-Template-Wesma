@@ -1,0 +1,193 @@
+.seo-notwork {
+	background: #000000;
+
+	& #canvas-wesma {
+		position: static;
+	}
+
+	&__wrap {
+		padding: 80px 0 180px 0;
+	}
+
+	&__row {
+		display: grid;
+		grid-template-columns: calc(100% - 680px) 630px;
+		gap: 50px;
+	}
+
+	&__column {
+	}
+
+	&__title {
+		color: #fff;
+		margin-bottom: 40px;
+	}
+
+	&__text {
+		& p {
+			font-family: $EFont;
+			font-size: 18px;
+			line-height: 140%;
+			color: #aaaaaa;
+		}
+	}
+
+	&__text-title {
+		margin-bottom: 40px;
+		font-weight: bold;
+		font-size: 40px;
+		line-height: 140%;
+		color: #ffffff;
+	}
+
+	&__slider {
+		margin-bottom: 50px;
+	}
+
+	&__slide {
+		min-height: 250px;
+	}
+
+	&__arrows {
+		margin-top: 30px;
+		display: flex;
+		align-items: center;
+	}
+
+	&__prev {
+		cursor: pointer;
+		margin-right: 50px;
+		padding: 10px 0;
+		& svg {
+			transform: rotate(-180deg);
+			& path {
+				transition: all 0.3s ease;
+			}
+		}
+
+		&:hover {
+			& svg {
+				& path {
+					fill: #43bea2;
+				}
+			}
+		}
+	}
+
+	&__next {
+		cursor: pointer;
+		padding: 10px 0;
+		& svg {
+			& path {
+				transition: all 0.3s ease;
+			}
+		}
+		&:hover {
+			& svg {
+				& path {
+					fill: #43bea2;
+				}
+			}
+		}
+	}
+
+	&__control {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	&__button {
+		cursor: pointer;
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+		&.active {
+			& .seo-notwork__lord-icon {
+				filter: none;
+			}
+		}
+
+		&:hover {
+			& .seo-notwork__lord-icon {
+				filter: none;
+			}
+		}
+	}
+
+	&__icon {
+	}
+
+	&__lord-icon {
+		width: 100px;
+		height: 100px;
+		filter: grayscale(1) contrast(0);
+		transition: all 0.3s ease;
+	}
+}
+
+@media (max-width: 1600px) {
+	.seo-notwork {
+		&__text-title {
+			@include adaptiv-font(40, 24);
+		}
+
+		&__text {
+			& p {
+				@include adaptiv-font(18, 16);
+			}
+		}
+	}
+}
+
+@media (max-width: 1170px) {
+	.seo-notwork {
+		&__wrap {
+			padding: 40px 0 120px 0;
+		}
+
+		&__title {
+			margin-bottom: 30px;
+		}
+
+		&__row {
+			grid-template-columns: 100%;
+			gap: 25px;
+		}
+
+		&__column {
+			&:last-child {
+				display: none;
+			}
+		}
+
+		&__arrows {
+			justify-content: center;
+		}
+
+		&__slider {
+			margin-bottom: 30px;
+		}
+
+		&__slide {
+			min-height: initial;
+		}
+
+		&__text-title {
+			margin-bottom: 20px;
+		}
+
+		&__content {
+			margin-bottom: 40px;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.seo-notwork {
+		&__lord-icon {
+			width: 70px;
+			height: 70px;
+		}
+	}
+}

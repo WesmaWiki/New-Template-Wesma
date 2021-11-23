@@ -301,9 +301,11 @@
 	&__text {
 		flex-grow: 1;
 		& p {
+			font-family: $EFont;
 			margin-bottom: 15px;
 			color: #333;
-			line-height: 30px;
+			font-size: 14px;
+			line-height: 200%;
 			&:last-child {
 				margin-bottom: 0;
 			}
@@ -454,6 +456,8 @@
 	padding: 25px 35px 40px 25px;
 	transition: all 0.3s ease;
 
+	background: #fff;
+
 	&__banner {
 		position: absolute;
 		top: 0%;
@@ -547,7 +551,9 @@
 	&__text {
 		flex-grow: 1;
 		& p {
+			font-family: $EFont;
 			font-size: 14px;
+			line-height: 200%;
 			color: #333;
 		}
 
@@ -570,8 +576,11 @@
 		& li {
 			position: relative;
 			padding-left: 50px;
-			color: #333;
 			margin-bottom: 20px;
+			font-family: $EFont;
+			color: #333;
+			font-size: 14px;
+			line-height: 140%;
 			&:last-child {
 				margin-bottom: 0;
 			}
@@ -646,11 +655,14 @@
 	}
 
 	&__out-text {
+		opacity: 0;
+		visibility: hidden;
 		margin-top: 30px;
 		font-size: 14px;
 		line-height: 140%;
 		text-align: center;
 		color: #797979;
+		transition: all 0.3s ease;
 	}
 
 	&.--hover {
@@ -673,6 +685,11 @@
 				opacity: 1;
 				visibility: visible;
 			}
+		}
+
+		& .card-dev-all__out-text {
+			opacity: 1;
+			visibility: visible;
 		}
 
 		& .card-dev-all__text {
@@ -722,6 +739,8 @@
 		padding: 15px;
 
 		&.--hover {
+			box-shadow: 0px 15px 15.4px 4.6px #e9ebf7;
+
 			& .card-dev-all__bg {
 				display: none;
 			}

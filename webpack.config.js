@@ -31,6 +31,8 @@ module.exports = {
 		cpc: "./source/js/cpc.js",
 		"develop-site": "./source/js/develop-site.js",
 		"support-site": "./source/js/support-site.js",
+		optimization: "./source/js/optimization.js",
+		"case-item": "./source/js/case-item.js",
 	},
 
 	mode: "development",

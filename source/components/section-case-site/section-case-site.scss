@@ -1,0 +1,174 @@
+.main-image {
+	& .breadcrumbs__list {
+		position: relative;
+		padding-right: 30px;
+		max-width: 640px;
+		&::before {
+			content: "";
+			position: absolute;
+			top: -35px;
+			bottom: -35px;
+			right: 0;
+			width: 100vw;
+			background: #ffffff;
+		}
+	}
+}
+
+.case-site {
+	&__wrap {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__group {
+		position: relative;
+		padding: 30px 30px 30px 0;
+		max-width: 640px;
+		margin-bottom: 100px;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 100vw;
+			height: 100%;
+			background: #ffffff;
+		}
+	}
+
+	&__title {
+		position: relative;
+		font-size: 40px;
+		margin-bottom: 40px;
+	}
+
+	&__sign {
+		position: relative;
+		text-align: end;
+		font-weight: bold;
+		font-size: 27px;
+		line-height: 140%;
+		color: #e9ebf7;
+	}
+
+	&__logo {
+		align-self: flex-end;
+		position: relative;
+		padding: 30px 30px 45px 30px;
+		& img {
+			position: relative;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: -2px;
+			left: 50%;
+			transform: translate(-50%, 0%);
+			width: 560px;
+			height: 185px;
+			background: url("../img/section-case-logo-bg.svg") no-repeat center / contain;
+		}
+	}
+}
+
+@media (max-width: 1600px) {
+	.case-site {
+		&__title {
+			@include adaptiv-font(40, 20);
+		}
+
+		&__sign {
+			@include adaptiv-font(27, 16);
+		}
+	}
+}
+
+@media (max-width: 1170px) {
+	.main-image .breadcrumbs {
+		&__list {
+			max-width: 450px;
+		}
+	}
+
+	.case-site {
+		&__group {
+			max-width: 450px;
+			padding: 15px 15px 15px 0;
+		}
+
+		&__title {
+			margin-bottom: 20px;
+		}
+
+		&__logo {
+			padding: 10px 10px 20px 10px;
+			&::before {
+				width: 375px;
+				height: 125px;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.main-image .breadcrumbs {
+		&__list {
+			&::before {
+				content: none;
+			}
+		}
+
+		&__item {
+			&::before {
+				color: #fff;
+				text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+			}
+			& a {
+				color: #fff;
+				border-color: #fff;
+				text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+			}
+
+			& span {
+				color: #fff;
+				text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+			}
+		}
+	}
+
+	.case-site {
+		&__group {
+			margin: 0 auto 80px auto;
+			padding: 15px 0;
+			&::before {
+				content: none;
+			}
+		}
+
+		&__title {
+			color: #fff;
+			text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+		}
+
+		&__sign {
+			text-align: center;
+			color: #fff;
+			text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+		}
+
+		&__logo {
+			padding: 0px 0px 10px 0px;
+			align-self: center;
+			& img {
+				height: 25px;
+			}
+
+			&::before {
+				width: 230px;
+				height: 80px;
+				bottom: -4px;
+			}
+		}
+	}
+}

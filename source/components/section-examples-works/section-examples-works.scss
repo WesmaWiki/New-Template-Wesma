@@ -1,0 +1,394 @@
+.examples-works {
+	&__wrap {
+		position: relative;
+		padding: 30px 0 50px 30px;
+		margin-top: -80px;
+		border-radius: 50px 50px 0px 0px;
+		background-color: #fff;
+	}
+
+	&__title {
+		margin-bottom: 40px;
+	}
+
+	&__subtitle {
+		margin-bottom: 30px;
+		font-size: 18px;
+		line-height: 160%;
+		color: #aaaaaa;
+	}
+
+	&__slider {
+		overflow: initial;
+	}
+
+	&__slide {
+		&.swiper-slide-active {
+			z-index: 3;
+		}
+	}
+
+	&__item {
+	}
+}
+
+.card-examples-works {
+	&__row {
+		display: grid;
+		grid-template-columns: 0.6fr 1fr;
+		gap: 40px;
+	}
+
+	&__column {
+		&:first-child {
+			padding-top: 30px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 25px;
+		font-weight: bold;
+		font-size: 24px;
+		line-height: 140%;
+		color: #43bea2;
+	}
+
+	&__group {
+		position: relative;
+		padding: 30px 60px 55px 30px;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 100vw;
+			height: 100%;
+			background: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' style='fill: none; stroke: %23aaaaaa; stroke-width: 2; stroke-dasharray: 15 15'/%3E%3C/svg%3E");
+		}
+	}
+
+	&__name {
+		margin-bottom: 30px;
+		font-weight: bold;
+		font-size: 27px;
+		line-height: 140%;
+		letter-spacing: 0.02em;
+		color: #333333;
+	}
+
+	&__list {
+		& li {
+			position: relative;
+			display: flex;
+			align-items: center;
+			font-size: 18px;
+			line-height: 140%;
+			letter-spacing: 0.02em;
+			color: #333333;
+			&:not(:last-child) {
+				margin-bottom: 15px;
+			}
+		}
+	}
+
+	&__dot-icon {
+		margin-right: 15px;
+		min-width: 25px;
+		min-height: 25px;
+		max-width: 25px;
+		max-height: 25px;
+	}
+
+	&__arrows {
+		margin-top: 15px;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+	}
+
+	&__prev {
+		cursor: pointer;
+		padding: 55px 30px 0px 0px;
+		& svg {
+			transform: rotate(180deg);
+			width: 30px;
+			height: 30px;
+			transition: all 0.3s ease;
+		}
+		&:hover {
+			& svg {
+				fill: #aaaaaa;
+				filter: grayscale(1);
+			}
+		}
+	}
+
+	&__next {
+		cursor: pointer;
+		position: relative;
+		padding: 55px 0px 0px 30px;
+		& svg {
+			position: relative;
+			width: 30px;
+			height: 30px;
+			transition: all 0.3s ease;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: -60px;
+			bottom: -55px;
+			background: #e9ebf7;
+			border-radius: 100% 0% 0% 100%/50% 0% 0% 50%;
+		}
+		&:hover {
+			& svg {
+				fill: #aaaaaa;
+				filter: grayscale(1);
+			}
+		}
+	}
+
+	&__top {
+		display: flex;
+		align-items: center;
+		margin-bottom: 25px;
+	}
+
+	&__link {
+		white-space: nowrap;
+		margin-right: 30px;
+		&:hover {
+			& .card-examples-works__text-link {
+				border-color: transparent;
+			}
+		}
+	}
+
+	&__lord-icon {
+		width: 35px;
+		height: 35px;
+	}
+
+	&__text-link {
+		font-size: 18px;
+		line-height: 160%;
+		color: #333333;
+		border-bottom: 1px solid #333333;
+		transition: all 0.3s ease;
+	}
+
+	&__group-screen {
+		flex-grow: 1;
+		display: flex;
+		padding: 15px 40px 0px 40px;
+		border-radius: 50px 50px 0px 0px;
+		background: #e9ebf7;
+		box-shadow: 15px -4px 17px #cfd2e4;
+	}
+
+	&__screen-metrik {
+		& img {
+			height: 65px;
+			width: 100%;
+			object-fit: cover;
+			box-shadow: 15px -4px 17px #cfd2e4;
+		}
+	}
+
+	&__screen-name {
+		margin-right: 30px;
+		padding-bottom: 15px;
+		flex-shrink: 0;
+		font-size: 18px;
+		line-height: 150%;
+		letter-spacing: 0.02em;
+		color: #333333;
+		& > span {
+			display: block;
+			font-weight: bold;
+			font-size: 25px;
+			& > span {
+				color: #ff0000;
+			}
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		align-items: center;
+		padding-right: 60px;
+	}
+
+	&__screen {
+		width: 100%;
+	}
+
+	&__sign {
+		margin-right: 20px;
+		writing-mode: vertical-lr;
+		font-size: 16px;
+		line-height: 120%;
+		letter-spacing: 0.02em;
+		color: #333333;
+		transform: rotate(180deg);
+	}
+
+	&__bottom {
+	}
+
+	& .js-plotly-plot .plotly .cursor-crosshair {
+		cursor: initial;
+	}
+}
+
+@media (max-width: 1600px) {
+	.examples-works {
+		&__subtitle {
+			@include adaptiv-font(18, 16);
+		}
+	}
+
+	.card-examples-works {
+		&__title {
+			@include adaptiv-font(24, 18);
+		}
+
+		&__name {
+			@include adaptiv-font(27, 18);
+		}
+
+		&__list {
+			& li {
+				@include adaptiv-font(18, 14);
+			}
+		}
+
+		&__screen-name {
+			@include adaptiv-font(18, 16);
+			& > span {
+				@include adaptiv-font(25, 18);
+			}
+		}
+	}
+}
+
+@media (max-width: 1400px) {
+	.examples-works {
+		&__wrap {
+			padding: 30px 0;
+		}
+	}
+
+	.card-examples-works {
+		&__bottom {
+			padding-right: 0;
+		}
+
+		&__group {
+			padding: 15px 30px 30px 15px;
+		}
+
+		&__prev {
+			padding: 30px 30px 0px 0px;
+		}
+
+		&__next {
+			padding: 30px 0px 0px 30px;
+			&::before {
+				right: -30px;
+				bottom: -30px;
+			}
+		}
+	}
+}
+
+@media (max-width: 1170px) {
+	.examples-works {
+		&__title {
+			margin-bottom: 30px;
+		}
+	}
+
+	.card-examples-works {
+		&__row {
+			grid-template-columns: 1fr;
+			gap: 25px;
+		}
+
+		&__column {
+			&:first-child {
+				padding-top: 0;
+			}
+		}
+
+		&__name {
+			margin-bottom: 15px;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.card-examples-works {
+		&__top {
+			flex-direction: column;
+			text-align: center;
+			justify-content: center;
+			align-items: initial;
+		}
+
+		&__link {
+			margin-right: 0;
+			margin-bottom: 25px;
+		}
+
+		&__screen-name {
+			margin-right: 0;
+		}
+
+		&__group-screen {
+			flex-direction: column;
+			justify-content: center;
+			padding: 10px 10px 0 10px;
+			border-radius: 20px 20px 0px 0px;
+		}
+
+		&__bottom {
+			flex-direction: column;
+		}
+
+		&__sign {
+			margin-right: 0;
+			margin-bottom: 20px;
+			writing-mode: initial;
+			transform: none;
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.card-examples-works {
+		&__group {
+			padding: 15px;
+		}
+
+		&__arrows {
+			margin-top: 0;
+		}
+
+		&__prev {
+			padding: 15px 15px 0 0px;
+		}
+
+		&__next {
+			padding: 15px 0 0 15px;
+
+			&::before {
+				right: -15px;
+				bottom: -15px;
+			}
+		}
+	}
+}

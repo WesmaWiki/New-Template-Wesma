@@ -2,7 +2,7 @@ import gsap from "gsap";
 
 if (document.querySelector(".section-order-vacancy")) {
 	const BOUNDS = 50;
-	document.addEventListener("pointermove", ({ x, y }) => {
+	document.querySelector(".section-order-vacancy").addEventListener("pointermove", ({ x, y }) => {
 		const newX = gsap.utils.mapRange(0, window.innerWidth, -BOUNDS, BOUNDS, x);
 		const newY = gsap.utils.mapRange(0, window.innerHeight, BOUNDS, -BOUNDS, y);
 		gsap.set(document.documentElement, {

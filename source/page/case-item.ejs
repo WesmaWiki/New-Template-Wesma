@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://yastatic.net/share2/share.js"></script>
+
+</head>
+
+<body>
+    <div class="full">
+        <% include ../components/floating-menu/floating-menu.ejs %>
+
+            <% var classNameHeader='' ; %>
+                <% include ../components/header/header.ejs %>
+
+                    <main class="page-main">
+                        <div class="main-image"
+                            style="background: url('./img/seo-case-bg-main-image.png') no-repeat center / cover;">
+                            <% include ../components/breadcrumbs/breadcrumbs.ejs %>
+
+                                <% include ../components/section-case-site/section-case-site.ejs %>
+                        </div>
+
+                        <% include ../components/section-share/section-share.ejs %>
+
+                            <% include ../components/section-case-task/section-case-task.ejs %>
+
+                                <% include ../components/section-case-problem/section-case-problem.ejs %>
+
+                                    <% include ../components/section-case-solution/section-case-solution.ejs %>
+
+                                        <% include ../components/section-case-result/section-case-result.ejs %>
+
+                                            <% include ../components/section-case-review/section-case-review.ejs %>
+
+                                                <% include ../components/section-case-other/section-case-other.ejs %>
+
+                                                    <% include ../components/section-order-form/section-order-form.ejs
+                                                        %>
+
+                    </main>
+                    <% include ../components/footer/footer.ejs %>
+    </div>
+
+
+</body>
+
+</html>

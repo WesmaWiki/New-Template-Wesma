@@ -28,13 +28,18 @@
 		"@svgdotjs/svg.js": "^3.1.1",
 		"dat.gui": "^0.7.7",
 		"gsap": "^3.7.0",
+		"hc-sticky": "^2.2.7",
 		"inputmask": "^5.0.6",
 		"lightgallery": "^2.1.8",
 		"lord-icon-element": "^2.1.0",
 		"lottie-web": "^5.7.13",
+		"nouislider": "^15.5.0",
+		"parallax-js": "^3.1.0",
+		"plotly.js-dist-min": "^2.6.2",
 		"progressive-image": "^1.2.0",
 		"scenejs": "^1.5.0",
 		"swiper": "^6.7.5",
-		"three": "^0.130.1"
+		"three": "^0.130.1",
+		"webfontloader": "^1.6.28"
 	}
 }

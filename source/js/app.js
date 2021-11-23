@@ -1,5 +1,7 @@
 import "swiper/swiper-bundle.css";
 
+import "nouislider/dist/nouislider.css";
+
 import floatingMenu from "../components/floating-menu/floating-menu";
 
 import header from "../components/header/header";
@@ -56,139 +58,139 @@ export const fadeOut = (element, duration, remove, lock_body) => {
 	})();
 };
 
-// document.addEventListener("click", function (e) {
-// 	let element = e.target,
-// 		body = document.body,
-// 		scrollAnim = element.getAttribute("data-scroll-to-anim"),
-// 		scrollAnimParent = element.closest("[data-scroll-to-anim]");
-// 	if (element.closest(".popupImageLink")) {
-// 		let link = element.closest(".popupImageLink").getAttribute("data-href");
-// 		if (link != null) {
-// 			let modal = document.createElement("div");
-// 			modal.classList.add("modal", "popup-general", "--zoom-img");
-// 			modal.innerHTML = '<div class="popup-general__popup-wrap"><div class="popup-general__body"></div><div class="popup-general__close js-modal-close"></div></div>';
+document.addEventListener("click", function (e) {
+	let element = e.target,
+		body = document.body,
+		scrollAnim = element.getAttribute("data-scroll-to-anim"),
+		scrollAnimParent = element.closest("[data-scroll-to-anim]");
+	if (element.closest(".popupImageLink")) {
+		let link = element.closest(".popupImageLink").getAttribute("data-href");
+		if (link != null) {
+			let modal = document.createElement("div");
+			modal.classList.add("modal", "popup-general", "--zoom-img");
+			modal.innerHTML = '<div class="popup-general__popup-wrap"><div class="popup-general__body"></div><div class="popup-general__close js-modal-close"></div></div>';
 
-// 			if (body.querySelector(".popup-general") == null) {
-// 				body.append(modal);
-// 			}
-// 			if (body.querySelector(".popup-general__body") != null) {
-// 				body.querySelector(".popup-general__body").innerHTML = '<img src="' + link + '"/>';
-// 			} else {
-// 				let modalBody = document.createElement("div");
-// 				modalBody.classList.add("popup-general__body");
-// 				modalBody.innerHTML = '<img src="' + link + '"/>';
-// 				body.querySelector(".popup-general__popup-wrap").append(modalBody);
-// 			}
-// 			fadeIn(body.querySelector(".popup-general"), 100, body);
-// 		}
-// 	}
-// 	if (element.closest(".popupFileFromLink") || element.classList.contains("popupFileFromLink")) {
-// 		let targetElement = element.classList.contains("popupFileFromLink") ? element : element.closest(".popupFileFromLink"),
-// 			path_to_file = targetElement.getAttribute("data-path-to-file"),
-// 			tpl = targetElement.getAttribute("data-tpl"),
-// 			type = targetElement.getAttribute("data-type"),
-// 			sendData = {},
-// 			ajaxFormScriptPath = "/assets/components/ajaxform/",
-// 			ajaxFormScripts = [ajaxFormScriptPath + "js/lib/jquery.form.min.js", ajaxFormScriptPath + "js/lib/jquery.jgrowl.min.js", ajaxFormScriptPath + "js/default.js"];
-// 		if (path_to_file != null) {
-// 			if (tpl != "") {
-// 				sendData.tpl = tpl;
-// 			}
-// 			$.ajax({
-// 				url: path_to_file,
-// 				method: "POST",
-// 				data: sendData,
-// 				dataType: "html",
-// 				async: true,
-// 				processData: true,
-// 				cache: false,
-// 				success: function (html) {
-// 					let code = $("<div></div>").html(html),
-// 						innerHtml = code.html();
+			if (body.querySelector(".popup-general") == null) {
+				body.append(modal);
+			}
+			if (body.querySelector(".popup-general__body") != null) {
+				body.querySelector(".popup-general__body").innerHTML = '<img src="' + link + '"/>';
+			} else {
+				let modalBody = document.createElement("div");
+				modalBody.classList.add("popup-general__body");
+				modalBody.innerHTML = '<img src="' + link + '"/>';
+				body.querySelector(".popup-general__popup-wrap").append(modalBody);
+			}
+			fadeIn(body.querySelector(".popup-general"), 100, body);
+		}
+	}
+	if (element.closest(".popupFileFromLink") || element.classList.contains("popupFileFromLink")) {
+		let targetElement = element.classList.contains("popupFileFromLink") ? element : element.closest(".popupFileFromLink"),
+			path_to_file = targetElement.getAttribute("data-path-to-file"),
+			tpl = targetElement.getAttribute("data-tpl"),
+			type = targetElement.getAttribute("data-type"),
+			sendData = {},
+			ajaxFormScriptPath = "/assets/components/ajaxform/",
+			ajaxFormScripts = [ajaxFormScriptPath + "js/lib/jquery.form.min.js", ajaxFormScriptPath + "js/lib/jquery.jgrowl.min.js", ajaxFormScriptPath + "js/default.js"];
+		if (path_to_file != null) {
+			if (tpl != "") {
+				sendData.tpl = tpl;
+			}
+			$.ajax({
+				url: path_to_file,
+				method: "POST",
+				data: sendData,
+				dataType: "html",
+				async: true,
+				processData: true,
+				cache: false,
+				success: function (html) {
+					let code = $("<div></div>").html(html),
+						innerHtml = code.html();
 
-// 					switch (type) {
-// 						case "PopupForm":
-// 							let modal = document.createElement("div");
-// 							modal.classList.add("modal", "popup-general");
-// 							modal.innerHTML = '<div class="popup-general__popup-wrap"><div class="popup-general__body"></div><div class="popup-general__close js-modal-close"></div></div>';
+					switch (type) {
+						case "PopupForm":
+							let modal = document.createElement("div");
+							modal.classList.add("modal", "popup-general");
+							modal.innerHTML = '<div class="popup-general__popup-wrap"><div class="popup-general__body"></div><div class="popup-general__close js-modal-close"></div></div>';
 
-// 							if (body.querySelector(".popup-general") == null) {
-// 								body.append(modal);
-// 							}
-// 							if (body.querySelector(".popup-general__body") != null) {
-// 								body.querySelector(".popup-general__body").innerHTML = innerHtml;
-// 							} else {
-// 								let modalBody = document.createElement("div");
-// 								modalBody.classList.add("popup-general__body");
-// 								modalBody.innerHTML = innerHtml;
-// 								body.querySelector(".popup-general__popup-wrap").append(modalBody);
-// 							}
-// 							fadeIn(body.querySelector(".popup-general"), 100, body);
+							if (body.querySelector(".popup-general") == null) {
+								body.append(modal);
+							}
+							if (body.querySelector(".popup-general__body") != null) {
+								body.querySelector(".popup-general__body").innerHTML = innerHtml;
+							} else {
+								let modalBody = document.createElement("div");
+								modalBody.classList.add("popup-general__body");
+								modalBody.innerHTML = innerHtml;
+								body.querySelector(".popup-general__popup-wrap").append(modalBody);
+							}
+							fadeIn(body.querySelector(".popup-general"), 100, body);
 
-// 							let hiddenIpunts = document.querySelectorAll('[type="hidden"][name="sitename"]');
-// 							if (hiddenIpunts != null && hiddenIpunts.length) {
-// 								hiddenIpunts.forEach((element, index, array) => {
-// 									element.setAttribute("value", "");
-// 								});
-// 							}
-// 							let css = document.createElement("link");
-// 							css.rel = "stylesheet";
-// 							css.href = ajaxFormScriptPath + "css/default.css";
-// 							if (document.querySelector('[href="' + ajaxFormScriptPath + 'css/default.css"]') == null) body.appendChild(css);
-// 							for (let i in ajaxFormScripts) {
-// 								let script = document.createElement("script");
-// 								script.src = ajaxFormScripts[i];
-// 								if (document.querySelector('[src="' + ajaxFormScripts[i] + '"]') == null) body.appendChild(script);
-// 							}
-// 							activePlaceholder();
-// 							phoneMask();
-// 							break;
+							let hiddenIpunts = document.querySelectorAll('[type="hidden"][name="sitename"]');
+							if (hiddenIpunts != null && hiddenIpunts.length) {
+								hiddenIpunts.forEach((element, index, array) => {
+									element.setAttribute("value", "");
+								});
+							}
+							let css = document.createElement("link");
+							css.rel = "stylesheet";
+							css.href = ajaxFormScriptPath + "css/default.css";
+							if (document.querySelector('[href="' + ajaxFormScriptPath + 'css/default.css"]') == null) body.appendChild(css);
+							for (let i in ajaxFormScripts) {
+								let script = document.createElement("script");
+								script.src = ajaxFormScripts[i];
+								if (document.querySelector('[src="' + ajaxFormScripts[i] + '"]') == null) body.appendChild(script);
+							}
+							activePlaceholder();
+							phoneMask();
+							break;
 
-// 						default:
-// 							console.log("CHANK", tpl);
-// 					}
-// 				},
-// 				error: function (data) {
-// 					console.log("ERROR", data);
-// 				},
-// 			});
-// 		}
-// 	}
-// 	if (element.classList.contains("js-modal-close") || element.classList.contains("popup-general")) {
-// 		fadeOut(body.querySelector(".popup-general"), 100, 1, body);
-// 	}
-// 	if (scrollAnim != null || scrollAnimParent != null) {
-// 		scrollAnim = scrollAnim != null ? scrollAnim : scrollAnimParent;
-// 		let scrollAnimTo = scrollAnim != "" && (scrollAnim[0] == "." || scrollAnim[0] == "#" || scrollAnim[0] == "[") ? body.querySelector(scrollAnim) : null,
-// 			scrollAnimToPx = scrollAnimTo != null ? scrollAnimTo.getBoundingClientRect().top + window.pageYOffset : 0;
-// 		window.scrollTo({
-// 			top: scrollAnimToPx,
-// 			behavior: "smooth",
-// 		});
-// 	}
-// });
+						default:
+							console.log("CHANK", tpl);
+					}
+				},
+				error: function (data) {
+					console.log("ERROR", data);
+				},
+			});
+		}
+	}
+	if (element.classList.contains("js-modal-close") || element.classList.contains("popup-general")) {
+		fadeOut(body.querySelector(".popup-general"), 100, 1, body);
+	}
+	if (scrollAnim != null || scrollAnimParent != null) {
+		scrollAnim = scrollAnim != null ? scrollAnim : scrollAnimParent;
+		let scrollAnimTo = scrollAnim != "" && (scrollAnim[0] == "." || scrollAnim[0] == "#" || scrollAnim[0] == "[") ? body.querySelector(scrollAnim) : null,
+			scrollAnimToPx = scrollAnimTo != null ? scrollAnimTo.getBoundingClientRect().top + window.pageYOffset : 0;
+		window.scrollTo({
+			top: scrollAnimToPx,
+			behavior: "smooth",
+		});
+	}
+});
 
-// document.addEventListener("change", function (e) {
-// 	let element = e.target,
-// 		elem_name = element.getAttribute("name"),
-// 		body = document.body;
-// 	if (element.closest(".input-box") || elem_name == "file") {
-// 		let fileName = element.files[0].name,
-// 			textWrapper = element.closest(".input-box"),
-// 			textTarget = textWrapper != null ? textWrapper.querySelector(".input-box__button") : null;
-// 		if (fileName != null && textTarget != null) {
-// 			textTarget.innerText = fileName;
-// 		}
-// 	}
-// });
+document.addEventListener("change", function (e) {
+	let element = e.target,
+		elem_name = element.getAttribute("name"),
+		body = document.body;
+	if (element.closest(".input-box") || elem_name == "file") {
+		let fileName = element.files[0].name,
+			textWrapper = element.closest(".input-box"),
+			textTarget = textWrapper != null ? textWrapper.querySelector(".input-box__button") : null;
+		if (fileName != null && textTarget != null) {
+			textTarget.innerText = fileName;
+		}
+	}
+});
 
-// document.addEventListener(
-// 	"DOMContentLoaded",
-// 	function () {
-// 		phoneMask();
-// 	},
-// 	false
-// );
+document.addEventListener(
+	"DOMContentLoaded",
+	function () {
+		phoneMask();
+	},
+	false
+);
 
 // $(function () {
 // 	/*AJAX LOADING FROM FILE INLINE*/
