@@ -25,6 +25,8 @@
 	"dependencies": {
 		"@georgedoescode/generative-utils": "^1.0.36",
 		"@scenejs/effects": "^1.0.1",
+		"@splidejs/splide": "^3.6.4",
+		"@splidejs/splide-extension-auto-scroll": "^0.3.1",
 		"@svgdotjs/svg.js": "^3.1.1",
 		"dat.gui": "^0.7.7",
 		"gsap": "^3.7.0",
