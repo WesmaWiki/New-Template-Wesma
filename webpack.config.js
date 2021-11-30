@@ -33,6 +33,7 @@ module.exports = {
 		"support-site": "./source/js/support-site.js",
 		optimization: "./source/js/optimization.js",
 		"case-item": "./source/js/case-item.js",
+		"portfolio-item": "./source/js/portfolio-item.js",
 	},
 
 	mode: "development",

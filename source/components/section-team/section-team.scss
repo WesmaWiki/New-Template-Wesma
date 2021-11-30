@@ -113,6 +113,7 @@
 	}
 
 	&__group {
+		pointer-events: none;
 		position: absolute;
 		left: 30px;
 		top: calc(100% - 20px);
