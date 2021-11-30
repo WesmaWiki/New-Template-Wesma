@@ -270,8 +270,11 @@ canvas {
     transform: translateX(-50%);
     z-index: 99999;
 }*/
+.preloader {
+    display: block!important;
+}
 .preloaderItem {
-    position: absolute;
+    position: relative;
     margin: 0 auto;
     width: 100px;
     height: 100px;

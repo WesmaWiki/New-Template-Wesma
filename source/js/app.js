@@ -1,5 +1,7 @@
 import "swiper/swiper-bundle.css";
 
+import "@splidejs/splide/dist/css/splide.min.css";
+
 import "nouislider/dist/nouislider.css";
 
 import floatingMenu from "../components/floating-menu/floating-menu";
@@ -332,6 +334,7 @@ $(function () {
 			html_class = typeof elem_wrap.data("class") !== "undefined" ? elem_wrap.data("class") : "",
 			parent_id = typeof elem_wrap.data("parent-id") !== "undefined" ? elem_wrap.data("parent-id") : "",
 			show_filter = typeof elem_wrap.data("show-filter") !== "undefined" ? elem_wrap.data("show-filter") : 0,
+			snippet = typeof elem_wrap.data("snippet") !== "undefined" ? elem_wrap.data("snippet") : 'pdoResources',
 			elemActive = elem_wrap.find(".ajaxFilterResource.active");
 
 		if (elem_parent_id != "") {
@@ -366,7 +369,9 @@ $(function () {
 		else $(".case__list-tag").fadeOut(300);
 
 		if (path_to_file != "") {
+			sendData.snippet = snippet;
 			sendData.parent_id = parent_id != "" ? parseInt(parent_id) : 0;
+			console.log(sendData);
 			$.ajax({
 				url: path_to_file,
 				method: "POST",
