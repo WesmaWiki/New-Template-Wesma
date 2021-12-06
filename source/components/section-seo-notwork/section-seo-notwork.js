@@ -131,6 +131,7 @@ if (canvas === null) {
 	canvas.id = "canvas-wesma";
 	document.body.appendChild(canvas);
 }
+let altTextCanvas = canvas.getAttribute("data-init-text");
 let ctx = canvas.getContext("2d", {
 	desynchronized: canvasOptions && canvasOptions.desynchronized !== undefined ? canvasOptions.desynchronized : _defaulCanvasOptions.desynchronized,
 	// preserveDrawingBuffer: true // WebGL
@@ -2317,7 +2318,7 @@ function repeatArray(input = [], count = 0) {
 }
 // Inspiration: https://cdn.alca.tv/sharex/2021/09/30/31899ae1-b035-497c-aaa5-f367544de100.png
 
-let text = "WESMA";
+let text = altTextCanvas != null ? altTextCanvas : "WESMA";
 const fontName = "Exo20-Bold";
 const fontWeight = 400;
 let fontsReady = false;
@@ -2427,7 +2428,7 @@ function draw(e) {
 		starGroups[isLine ? "line" : "circle"].push(star);
 	}
 	let currentSize = (_starGroups$circle$ = starGroups.circle[0]) === null || _starGroups$circle$ === void 0 ? void 0 : _starGroups$circle$.size;
-	ctx.shadowColor = "white";
+	ctx.shadowColor = "black";
 	const end = (rad) => {
 		ctx.shadowBlur = currentSize ** 3;
 	};

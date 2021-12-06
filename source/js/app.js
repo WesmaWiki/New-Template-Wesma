@@ -194,6 +194,13 @@ document.addEventListener(
 	false
 );
 
+$(document).on('pdopage_load', function(e, config, response) {
+    let cases = $('.case__list > a');
+    if (cases) {
+    	sectionCase();
+    }
+});
+
 $(function () {
 	/*AJAX LOADING FROM FILE INLINE*/
 	let loadingFiles = $("body").find(".ajaxLoadFromFile"),
@@ -371,7 +378,7 @@ $(function () {
 		if (path_to_file != "") {
 			sendData.snippet = snippet;
 			sendData.parent_id = parent_id != "" ? parseInt(parent_id) : 0;
-			console.log(sendData);
+
 			$.ajax({
 				url: path_to_file,
 				method: "POST",
@@ -391,7 +398,18 @@ $(function () {
 					$("." + html_class).html(innerHtml);
 					switch (html_class) {
 						case "case__list":
+						case "pdoPageList":
 							sectionCase();
+							let pagination = $("." + html_class).find('.pagination');
+							if (pagination.length) {
+								pagination.hide();
+							}
+							if (html_class == 'pdoPageList') {
+								if (typeof pdoPage.Reached !== 'undefined')
+									pdoPage.Reached = false;
+								if (typeof pdoPage.keys.page !== 'undefined')
+									pdoPage.keys.page = 1;
+							}
 							break;
 						default:
 							console.log("CLASS", html_class);

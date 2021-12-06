@@ -43,6 +43,7 @@
 
 	&__group {
 		margin-right: 15px;
+		width: 60%;
 	}
 
 	&__text {
@@ -52,10 +53,10 @@
 	}
 
 	&__image {
-		width: 100%;
+		width: 40%;
 		text-align: end;
 		& img {
-			min-width: 180px;
+			/*min-width: 180px;*/
 			filter: drop-shadow(10px 20px 10px rgba(0, 0, 0, 0.5));
 		}
 	}

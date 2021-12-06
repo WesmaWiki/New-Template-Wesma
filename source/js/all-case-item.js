@@ -1,0 +1,1 @@
+import sectionCaseOther from "../components/section-case-other/section-case-other";
