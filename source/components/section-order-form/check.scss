@@ -84,8 +84,8 @@
 }
 .check[type="checkbox"]:checked + label {
 	color: #c3c8de;
-	-webkit-animation: move 0.3s ease 0.1s forwards;
-	animation: move 0.3s ease 0.1s forwards;
+	-webkit-animation: move-check 0.3s ease 0.1s forwards;
+	animation: move-check 0.3s ease 0.1s forwards;
 }
 .check[type="checkbox"]:checked + label::before {
 	background: #c3c8de;
@@ -97,7 +97,7 @@
 	animation: firework 0.5s ease forwards 0.1s;
 }
 
-@-webkit-keyframes move {
+@-webkit-keyframes move-check {
 	50% {
 		padding-left: 8px;
 		padding-right: 0px;
@@ -107,7 +107,7 @@
 	}
 }
 
-@keyframes move {
+@keyframes move-check {
 	50% {
 		padding-left: 8px;
 		padding-right: 0px;
@@ -116,6 +116,7 @@
 		padding-right: 4px;
 	}
 }
+
 @-webkit-keyframes slice {
 	60% {
 		width: 100%;
