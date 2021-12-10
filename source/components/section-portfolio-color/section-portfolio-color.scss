@@ -1,0 +1,171 @@
+.portfolio-color {
+	&__wrap {
+		padding: 80px 0;
+	}
+
+	&__row {
+		display: grid;
+		grid-template-columns: 110px 1fr;
+		gap: 80px;
+	}
+
+	&__column {
+		&:first-child {
+			justify-self: center;
+		}
+		&:nth-child(2) {
+			padding-top: 30px;
+		}
+	}
+
+	&__numbers {
+	}
+
+	&__title {
+		text-transform: uppercase;
+		margin-bottom: 40px;
+	}
+
+	&__group {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		justify-content: space-between;
+		gap: 100px;
+	}
+
+	&__image {
+	}
+
+	&__list-color {
+		padding-top: 250px;
+		align-self: end;
+	}
+
+	&__item {
+		position: relative;
+		max-width: 270px;
+		max-height: 140px;
+		& svg {
+			width: 270px;
+			height: 140px;
+		}
+		&:not(:last-child) {
+			margin-bottom: 40px;
+		}
+	}
+
+	&__item-value {
+		position: absolute;
+		top: 55%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-weight: 300;
+		font-size: 30px;
+		line-height: 120%;
+	}
+}
+
+@media (max-width: 1600px) {
+	.portfolio-color {
+		&__item-value {
+			@include adaptiv-font(30, 16);
+		}
+	}
+}
+
+@media (max-width: 1450px) {
+	.portfolio-color {
+		&__row {
+			gap: 40px;
+		}
+
+		&__group {
+			gap: 40px;
+		}
+
+		&__list-color {
+			padding-top: 150px;
+		}
+	}
+}
+
+@media (max-width: 1170px) {
+	.portfolio-color {
+		&__wrap {
+			padding: 40px 0;
+		}
+
+		&__row {
+			grid-template-columns: 1fr;
+			gap: 20px;
+		}
+
+		&__column {
+			&:nth-child(2) {
+				padding-top: 0;
+			}
+		}
+
+		&__title {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
+		&__item {
+			max-width: 200px;
+			max-height: 100px;
+			& svg {
+				width: 200px;
+				height: 100px;
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 20px;
+			}
+		}
+
+		&__list-color {
+			padding-top: 0;
+			align-self: center;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.portfolio-color {
+		&__group {
+			grid-template-columns: 1fr;
+			gap: 20px;
+		}
+
+		&__list-color {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			margin: 0 -20px 0 -20px;
+		}
+
+		&__item {
+			margin: 0 20px 20px 20px;
+			max-width: 150px;
+			max-height: 70px;
+			& svg {
+				width: 150px;
+				height: 70px;
+			}
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.portfolio-color {
+		&__item {
+			max-width: 120px;
+			max-height: 50px;
+			& svg {
+				width: 120px;
+				height: 50px;
+			}
+		}
+	}
+}
