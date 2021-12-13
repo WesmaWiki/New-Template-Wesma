@@ -5,10 +5,11 @@ gsap.registerPlugin(SlowMo);
 
 document.addEventListener("mousemove", function (e) {
 	let element = e.target;
-	if (element.classList.contains("btn-magic-wrapper")) {
-		if (!element.classList.contains("--add")) {
-			let $circlesTopLeft = element.querySelectorAll(".circle.top-left");
-			let $circlesBottomRight = element.querySelectorAll(".circle.bottom-right");
+	if (element.closest(".btn-magic-wrapper")) {
+		let elWrap = element.closest(".btn-magic-wrapper");
+		if (!elWrap.classList.contains("--add")) {
+			let $circlesTopLeft = elWrap.querySelectorAll(".circle.top-left");
+			let $circlesBottomRight = elWrap.querySelectorAll(".circle.bottom-right");
 
 			let tl = new TimelineLite();
 			let tl2 = new TimelineLite();
@@ -41,15 +42,15 @@ document.addEventListener("mousemove", function (e) {
 			tlBt2.add(tl2);
 
 			btTl.add(tlBt1);
-			btTl.to(element.querySelectorAll(".button.effect-button"), 0.8, { scaleY: 1.1 }, 0.1);
+			btTl.to(elWrap.querySelectorAll(".button.effect-button"), 0.8, { scaleY: 1.1 }, 0.1);
 			btTl.add(tlBt2, 0.2);
-			btTl.to(element.querySelectorAll(".button.effect-button"), 1.8, { scale: 1, ease: Elastic.easeOut.config(1.2, 0.4) }, 1.2);
+			btTl.to(elWrap.querySelectorAll(".button.effect-button"), 1.8, { scale: 1, ease: Elastic.easeOut.config(1.2, 0.4) }, 1.2);
 
 			btTl.timeScale(2.6);
 
-			element.classList.add("--add");
+			elWrap.classList.add("--add");
 
-			element.addEventListener("mouseover", () => {
+			elWrap.addEventListener("mouseenter", () => {
 				btTl.restart();
 			});
 
