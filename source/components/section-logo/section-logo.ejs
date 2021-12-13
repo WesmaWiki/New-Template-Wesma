@@ -1,30 +1,49 @@
 <section class="section --partners">
-    <div class="wrapper">
-        <ul class="logo-partners">
-            <li class="logo-partners__item">
-                <img src="./img/bitrix_gold_partner.png" width="150" alt="">
-            </li>
-            <li class="logo-partners__item">
-                <img src="./img/webasyst_partner.png" width="100" alt="">
-            </li>
-            <li class="logo-partners__item">
-                <img src="./img/cs-cart_partner.png" width="100" alt="">
-            </li>
-            <li class="logo-partners__item">
-                <img src="./img/yandex_agency.png" width="100" alt="">
-            </li>
-            <li class="logo-partners__item">
-                <img src="./img/facebook_marketing_partner.jpg" width="150" alt="">
-            </li>
-            <li class="logo-partners__item">
-                <img src="./img/target_partner.png" width="100" alt="">
-            </li>
-            <li class="logo-partners__item">
-                <img src="./img/google_partner.png" width="150" alt="">
-            </li>
-        </ul>
-        <div class="random-phrase-container">
-            К нам обращаются, если нужно <span class="random-phrase" id="random-phrase">увеличить конверсию</span>
-        </div>
+  <div class="wrapper">
+    <ul class="logo-partners">
+      <li class="logo-partners__item">
+        <img src="./img/bitrix_gold_partner.png" width="150" alt="" />
+      </li>
+      <li class="logo-partners__item">
+        <img src="./img/webasyst_partner.png" width="100" alt="" />
+      </li>
+      <li class="logo-partners__item">
+        <img src="./img/cs-cart_partner.png" width="100" alt="" />
+      </li>
+      <li class="logo-partners__item">
+        <img src="./img/yandex_agency.png" width="100" alt="" />
+      </li>
+      <li class="logo-partners__item">
+        <img src="./img/facebook_marketing_partner.jpg" width="150" alt="" />
+      </li>
+      <li class="logo-partners__item">
+        <img src="./img/target_partner.png" width="100" alt="" />
+      </li>
+      <li class="logo-partners__item">
+        <img src="./img/google_partner.png" width="150" alt="" />
+      </li>
+    </ul>
+    <div class="random-phrase-container">
+      <div class="random-phrase-container__text">К нам обращаются, если нужно</div>
+      <div class="random-phrase-container__animation">
+        <span class="random-phrase__text1">увеличить конверсию</span>
+        <span class="random-phrase__text2"></span>
+      </div>
+      <svg id="filters">
+        <defs>
+          <filter id="threshold">
+            <!-- Basically just a threshold effect - pixels with a high enough opacity are set to full opacity, and all other pixels are set to completely transparent. -->
+            <feColorMatrix
+              in="SourceGraphic"
+              type="matrix"
+              values="1 0 0 0 0
+                                                  0 1 0 0 0
+                                                  0 0 1 0 0
+                                                  0 0 0 255 -140"
+            />
+          </filter>
+        </defs>
+      </svg>
     </div>
+  </div>
 </section>
