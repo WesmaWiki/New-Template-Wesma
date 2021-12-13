@@ -45,6 +45,9 @@
 		font-size: 14px;
 		line-height: 22px;
 		color: #000;
+		text-align: center;
+		max-width: 455px;
+		margin: 0 auto;
 	}
 
 	&__form {
@@ -187,10 +190,6 @@ body {
 	text-align: center;
 	user-select: none;
 	color: #43bea2;
-}
-
-.section-order-vacancy__text {
-	text-align: center;
 }
 
 @media (min-width: 1171px) and (max-width: 1300px) {
