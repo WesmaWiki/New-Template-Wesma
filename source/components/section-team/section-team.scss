@@ -301,7 +301,7 @@
 @media (max-width: 900px) {
 	.section-team {
 		&__gallery {
-			&.--small:not(.portfolio-team__list) {
+			&.--small {
 				grid-template-columns: repeat(3, 1fr);
 				grid-row-gap: 30px;
 				& .section-team__image {
@@ -337,8 +337,8 @@
 				margin-bottom: 60px;
 			}
 			&.--small {
-				grid-template-columns: repeat(2, 1fr);
-				grid-row-gap: 10px;
+				grid-template-columns: repeat(2, 1fr) !important;
+				grid-row-gap: 10px !important;
 				& .section-team__image {
 					&:nth-child(3n + 3) {
 						margin-bottom: 0px !important;

@@ -17,11 +17,10 @@ document.addEventListener(
 
 		if (sectionNumber.length > 0) {
 			let options = {
-				root: null,
+				root: document.querySelector("#scrollArea"),
 				rootMargin: "0px",
-				threshold: 0.2,
+				threshold: 0.3,
 			};
-
 			let callback = function (entries, observer) {
 				if (entries[0]["isIntersecting"] === true) {
 					entries[0].target.classList.add("--show-number");
@@ -29,7 +28,6 @@ document.addEventListener(
 					entries[0].target.classList.remove("--show-number");
 				}
 			};
-
 			let observer = new IntersectionObserver(callback, options);
 
 			sectionNumber.forEach((element) => {
