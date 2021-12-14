@@ -1,4 +1,5 @@
-import "./anim-lamp";
+//import "./anim-lamp";
+import "./tarif-anim";
 import noUiSlider from "nouislider";
 
 let elNoUiSlider = document.querySelector(".nouislider-container");
