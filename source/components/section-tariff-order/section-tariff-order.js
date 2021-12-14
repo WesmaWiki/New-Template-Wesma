@@ -1,4 +1,4 @@
-import "./anim-lamp";
+// import "./anim-lamp";
 import noUiSlider from "nouislider";
 
 let elNoUiSlider = document.querySelector(".nouislider-container");
