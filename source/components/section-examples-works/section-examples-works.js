@@ -1,5 +1,5 @@
 import Swiper from "swiper/bundle";
-import Plotly from "plotly.js-dist-min";
+import Plotly from "./plotly.min.js";
 
 document.addEventListener(
 	"DOMContentLoaded",
@@ -59,7 +59,10 @@ document.addEventListener(
 					xaxis: {
 						showline: false,
 						showgrid: false,
-					},
+						type: 'date',
+						tickformat: "%B",
+						 dtick: "M2",
+					}, 
 
 					yaxis: {
 						dtick: elRange,
@@ -76,7 +79,7 @@ document.addEventListener(
 					},
 				};
 
-				Plotly.react(element, [trace1], layout, { displayModeBar: false, responsive: true });
+				let polot = Plotly.react(element, [trace1], layout, { displayModeBar: false, responsive: true, locale: "ru" });
 			});
 		}
 	},

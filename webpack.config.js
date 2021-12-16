@@ -35,6 +35,9 @@ module.exports = {
 		"case-item": "./source/js/case-item.js",
 		"all-case-item": "./source/js/all-case-item.js",
 		"portfolio-item": "./source/js/portfolio-item.js",
+		"seo-advert": "./source/js/seo-advert.js",
+		"yandex-advert": "./source/js/yandex-advert.js",
+		"contextual-advert": "./source/js/contextual-advert.js",
 	},
 
 	mode: "development",
