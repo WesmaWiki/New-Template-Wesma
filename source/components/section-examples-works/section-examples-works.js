@@ -61,7 +61,7 @@ document.addEventListener(
 						showgrid: false,
 						type: 'date',
 						tickformat: "%B",
-						 dtick: "M2",
+						 dtick: JSON.parse(coord[0]).length > 10? "M2" : "M1",
 					}, 
 
 					yaxis: {
@@ -79,7 +79,7 @@ document.addEventListener(
 					},
 				};
 
-				let polot = Plotly.react(element, [trace1], layout, { displayModeBar: false, responsive: true, locale: "ru" });
+				let polot = Plotly.react(element, [trace1], layout, { displayModeBar: false, responsive: true,  });
 			});
 		}
 	},
