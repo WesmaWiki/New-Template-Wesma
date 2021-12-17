@@ -26,6 +26,8 @@ import { swiperTrust } from "../components/section-trust/section-trust";
 
 import { phoneMask } from "./module/phoneMask";
 
+import { UiSlider } from "./module/uiSlider";
+
 tabContainers();
 
 phoneMask();
@@ -190,6 +192,24 @@ document.addEventListener(
 	"DOMContentLoaded",
 	function () {
 		phoneMask();
+		let hiddenLink = document.querySelectorAll("[data-hidden-href]");
+		if (hiddenLink != null && hiddenLink.length) {
+			hiddenLink.forEach((element) => {
+				let eLink = element.getAttribute("data-hidden-href"),
+					eClass = element.getAttribute("class"),
+					eCont = element.innerHTML;
+
+				if (eLink != '') {
+					let nLink = document.createElement("a");
+					nLink.innerHTML = eCont;
+					nLink.setAttribute("href", eLink);
+					nLink.setAttribute("target","_blank");
+					if (eClass != null)
+						nLink.setAttribute("class", eClass);
+					element.replaceWith(nLink);
+				}
+			});
+		}
 	},
 	false
 );
@@ -285,6 +305,7 @@ $(function () {
 								break;
 							case "AjaxDiscussProject":
 							case "AjaxWontWork":
+							case "AjaxHelpTarifSend":
 								let hiddenIpunts = document.querySelectorAll('[type="hidden"][name="sitename"]');
 								if (hiddenIpunts != null && hiddenIpunts.length) {
 									hiddenIpunts.forEach((element, index, array) => {
@@ -302,6 +323,8 @@ $(function () {
 								}
 								activePlaceholder();
 								phoneMask();
+								if (tpl == 'AjaxHelpTarifSend')
+									UiSlider();
 								break;
 
 							default:

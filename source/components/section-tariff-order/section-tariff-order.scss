@@ -3,19 +3,20 @@
 .tariff-order {
 	position: relative;
 	background: #e9ebf7;
-	&::before {
-		content: "";
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		right: 0;
-		width: 30vw;
-		border-radius: 100% 0% 0% 100%/50% 0% 0% 50%;
-		background: #fff;
-	}
+	// &::before {
+	// 	content: "";
+	// 	position: absolute;
+	// 	top: 0;
+	// 	bottom: 0;
+	// 	right: 0;
+	// 	width: 30vw;
+	// 	border-radius: 100% 0% 0% 100%/50% 0% 0% 50%;
+	// 	background: #fff;
+	// }
 	&__wrap {
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 		padding: 80px 0;
 	}
 
@@ -39,14 +40,17 @@
 	&__form {
 	}
 
-	&__ainm {
-		flex-grow: 1;
+	&__anim {
+		// flex-grow: 1;
+		flex-shrink: 0;
+		flex-basis: 350px;
 		position: relative;
 		text-align: center;
-		padding-left: 80px;
+		margin-left: 80px;
 		z-index: 2;
 		&-canvas {
 			position: static;
+			clip-path: ellipse(50% 50% at 50% 50%);
 		}
 	}
 
@@ -238,8 +242,18 @@
 
 @media (max-width: 1400px) {
 	.tariff-order {
-		&__lamp {
-			padding: 0 40px;
+		&__anim {
+			margin-left: 40px;
+			flex-basis: 350px;
+		}
+	}
+
+	.from-tariff-order {
+		&__column {
+			&:last-child {
+				padding: 45px 45px;
+				flex-basis: 295px;
+			}
 		}
 	}
 }
@@ -259,7 +273,7 @@
 			flex-basis: initial;
 		}
 
-		&__lamp {
+		&__anim {
 			display: none;
 		}
 

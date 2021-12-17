@@ -30,6 +30,18 @@
 	& .slider-case-task__row {
 		grid-template-columns: 0.95fr 1fr;
 	}
+
+	& .slider-case-task__image {
+		overflow: hidden;
+		& img {
+			transition: all 0.3s ease;
+		}
+		&:hover {
+			& img {
+				transform: scale(1.2);
+			}
+		}
+	}
 }
 
 @media (max-width: 1170px) {
