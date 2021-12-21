@@ -1,4 +1,7 @@
 const canvas = document.querySelector(".case-result__canvas-bg");
+
+if (canvas != null) {
+
 const ctx = canvas.getContext("2d");
 
 const RESOLUTION = 1;
@@ -140,3 +143,4 @@ window.addEventListener("resize", (e) => {
 	w = canvas.width = canvas.parentNode.clientWidth * RESOLUTION;
 	h = canvas.height = canvas.parentNode.clientHeight * RESOLUTION;
 });
+}

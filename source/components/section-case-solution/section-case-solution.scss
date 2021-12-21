@@ -155,7 +155,7 @@
 				}
 			}
 		
-			&__name {
+			& p {
 				position: relative;
 				display: block;
 				padding-left: 15px;
@@ -178,8 +178,14 @@
 			&__image {
 				display: inline-block;
 			}
+
+			& figure {
+				display: block;
+				margin: 0 auto 20px auto;
+				text-align: center;
+			}
 		
-			&__sign {
+			& figcaption {
 				margin-top: 20px;
 				display: block;
 				text-align: center;
