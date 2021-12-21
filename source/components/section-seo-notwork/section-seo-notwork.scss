@@ -3,6 +3,7 @@
 
 	& #canvas-wesma {
 		position: static;
+		contain: layout;
 	}
 
 	&__wrap {
