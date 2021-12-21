@@ -240,6 +240,14 @@
 		font-size: 18px;
 		line-height: 160%;
 		color: #707070;
+		& p {
+			font-size: 18px;
+			line-height: 160%;
+			color: #707070;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
 	}
 }
 
@@ -255,6 +263,9 @@
 
 		&__text {
 			@include adaptiv-font(18, 14);
+			& p {
+				@include adaptiv-font(18, 14);
+			}
 		}
 	}
 }
