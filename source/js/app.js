@@ -66,7 +66,7 @@ document.addEventListener("click", function (e) {
 	let element = e.target,
 		body = document.body,
 		scrollAnim = element.getAttribute("data-scroll-to-anim"),
-		scrollAnimParent = element.closest("[data-scroll-to-anim]");
+		scrollAnimParent = element.closest("[data-scroll-to-anim]") != null ? element.closest("[data-scroll-to-anim]").getAttribute("data-scroll-to-anim") : null;
 	if (element.closest(".popupImageLink")) {
 		let link = element.closest(".popupImageLink").getAttribute("data-href");
 		if (link != null) {
@@ -92,13 +92,21 @@ document.addEventListener("click", function (e) {
 		let targetElement = element.classList.contains("popupFileFromLink") ? element : element.closest(".popupFileFromLink"),
 			path_to_file = targetElement.getAttribute("data-path-to-file"),
 			tpl = targetElement.getAttribute("data-tpl"),
+			id = targetElement.getAttribute("data-rid"),
+			tarif = targetElement.getAttribute("data-tarif"),
 			type = targetElement.getAttribute("data-type"),
 			sendData = {},
 			ajaxFormScriptPath = "/assets/components/ajaxform/",
 			ajaxFormScripts = [ajaxFormScriptPath + "js/lib/jquery.form.min.js", ajaxFormScriptPath + "js/lib/jquery.jgrowl.min.js", ajaxFormScriptPath + "js/default.js"];
 		if (path_to_file != null) {
-			if (tpl != "") {
+			if (tpl != null) {
 				sendData.tpl = tpl;
+			}
+			if (id != null) {
+				sendData.id = id;
+			}
+			if (tarif != null) {
+				sendData.tarif = tarif;
 			}
 			$.ajax({
 				url: path_to_file,
@@ -273,6 +281,7 @@ $(function () {
 			let file_wrapper = $(this),
 				path_to_file = file_wrapper.data("path-to-file"),
 				tpl = typeof file_wrapper.data("tpl") !== "undefined" ? file_wrapper.data("tpl") : "",
+				id = typeof file_wrapper.data("rid") !== "undefined" ? file_wrapper.data("rid") : "",
 				sendData = {},
 				ajaxFormScriptPath = "/assets/components/ajaxform/",
 				ajaxFormScripts = [ajaxFormScriptPath + "js/lib/jquery.form.min.js", ajaxFormScriptPath + "js/lib/jquery.jgrowl.min.js", ajaxFormScriptPath + "js/default.js"];
@@ -280,6 +289,9 @@ $(function () {
 			if (typeof path_to_file !== "undefined" && path_to_file != "") {
 				if (tpl != "") {
 					sendData.tpl = tpl;
+				}
+				if (id != "") {
+					sendData.id = id;
 				}
 				$.ajax({
 					url: path_to_file,

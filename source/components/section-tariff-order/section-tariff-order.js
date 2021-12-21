@@ -1,2 +1,2 @@
 //import "./anim-lamp";
-// import "./tarif-anim";
+import "./tarif-anim";
