@@ -16,6 +16,8 @@ import sectionTrust from "../components/section-trust/section-trust";
 
 import sectionOurClients from "../components/section-ourClients/section-ourClients";
 
+import sectionTeam from "../components/section-team/section-team.js";
+
 import { tabContainers } from "./module/tab-containers";
 
 import { activePlaceholder } from "./module/active-placeholder";
