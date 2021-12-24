@@ -90,6 +90,9 @@
 			outline: none;
 			background: transparent;
 			text-align: end;
+			font-size: 18px;
+		    width: 100%;
+		    max-width: 170px;
 			&:hover,
 			&:active,
 			&:focus {
@@ -121,6 +124,7 @@
 			outline: none;
 			background: transparent;
 			border-bottom: 1px solid #aaaaaa;
+			font-size: 18px;
 			&:hover,
 			&:active,
 			&:focus {
@@ -335,11 +339,18 @@
 			flex-direction: column;
 			align-items: flex-start;
 			margin-bottom: 20px;
+			& input {
+				margin: 0 auto;
+			}
 		}
 
 		&__tel-text {
-			margin-right: 0;
+			margin: 0 auto;
 			margin-bottom: 15px;
+		}
+
+		&__price-text {
+			text-align: center;
 		}
 
 		&__adress {
@@ -349,11 +360,12 @@
 
 			& input {
 				width: 100%;
+				text-align: center;
 			}
 		}
 
 		&__adress-text {
-			margin-right: 0;
+			margin: 0 auto;
 			margin-bottom: 15px;
 		}
 
