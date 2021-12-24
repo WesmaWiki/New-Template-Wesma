@@ -265,6 +265,15 @@
 
 	transition: all 0.3s ease;
 
+	&__link {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 5;
+	}
+
 	&__image {
 		align-self: center;
 	}
@@ -457,6 +466,15 @@
 	transition: all 0.3s ease;
 
 	background: #fff;
+
+	&__link {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 5;
+	}
 
 	&__banner {
 		position: absolute;

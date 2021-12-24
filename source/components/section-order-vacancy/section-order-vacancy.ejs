@@ -8,8 +8,8 @@
           <div class="section-order-vacancy__image">
             <!-- The two texts -->
             <div class="section-order-vacancy__container" id="container">
-              <span class="section-order-vacancy__text1" id="text1"></span>
-              <span class="section-order-vacancy__text2"></span>
+              <span class="section-order-vacancy__text1 buble-text-anim-1"></span>
+              <span class="section-order-vacancy__text2 buble-text-anim-2"></span>
             </div>
 
             <!-- The SVG filter used to create the merging effect -->
@@ -17,20 +17,17 @@
               <defs>
                 <filter id="threshold">
                   <!-- Basically just a threshold effect - pixels with a high enough opacity are set to full opacity, and all other pixels are set to completely transparent. -->
-                  <feColorMatrix
-                    in="SourceGraphic"
-                    type="matrix"
-                    values="1 0 0 0 0
+                  <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
 									0 1 0 0 0
 									0 0 1 0 0
-									0 0 0 255 -140"
-                  />
+									0 0 0 255 -140" />
                 </filter>
               </defs>
             </svg>
           </div>
           <div class="section-order-vacancy__text">
-            Если вы молоды, креативны и стремитесь получить большой опыт в веб-технологиях - присоединяйтесь к нашей команде! Не забудьте прикрепить резюме для более детального изучения ваших текущих
+            Если вы молоды, креативны и стремитесь получить большой опыт в веб-технологиях - присоединяйтесь к нашей
+            команде! Не забудьте прикрепить резюме для более детального изучения ваших текущих
             навыков.
           </div>
         </div>
@@ -68,7 +65,8 @@
             </label>
 
             <div class="form-order-vacancy__privacy privacy">
-              Заполняя данную форму вы соглашаетесь на обработку персональных данных ООО "WESMA" в соответствии с законом №152-ФЗ "О персональных данных" <a href="#">политика конфиденциальности.</a>
+              Заполняя данную форму вы соглашаетесь на обработку персональных данных ООО "WESMA" в соответствии с
+              законом №152-ФЗ "О персональных данных" <a href="#">политика конфиденциальности.</a>
             </div>
             <div class="form-order-vacancy__btutton-wrap">
               <div class="form-order-vacancy__btutton btn-magic-wrapper">
@@ -76,7 +74,8 @@
                   <defs>
                     <filter id="goo">
                       <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+                      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                        result="goo" />
                       <feComposite in="SourceGraphic" in2="goo" />
                     </filter>
                   </defs>

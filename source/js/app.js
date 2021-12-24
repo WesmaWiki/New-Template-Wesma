@@ -16,7 +16,11 @@ import sectionTrust from "../components/section-trust/section-trust";
 
 import sectionOurClients from "../components/section-ourClients/section-ourClients";
 
+import sectionOrderVacancy from "../components/section-order-vacancy/section-order-vacancy.js";
+
 import sectionTeam from "../components/section-team/section-team.js";
+
+import sectionExamplesWorks from "../components/section-examples-works/section-examples-works";
 
 import { tabContainers } from "./module/tab-containers";
 
@@ -209,13 +213,12 @@ document.addEventListener(
 					eClass = element.getAttribute("class"),
 					eCont = element.innerHTML;
 
-				if (eLink != '') {
+				if (eLink != "") {
 					let nLink = document.createElement("a");
 					nLink.innerHTML = eCont;
 					nLink.setAttribute("href", eLink);
-					nLink.setAttribute("target","_blank");
-					if (eClass != null)
-						nLink.setAttribute("class", eClass);
+					nLink.setAttribute("target", "_blank");
+					if (eClass != null) nLink.setAttribute("class", eClass);
 					element.replaceWith(nLink);
 				}
 			});
@@ -224,11 +227,11 @@ document.addEventListener(
 	false
 );
 
-$(document).on('pdopage_load', function(e, config, response) {
-    let cases = $('.case__list > a');
-    if (cases) {
-    	sectionCase();
-    }
+$(document).on("pdopage_load", function (e, config, response) {
+	let cases = $(".case__list > a");
+	if (cases) {
+		sectionCase();
+	}
 });
 
 $(function () {
@@ -341,8 +344,7 @@ $(function () {
 								}
 								activePlaceholder();
 								phoneMask();
-								if (tpl == 'AjaxHelpTarifSend')
-									UiSlider();
+								if (tpl == "AjaxHelpTarifSend") UiSlider();
 								break;
 
 							default:
@@ -382,7 +384,7 @@ $(function () {
 			html_class = typeof elem_wrap.data("class") !== "undefined" ? elem_wrap.data("class") : "",
 			parent_id = typeof elem_wrap.data("parent-id") !== "undefined" ? elem_wrap.data("parent-id") : "",
 			show_filter = typeof elem_wrap.data("show-filter") !== "undefined" ? elem_wrap.data("show-filter") : 0,
-			snippet = typeof elem_wrap.data("snippet") !== "undefined" ? elem_wrap.data("snippet") : 'pdoResources',
+			snippet = typeof elem_wrap.data("snippet") !== "undefined" ? elem_wrap.data("snippet") : "pdoResources",
 			elemActive = elem_wrap.find(".ajaxFilterResource.active");
 
 		if (elem_parent_id != "") {
@@ -441,15 +443,13 @@ $(function () {
 						case "case__list":
 						case "pdoPageList":
 							sectionCase();
-							let pagination = $("." + html_class).find('.pagination');
+							let pagination = $("." + html_class).find(".pagination");
 							if (pagination.length) {
 								pagination.hide();
 							}
-							if (html_class == 'pdoPageList') {
-								if (typeof pdoPage.Reached !== 'undefined')
-									pdoPage.Reached = false;
-								if (typeof pdoPage.keys.page !== 'undefined')
-									pdoPage.keys.page = 1;
+							if (html_class == "pdoPageList") {
+								if (typeof pdoPage.Reached !== "undefined") pdoPage.Reached = false;
+								if (typeof pdoPage.keys.page !== "undefined") pdoPage.keys.page = 1;
 							}
 							break;
 						default:

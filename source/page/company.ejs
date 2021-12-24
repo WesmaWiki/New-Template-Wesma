@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
 
-  <body>
-    <div class="full">
-      <% include ../components/floating-menu/floating-menu.ejs %> <% var classNameHeader='' ; %> <% include ../components/header/header.ejs %>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
 
-      <main class="page-main">
-        <% include ../components/breadcrumbs/breadcrumbs.ejs %> <% include ../components/section-team/section-team.ejs %> <% include ../components/section-office/section-office.ejs %> <% include
-        ../components/section-requisites/section-requisites.ejs %> <% include ../components/section-trust/section-trust.ejs %> <% include ../components/section-ourClients/section-ourClients.ejs %> <%
-        include ../components/section-order-vacancy/section-order-vacancy.ejs %>
-      </main>
-      <% include ../components/footer/footer.ejs %>
-    </div>
-  </body>
+<body>
+  <div class="full">
+    <% include ../components/floating-menu/floating-menu.ejs %>
+      <% var classNameHeader='' ; %>
+        <% include ../components/header/header.ejs %>
+
+          <main class="page-main">
+            <% include ../components/breadcrumbs/breadcrumbs.ejs %>
+              <% include ../components/section-team/section-team.ejs %>
+                <% include ../components/section-office/section-office.ejs %>
+                  <% include ../components/section-requisites/section-requisites.ejs %>
+                    <% include ../components/section-trust/section-trust.ejs %>
+                      <% include ../components/section-ourClients/section-ourClients.ejs %>
+                        <% include ../components/section-order-vacancy/section-order-vacancy.ejs %>
+          </main>
+          <% include ../components/footer/footer.ejs %>
+  </div>
+</body>
+
 </html>

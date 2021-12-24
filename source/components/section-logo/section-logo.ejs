@@ -26,21 +26,17 @@
     <div class="random-phrase-container">
       <div class="random-phrase-container__text">К нам обращаются, если нужно</div>
       <div class="random-phrase-container__animation">
-        <span class="random-phrase__text1">увеличить конверсию</span>
-        <span class="random-phrase__text2"></span>
+        <span class="random-phrase__text1 buble-text-anim-1">увеличить конверсию</span>
+        <span class="random-phrase__text2 buble-text-anim-2"></span>
       </div>
       <svg id="filters">
         <defs>
           <filter id="threshold">
             <!-- Basically just a threshold effect - pixels with a high enough opacity are set to full opacity, and all other pixels are set to completely transparent. -->
-            <feColorMatrix
-              in="SourceGraphic"
-              type="matrix"
-              values="1 0 0 0 0
+            <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
                                                   0 1 0 0 0
                                                   0 0 1 0 0
-                                                  0 0 0 255 -140"
-            />
+                                                  0 0 0 255 -140" />
           </filter>
         </defs>
       </svg>
