@@ -282,6 +282,7 @@ $(function () {
 				path_to_file = file_wrapper.data("path-to-file"),
 				tpl = typeof file_wrapper.data("tpl") !== "undefined" ? file_wrapper.data("tpl") : "",
 				id = typeof file_wrapper.data("rid") !== "undefined" ? file_wrapper.data("rid") : "",
+				checkPageType = typeof file_wrapper.data("checked-page") !== "undefined" ? file_wrapper.data("checked-page") : "",
 				sendData = {},
 				ajaxFormScriptPath = "/assets/components/ajaxform/",
 				ajaxFormScripts = [ajaxFormScriptPath + "js/lib/jquery.form.min.js", ajaxFormScriptPath + "js/lib/jquery.jgrowl.min.js", ajaxFormScriptPath + "js/default.js"];
@@ -292,6 +293,9 @@ $(function () {
 				}
 				if (id != "") {
 					sendData.id = id;
+				}
+				if (checkPageType != "") {
+					sendData.page_type = checkPageType;
 				}
 				$.ajax({
 					url: path_to_file,
