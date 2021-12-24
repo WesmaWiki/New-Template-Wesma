@@ -13,6 +13,14 @@
 	}
 
 	&__text {
+		& a {
+			font-size: 14px;
+			line-height: 140%;
+			letter-spacing: 0.02em;
+			color: #333333;
+			text-decoration: underline;
+		}
+
 		& p {
 			font-family: $EFont;
 			font-size: 14px;
@@ -32,6 +40,20 @@
 				line-height: 140%;
 				letter-spacing: 0.02em;
 				color: #333333;
+				&:not(:last-child) {
+					margin-bottom: 10px;
+				}
+			}
+		}
+
+		& ol {
+			margin-bottom: 30px;
+			& li {
+				font-size: 14px;
+				line-height: 140%;
+				letter-spacing: 0.02em;
+				color: #333333;
+				list-style-position: inside;
 				&:not(:last-child) {
 					margin-bottom: 10px;
 				}

@@ -1,0 +1,57 @@
+.errors-404 {
+	&__wrap {
+		display: flex;
+		align-items: center;
+	}
+
+	&__text-wrap {
+		margin-right: 50px;
+	}
+
+	&__title {
+		margin-bottom: 30px;
+		font-family: "Exo20-SemiBold", "Arial", sans-serif;
+		font-size: 200px;
+		line-height: 120%;
+		color: #000;
+	}
+
+	&__subtitle {
+	}
+
+	&__text {
+		max-width: 420px;
+		font-size: 23px;
+		line-height: 120%;
+		color: #000;
+	}
+
+	&__image {
+		text-align: center;
+	}
+}
+
+@media (max-width: 1600px) {
+	.errors-404 {
+		&__title {
+			@include adaptiv-font(200, 100);
+		}
+
+		&__text {
+			@include adaptiv-font(23, 18);
+		}
+	}
+}
+
+@media (max-width: 1170px) {
+	.errors-404 {
+		&__wrap {
+			flex-direction: column;
+		}
+
+		&__text-wrap {
+			margin-right: 0px;
+			text-align: center;
+		}
+	}
+}
