@@ -19,6 +19,9 @@
 			letter-spacing: 0.02em;
 			color: #333333;
 			text-decoration: underline;
+			&:hover {
+				text-decoration: none;
+			}
 		}
 
 		& p {
