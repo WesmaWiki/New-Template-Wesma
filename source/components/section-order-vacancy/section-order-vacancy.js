@@ -1,20 +1,3 @@
-// import gsap from "gsap";
-
-// if (document.querySelector(".section-order-vacancy")) {
-// 	const BOUNDS = 50;
-// 	document.querySelector(".section-order-vacancy").addEventListener("pointermove", ({ x, y }) => {
-// 		const newX = gsap.utils.mapRange(0, window.innerWidth, -BOUNDS, BOUNDS, x);
-// 		const newY = gsap.utils.mapRange(0, window.innerHeight, BOUNDS, -BOUNDS, y);
-// 		gsap.set(document.documentElement, {
-// 			"--rotate-x": newY,
-// 			"--rotate-y": newX,
-// 		});
-// 	});
-// }
-/*
-	This pen cleverly utilizes SVG filters to create a "Morphing Text" effect. Essentially, it layers 2 text elements on top of each other, and blurs them depending on which text element should be more visible. Once the blurring is applied, both texts are fed through a threshold filter together, which produces the "gooey" effect. Check the CSS - Comment the #container rule's filter out to see how the blurring works!
-*/
-
 document.addEventListener(
 	"DOMContentLoaded",
 	function () {
