@@ -127,6 +127,9 @@
 	}
 
 	&__arrow {
+		&.--not-active {
+			display: none;
+		}
 	}
 
 	&__next {
@@ -141,8 +144,21 @@
 .prototype-slider {
 	&__container {
 		max-height: 1000px;
+		height: 100%;
 		padding: 0 20px 20px 20px;
 		margin: 0 -20px -20px -20px;
+		&.--not-active {
+			max-height: initial;
+			& .prototype-slider__wrapper {
+				flex-direction: column;
+			}
+
+			& .prototype-slider__slide {
+				&:not(:last-child) {
+					margin-bottom: 30px;
+				}
+			}
+		}
 	}
 
 	&__wrapper {

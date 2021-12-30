@@ -85,6 +85,24 @@
 .logo-slider {
 	&__container {
 		max-height: 680px;
+		&.--not-active {
+			max-height: initial;
+			& .logo-slider__wrapper {
+				flex-direction: column;
+			}
+
+			& .logo-slider__slide {
+				&:not(:last-child) {
+					margin-bottom: 30px;
+				}
+			}
+		}
+	}
+
+	&__arrow {
+		&.--not-active {
+			display: none;
+		}
 	}
 
 	&__wrapper {

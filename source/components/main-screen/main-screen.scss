@@ -94,3 +94,13 @@
 		@include adaptiv-font(18, 16);
 	}
 }
+
+@media (max-width: 1850px) {
+	.device-ipad {
+		& .main-screen {
+			height: initial;
+			width: 100%;
+			padding: 30px 0px;
+		}
+	}
+}

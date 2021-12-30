@@ -1,0 +1,57 @@
+.new-years {
+	position: relative;
+	&__canvas {
+		position: static;
+	}
+
+	&__group-text {
+		position: absolute;
+		width: 100%;
+		top: 15%;
+		left: 50%;
+		transform: translate(-50%, 0);
+		text-align: center;
+	}
+
+	&__music {
+		position: absolute;
+		bottom: 15%;
+		left: 50%;
+		transform: translateX(-50%);
+		-webkit-appearance: none;
+		background: #43bea2;
+		color: white;
+		font: inherit;
+		font-size: 20px;
+		padding: 10px;
+		border: none;
+		border-radius: 20px;
+		cursor: pointer;
+	}
+
+	&__title {
+		color: #000;
+	}
+
+	&__subtext {
+		font-size: 30px;
+		line-height: 120%;
+		color: #000;
+	}
+}
+
+@media (max-width: 1600px) {
+	.new-years {
+		&__subtext {
+			@include adaptiv-font(30, 22);
+		}
+	}
+}
+
+@media (max-width: 1170px) {
+	.new-years {
+		&__music {
+			font-size: 14px;
+		}
+	}
+}

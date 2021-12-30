@@ -22,6 +22,8 @@ import sectionTeam from "../components/section-team/section-team.js";
 
 import sectionExamplesWorks from "../components/section-examples-works/section-examples-works";
 
+import sectionNewYears from "../components/section-new-years/section-new-years";
+
 import { tabContainers } from "./module/tab-containers";
 
 import { activePlaceholder } from "./module/active-placeholder";
@@ -391,8 +393,7 @@ $(function () {
 		// if (elem_vid == 'all')
 		// 	$('.'+elem_lists+' .ajaxFilterResource').removeClass('active');
 
-		if (elem_parent_tvname == 'projectSiteType')
-			return true;
+		if (elem_parent_tvname == "projectSiteType") return true;
 
 		if (elem.hasClass("active")) elem.removeClass("active");
 		else elem.addClass("active").siblings().removeClass("active");

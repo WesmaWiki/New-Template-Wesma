@@ -112,6 +112,8 @@
 }
 
 .footer-inner__logo-item {
+	width: 100%;
+	flex-grow: 1;
 	height: 65px;
 
 	&:not(:last-child) {
