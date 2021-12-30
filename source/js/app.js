@@ -376,6 +376,8 @@ $(function () {
 	/*AJAX LOADING FROM FILE*/
 	$("body").on("click", ".ajaxFilterResource", function () {
 		let elem = $(this),
+			elem_parent_tv = this.closest("[data-tv-name]"),
+			elem_parent_tvname = elem_parent_tv != null ? elem_parent_tv.getAttribute("data-tv-name") : null,
 			elem_vid = typeof elem.data("vid") !== "undefined" ? elem.data("vid") : "",
 			elem_parent_id = typeof elem.data("parent-id") !== "undefined" ? elem.data("parent-id") : "",
 			elem_show_filter = typeof elem.data("show-filter") !== "undefined" ? elem.data("show-filter") : 0,
@@ -388,6 +390,9 @@ $(function () {
 
 		// if (elem_vid == 'all')
 		// 	$('.'+elem_lists+' .ajaxFilterResource').removeClass('active');
+
+		if (elem_parent_tvname == 'projectSiteType')
+			return true;
 
 		if (elem.hasClass("active")) elem.removeClass("active");
 		else elem.addClass("active").siblings().removeClass("active");
