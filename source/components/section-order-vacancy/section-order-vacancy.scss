@@ -157,34 +157,31 @@
 /* Explanation in JS tab */
 
 /* Cool font from Google Fonts! */
-@import url('https://fonts.googleapis.com/css?family=Raleway:900&display=swap');
-
-body {
-	margin: 0px;
-}
+@import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
 
 .section-order-vacancy__container {
 	/* Center the text in the viewport. */
 	position: absolute;
 	margin: auto;
-	width: 100vw;
+	width: 100%;
 	height: 80pt;
 	top: 0;
 	bottom: 0;
-	
+
 	/* This filter is a lot of the magic, try commenting it out to see how the morphing works! */
-	filter: url(#threshold) blur(0.6px);
+	filter: url(#threshold);
 	display: flex;
 	align-items: center;
 }
 
 /* Your average text styling */
-.section-order-vacancy__text1, .section-order-vacancy__text2 {
+.section-order-vacancy__text1,
+.section-order-vacancy__text2 {
 	position: absolute;
 	width: 100%;
 	display: inline-block;
-	
-	font-family: 'Raleway', sans-serif;
+
+	font-family: "Raleway", sans-serif;
 	line-height: 1;
 	font-size: 30pt;
 	text-align: center;
@@ -193,13 +190,15 @@ body {
 }
 
 @media (min-width: 1171px) and (max-width: 1300px) {
-	.section-order-vacancy__text1, .section-order-vacancy__text2 {
+	.section-order-vacancy__text1,
+	.section-order-vacancy__text2 {
 		font-size: 25pt;
 	}
 }
 
 @media (min-width: 950px) and (max-width: 1170px) {
-	.section-order-vacancy__text1, .section-order-vacancy__text2 {
+	.section-order-vacancy__text1,
+	.section-order-vacancy__text2 {
 		font-size: 40pt;
 	}
 }
@@ -217,7 +216,8 @@ body {
 }
 
 @media (max-width: 320px) {
-	.section-order-vacancy__text1, .section-order-vacancy__text2 {
+	.section-order-vacancy__text1,
+	.section-order-vacancy__text2 {
 		font-size: 16px;
 	}
 }

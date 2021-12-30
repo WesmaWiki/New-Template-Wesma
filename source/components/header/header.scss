@@ -160,3 +160,25 @@
 		display: none;
 	}
 }
+
+// ipad
+
+@media (max-width: 1850px) {
+	.device-ipad {
+		& .mobmenu {
+			display: flex;
+		}
+
+		& .page-header {
+			border-bottom: 1px solid #000;
+
+			& + .page-main {
+				margin-top: 0;
+			}
+		}
+
+		& .pc-menu {
+			display: none;
+		}
+	}
+}

@@ -51,10 +51,9 @@
 		color: red;
 		border-color: red;
 	}
-.textarea
-	&.error {
+	.textarea &.error {
 		color: red;
-    	border-color: red;
+		border-color: red;
 	}
 }
 
@@ -226,7 +225,7 @@
 	.contact-form {
 		&__item {
 			flex-basis: 100%;
-			&:first-child {
+			&:nth-child(3) {
 				margin-bottom: 30px;
 			}
 		}

@@ -23,10 +23,17 @@
 .mobile-slider {
 	position: relative;
 
+	&__hidden {
+		overflow: hidden;
+	}
+
 	&__container {
-		padding: 130px 0;
-		padding-left: 30px;
-		max-width: 1360px;
+		padding: 120px 0;
+		padding-left: 24px;
+		padding-right: 24px;
+		margin: 0 auto;
+		max-width: 408px;
+		overflow: initial;
 	}
 
 	&__phone {
@@ -34,7 +41,7 @@
 		top: 0;
 		left: -4px;
 		display: flex;
-		max-width: 437px;
+		max-width: 408px;
 		width: 100%;
 		height: 100%;
 		flex-direction: column;
@@ -44,12 +51,12 @@
 		&::before {
 			content: "";
 			position: absolute;
-			top: 130px;
-			bottom: 124px;
-			left: 0;
-			width: 100%;
+			top: 107px;
+			bottom: 102px;
+			left: 0px;
+			right: 0px;
 			border: 33px solid transparent;
-			border-image: url("../img/image-border-phone-portfolio-middle.png") 33;
+			border-image: url("../img/image-border-phone-portfolio-middle.png") 37;
 			box-sizing: border-box;
 			z-index: 3;
 		}
@@ -69,8 +76,8 @@
 	}
 
 	&__slide {
-		max-width: 385px;
-		height: 660px;
+		max-width: 360px;
+		height: 530px;
 		overflow-x: hidden;
 		overflow-y: hidden;
 		&::-webkit-scrollbar {
@@ -103,6 +110,11 @@
 
 	&__image {
 		position: relative;
+
+		& img {
+			width: 100%;
+		}
+
 		&::before {
 			content: "";
 			position: absolute;
@@ -129,6 +141,37 @@
 		top: 50%;
 		right: 0;
 		transform: translate(0, -50%);
+		z-index: 3;
+		cursor: pointer;
+		& svg {
+			position: relative;
+			width: 65px;
+			transition: all 0.3s ease;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: -15px;
+			width: 15vw;
+			height: 300px;
+			background: #e9ebf7;
+			border-radius: 100% 0% 0% 100%/50% 0% 0% 50%;
+		}
+		&:hover {
+			& svg {
+				fill: #fff;
+				filter: brightness(10);
+			}
+		}
+	}
+
+	&__prev {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translate(0, -50%) rotate(180deg);
 		z-index: 3;
 		cursor: pointer;
 		& svg {
@@ -181,17 +224,18 @@
 
 	.mobile-slider {
 		&__container {
-			padding: 120px 0;
+			// padding: 120px 0;
+			// max-width: 400px;
 		}
 
 		&__phone {
-			left: 50%;
-			max-width: 400px;
-			transform: translate(-50%, 0);
-			&::before {
-				top: 120px;
-				bottom: 113px;
-			}
+			// left: 50%;
+			// max-width: 400px;
+			// transform: translate(-50%, 0);
+			// &::before {
+			// 	top: 120px;
+			// 	bottom: 113px;
+			// }
 		}
 
 		&__next {
@@ -201,8 +245,16 @@
 			}
 		}
 
+		&__prev {
+			display: none;
+			& svg {
+				width: 35px;
+			}
+		}
+
 		&__slide {
-			height: 500px;
+			// max-width: 390px;
+			// height: 500px;
 		}
 	}
 }
@@ -219,18 +271,19 @@
 
 		&__container {
 			padding: 105px 0;
+			// max-width: 350px;
 		}
 
 		&__phone {
-			max-width: 350px;
-			&::before {
-				top: 105px;
-				bottom: 100px;
-			}
+			// max-width: 350px;
+			// &::before {
+			// 	top: 105px;
+			// 	bottom: 100px;
+			// }
 		}
 		&__slide {
-			max-width: 310px;
-			height: 450px;
+			// max-width: 310px;
+			// height: 450px;
 			&:not(.swiper-slide-active) {
 				& .mobile-slider__image {
 					height: 100%;
@@ -248,6 +301,8 @@
 	.mobile-slider {
 		&__container {
 			padding: 82px 0;
+			max-width: 270px;
+			margin-left: auto;
 		}
 
 		&__phone {

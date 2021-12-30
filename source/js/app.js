@@ -40,6 +40,20 @@ phoneMask();
 
 activePlaceholder();
 
+document.addEventListener(
+	"DOMContentLoaded",
+	function () {
+		if (/Mac|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+			let body = document.querySelector("body");
+
+			if (body != null) {
+				body.classList.add("device-apple");
+			}
+		}
+	},
+	false
+);
+
 export const fadeIn = (element, duration, lock_body) => {
 	(function increment(value = 0) {
 		element.style.opacity = String(value);

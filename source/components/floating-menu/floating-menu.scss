@@ -263,9 +263,11 @@
 	transition: visibility 1s 0.25s, opacity 0.25s 0s;
 }
 
-.rating:hover .rating-list {
-	visibility: visible;
-	opacity: 1;
+@media (min-width: 1170px) {
+	.rating:hover .rating-list {
+		visibility: visible;
+		opacity: 1;
+	}
 }
 
 .rating-list li {
@@ -291,7 +293,7 @@
 	margin-top: -31px;
 	width: 57px;
 	height: 62px;
-	background: url("../img/runet.png") 0 0 no-repeat;
+	background: url("../img/runet.png") no-repeat center / contain;
 	position: absolute;
 	top: 50%;
 	left: -5px;
@@ -359,4 +361,98 @@
 	font-size: 11px;
 	line-height: 1.5;
 	text-decoration: underline;
+}
+
+@media (max-width: 1170px) {
+	.rating-list {
+		visibility: visible;
+		opacity: 1;
+
+		position: static;
+		width: 210px;
+		padding: 10px;
+		padding-top: 25px;
+		padding-bottom: 25px;
+	}
+
+	.rating-list li {
+		padding-left: 40px;
+	}
+
+	.rating-list li + li {
+		margin-top: 25px;
+	}
+
+	.rating-list li::before {
+		width: 35px;
+		height: 49px;
+		margin-top: -23px;
+	}
+}
+
+// ipad
+
+@media (max-width: 1850px) {
+	.device-ipad {
+		& .main-menu {
+			&.locked {
+				left: -353px;
+			}
+
+			&__wrap {
+				max-height: 100vh;
+				overflow-y: auto;
+				overflow-x: hidden;
+			}
+
+			&__right-block {
+				&-wrap {
+					top: 50% !important;
+				}
+
+				&-icon {
+					left: 6px !important;
+					opacity: 1 !important;
+					& span {
+						display: none;
+					}
+
+					&::before {
+						top: 12px;
+						transform: rotate(45deg);
+					}
+
+					&::after {
+						bottom: 13px;
+						transform: rotate(-45deg);
+					}
+				}
+			}
+		}
+
+		& .rating-list {
+			visibility: visible;
+			opacity: 1;
+
+			position: static;
+			width: 210px;
+			padding: 10px;
+			padding-top: 25px;
+			padding-bottom: 25px;
+		}
+
+		& .rating-list li {
+			padding-left: 40px;
+		}
+
+		& .rating-list li + li {
+			margin-top: 25px;
+		}
+
+		& .rating-list li::before {
+			width: 35px;
+			height: 49px;
+			margin-top: -23px;
+		}
+	}
 }

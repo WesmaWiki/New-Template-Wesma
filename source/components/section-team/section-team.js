@@ -60,6 +60,13 @@
 
 let arrImage = document.querySelectorAll(".section-team__image");
 
+arrImage.forEach((element) => {
+	let seriouslyImg = element.dataset.seriouslyImg;
+	let smilyImg = element.dataset.smilyImg;
+
+	smilyImg ? (element.style.backgroundImage = `url(${smilyImg})`) : null;
+});
+
 if (arrImage.length > 0) {
 	arrImage.forEach((element) => {
 		let timerAnim = 800;

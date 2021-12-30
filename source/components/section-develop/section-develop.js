@@ -5,10 +5,16 @@ let animCard = Array.prototype.slice.call(document.querySelectorAll(".develop__i
 if (animCard.length > 0) {
 	let containerBg = document.querySelector(".develop__background");
 
-	var timerAnimBg;
+	let timerAnimBg;
+	let sectAnim = document.querySelector(".develop");
+	let intervalAnim;
+	let count = animCard.findIndex((item, index, array) => {
+		return item.classList.contains("active");
+	});
 
 	animCard.forEach((element, index, array) => {
 		element.addEventListener("mouseenter", (e) => {
+			e.stopPropagation();
 			if (!e.target.classList.contains("active")) {
 				clearTimeout(timerAnimBg);
 
@@ -35,12 +41,9 @@ if (animCard.length > 0) {
 
 				e.target.classList.add("active");
 
-				// containerBg.style.animation = "0.3s ease 0s  animOpacity-1, 0.3s ease animScale-1";
-
-				// timerAnimBg = setTimeout(() => {
-				// 	containerBg.style.background = `URL("${e.target.dataset.image}") no-repeat center / cover`;
-				// 	containerBg.style.animation = "0.3s ease 0s animOpacity-2, 1.5s ease animScale-2";
-				// }, 200);
+				count = animCard.findIndex((item, index, array) => {
+					return item.classList.contains("active");
+				});
 			}
 		});
 	});
@@ -52,4 +55,27 @@ if (animCard.length > 0) {
 	});
 
 	animCard[0].dispatchEvent(event);
+
+	function autoMove() {
+		animCard[count].dispatchEvent(event);
+		if (count >= animCard.length - 1) {
+			count = 0;
+		} else {
+			count++;
+		}
+	}
+
+	intervalAnim = setInterval(autoMove, 2000);
+
+	if (sectAnim != null) {
+		sectAnim.addEventListener("mouseenter", (e) => {
+			e.stopPropagation();
+			clearInterval(intervalAnim);
+		});
+
+		sectAnim.addEventListener("mouseleave", (e) => {
+			e.stopPropagation();
+			intervalAnim = setInterval(autoMove, 2000);
+		});
+	}
 }

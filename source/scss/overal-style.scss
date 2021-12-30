@@ -17,7 +17,7 @@ body {
 	}
 }
 canvas {
-  contain: strict;
+	contain: strict;
 }
 .full {
 	width: 100%;
@@ -358,4 +358,93 @@ ul li {
 
 .privacy a {
 	text-decoration: underline;
+}
+
+.contact-wrap__text {
+	& a {
+		color: #000;
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+.contact-wrap {
+	display: grid;
+	grid-template-columns: 0.7fr 1fr;
+	gap: 50px;
+}
+
+.contact-wrap__control {
+	display: flex;
+	margin-bottom: 30px;
+}
+
+.contact-wrap__button:nth-child(1) {
+	margin-right: 30px;
+}
+
+.contact-wrap__item {
+	display: none;
+}
+
+.contact-wrap__item.active {
+	display: block;
+}
+
+@media (max-width: 1170px) {
+	.contact-wrap {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+}
+
+@media (max-width: 500px) {
+	.contact-wrap__control {
+		flex-direction: column;
+	}
+
+	.contact-wrap__button:nth-child(1) {
+		margin-right: 0;
+	}
+}
+
+.device-apple .bubbles {
+	display: none !important;
+	animation: none !important;
+}
+
+.device-apple .develop-cms {
+	margin-top: 100px;
+}
+
+.device-apple .open-portfolio {
+	margin-bottom: 50px;
+}
+
+.device-apple .description {
+	margin-top: 50px;
+}
+
+@media (max-width: 1170px) {
+	.device-apple .develop-cms {
+		margin-top: 20px;
+	}
+
+	.device-apple .open-portfolio {
+		margin-bottom: 20px;
+	}
+
+	.device-apple .stack {
+		margin-top: 20px;
+	}
+
+	.device-apple .description {
+		margin-top: 20px;
+	}
+
+	.device-apple .portfolio-client__wrap {
+		padding-bottom: 40px;
+	}
 }

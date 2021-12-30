@@ -188,6 +188,16 @@
 			column-gap: 20px;
 		}
 	}
+
+	.bubble:nth-child(2n + 1) {
+		display: none;
+		animation: none !important;
+	}
+
+	.bubble:nth-child(3n + 2) {
+		display: none;
+		animation: none !important;
+	}
 }
 
 @media (max-width: 768px) {

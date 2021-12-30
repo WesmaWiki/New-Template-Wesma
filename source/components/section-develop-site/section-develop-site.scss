@@ -214,6 +214,7 @@
 				grid-column-start: 1;
 				grid-column-end: 3;
 				grid-row-start: 3;
+				display: none;
 			}
 		}
 
@@ -636,8 +637,8 @@
 	}
 
 	&__order {
-		opacity: 0;
-		visibility: hidden;
+		// opacity: 0;
+		// visibility: hidden;
 		margin-top: 40px;
 		text-align: center;
 		transition: all 0.3s ease;
@@ -647,8 +648,8 @@
 		position: relative;
 		padding-right: 78px;
 		color: #000;
-		opacity: 0;
-		visibility: hidden;
+		// opacity: 0;
+		// visibility: hidden;
 		transition: all 0.3s ease;
 		& span {
 			border-bottom: 1px solid #000;
@@ -673,8 +674,8 @@
 	}
 
 	&__out-text {
-		opacity: 0;
-		visibility: hidden;
+		// opacity: 0;
+		// visibility: hidden;
 		margin-top: 30px;
 		font-size: 14px;
 		line-height: 140%;

@@ -190,10 +190,12 @@
 	}
 
 	&__screen-metrik {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		& img {
-			height: 65px;
 			width: 100%;
-			object-fit: cover;
+			object-fit: contain;
 			box-shadow: 15px -4px 17px #cfd2e4;
 		}
 	}

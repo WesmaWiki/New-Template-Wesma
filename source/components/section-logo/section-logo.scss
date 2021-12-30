@@ -70,26 +70,26 @@
 }
 
 .random-phrase-container__animation {
-	/* Center the text in the viewport. */
+	flex-grow: 1;
 	margin-left: 10px;
-	width: 100%;
-	height: 50px;
 	flex-shrink: 0;
-	/* This filter is a lot of the magic, try commenting it out to see how the morphing works! */
-	filter: url(#threshold) blur(0.6px);
+	filter: url(#threshold);
 }
 
 /* Your average text styling */
-.random-phrase__text1, .random-phrase__text2 {
+.random-phrase__text1,
+.random-phrase__text2 {
 	position: absolute;
-	width: 100%;
 	display: inline-block;
-	color:#43bea2;
-	
+	color: #43bea2;
+
 	user-select: none;
 }
 
 .random-phrase-container svg {
+	position: absolute;
+	top: 0;
+	left: 0;
 	height: 0;
 }
 
@@ -105,11 +105,20 @@
 		align-items: center;
 	}
 
+	.random-phrase-container__animation {
+		width: 100%;
+		margin-left: 0;
+	}
+
 	.random-phrase-container__text {
 		margin-bottom: 10px;
 	}
 
-	.random-phrase__text1, .random-phrase__text2 {
+	.random-phrase__text1,
+	.random-phrase__text2 {
 		text-align: center;
+		left: 50%;
+		transform: translate(-50%, 0);
+		width: 100%;
 	}
 }

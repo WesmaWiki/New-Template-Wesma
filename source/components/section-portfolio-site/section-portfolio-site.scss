@@ -38,6 +38,7 @@
 	}
 
 	&__subtitle {
+		text-transform: initial !important;
 		margin-bottom: 40px;
 		font-size: 23px;
 		line-height: 140%;
@@ -60,6 +61,10 @@
 		margin-bottom: 40px;
 		&:first-child {
 			width: 100%;
+		}
+		&.--empty {
+			display: none;
+			margin-bottom: 0;
 		}
 	}
 
@@ -385,7 +390,7 @@
 			&:nth-child(1) {
 				padding-top: 0;
 				margin-right: 0px;
-				margin-bottom: 30px;
+				margin-bottom: 0;
 				width: 100%;
 				text-align: center;
 			}
@@ -407,10 +412,12 @@
 		}
 
 		&__arrow {
+			display: none;
 			margin-bottom: 30px;
 		}
 
 		&__back {
+			display: none;
 			margin-bottom: 30px;
 		}
 
@@ -426,6 +433,7 @@
 		}
 
 		&__share {
+			display: none;
 			justify-content: center;
 		}
 

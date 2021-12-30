@@ -1,8 +1,16 @@
 import { match } from "../../js/module/match";
+import { _slideToggle } from "../../js/module/slideToggle";
 
 document.addEventListener(
 	"DOMContentLoaded",
 	function () {
+		let ratingBlock = document.querySelector(".rating__block");
+		let ratingList = document.querySelector(".rating-list");
+
+		function addHandlerRating() {
+			_slideToggle(ratingList, 500);
+		}
+
 		let menu = document.querySelector(".main-menu");
 
 		if (menu != null) {
@@ -34,24 +42,6 @@ document.addEventListener(
 			}
 
 			let timer;
-
-			// function menuEnter() {
-			// 	if (!menu.querySelector(".main-menu__right-block-icon").classList.contains("active")) {
-			// 		menu.querySelector(".button-open").beginElement();
-
-			// 		timer = setTimeout(() => {
-			// 			menu.querySelector(".main-menu__right-block-icon") ? menu.querySelector(".main-menu__right-block-icon").classList.add("active") : null;
-			// 		}, 100);
-			// 	}
-			// }
-
-			// function menuLeave() {
-			// 	menu.querySelector(".button-close").beginElement();
-
-			// 	menu.querySelector(".main-menu__right-block-icon") ? menu.querySelector(".main-menu__right-block-icon").classList.remove("active") : null;
-
-			// 	clearTimeout(timer);
-			// }
 
 			function showMenu(e) {
 				cursorCoord = e.clientX;
@@ -105,11 +95,12 @@ document.addEventListener(
 
 					window.addEventListener("mousemove", showMenu);
 
-					// menu.addEventListener("mouseenter", menuEnter);
-
-					// menu.addEventListener("mouseleave", menuLeave);
-
 					document.addEventListener("mousemove", moveMenuRightBlock);
+
+					if (ratingBlock != null) {
+						ratingList.removeAttribute("hidden");
+						ratingBlock.removeEventListener("click", addHandlerRating);
+					}
 				} else {
 					if (!document.querySelector(".page-header").classList.contains("main-page")) {
 						window.removeEventListener("load", lockTopMenuRightBlock);
@@ -121,9 +112,51 @@ document.addEventListener(
 						document.removeEventListener("scroll", lockTopMenu);
 					}
 
-					// menu.removeEventListener("mouseenter", menuEnter);
+					window.removeEventListener("mousemove", showMenu);
 
-					// menu.removeEventListener("mouseleave", menuLeave);
+					document.removeEventListener("mousemove", moveMenuRightBlock);
+
+					document.querySelector(".button-open").beginElement();
+
+					menu.classList.add("locked");
+
+					if (ratingBlock != null) {
+						ratingList.setAttribute("hidden", "");
+						ratingBlock.addEventListener("click", addHandlerRating);
+					}
+				}
+			}
+
+			function disableMenuMac() {
+				if (!match[3].matches) {
+					if (!document.querySelector(".page-header").classList.contains("main-page")) {
+						window.addEventListener("load", lockTopMenuRightBlock);
+
+						document.addEventListener("scroll", lockTopMenuRightBlock);
+					} else {
+						window.addEventListener("load", lockTopMenu);
+
+						document.addEventListener("scroll", lockTopMenu);
+					}
+
+					window.addEventListener("mousemove", showMenu);
+
+					document.addEventListener("mousemove", moveMenuRightBlock);
+
+					if (ratingBlock != null) {
+						ratingList.removeAttribute("hidden");
+						ratingBlock.removeEventListener("click", addHandlerRating);
+					}
+				} else {
+					if (!document.querySelector(".page-header").classList.contains("main-page")) {
+						window.removeEventListener("load", lockTopMenuRightBlock);
+
+						document.removeEventListener("scroll", lockTopMenuRightBlock);
+					} else {
+						window.removeEventListener("load", lockTopMenu);
+
+						document.removeEventListener("scroll", lockTopMenu);
+					}
 
 					window.removeEventListener("mousemove", showMenu);
 
@@ -132,11 +165,27 @@ document.addEventListener(
 					document.querySelector(".button-open").beginElement();
 
 					menu.classList.add("locked");
+
+					if (ratingBlock != null) {
+						ratingList.setAttribute("hidden", "");
+						ratingBlock.addEventListener("click", addHandlerRating);
+					}
 				}
 			}
 
-			disableMenu();
-			match[0].addListener(disableMenu);
+			if (/Mac|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+				let body = document.querySelector("body");
+
+				if (body != null) {
+					body.classList.add("device-ipad");
+				}
+
+				disableMenuMac();
+				match[3].addListener(disableMenuMac);
+			} else {
+				disableMenu();
+				match[0].addListener(disableMenu);
+			}
 		}
 	},
 	false

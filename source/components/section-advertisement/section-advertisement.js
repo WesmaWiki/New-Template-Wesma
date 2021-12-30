@@ -1,4 +1,4 @@
-import * as dat from "dat.gui";
+// import * as dat from "dat.gui";
 
 /**
  * requestAnimationFrame
@@ -339,7 +339,7 @@ document.addEventListener(
 				gravities = [],
 				particles = [],
 				grad,
-				gui,
+				// gui,
 				control;
 
 			// Event Listeners
@@ -383,7 +383,7 @@ document.addEventListener(
 					}
 				}
 				gravities.push(
-					new GravityPoint(e.clientX, e.clientY, G_POINT_RADIUS, {
+					new GravityPoint(e.layerX, e.layerY, G_POINT_RADIUS, {
 						particles: particles,
 						gravities: gravities,
 					})
@@ -451,18 +451,17 @@ document.addEventListener(
 
 				// GUI
 
-				gui = new dat.GUI();
-				gui
-					.add(control, "particleNum", 0, 500)
-					.step(1)
-					.name("Particle Num")
-					.onChange(function () {
-						var n = (control.particleNum | 0) - particles.length;
-						if (n > 0) addParticle(n);
-						else if (n < 0) removeParticle(-n);
-					});
-				gui.add(GravityPoint, "interferenceToPoint").name("Interference Between Point");
-				gui.close();
+				// gui = new dat.GUI();
+				// gui.add(control, "particleNum", 0, 500)
+				// 	.step(1)
+				// 	.name("Particle Num")
+				// 	.onChange(function () {
+				// 		var n = (control.particleNum | 0) - particles.length;
+				// 		if (n > 0) addParticle(n);
+				// 		else if (n < 0) removeParticle(-n);
+				// 	});
+				// gui.add(GravityPoint, "interferenceToPoint").name("Interference Between Point");
+				// gui.close();
 
 				// Start Update
 

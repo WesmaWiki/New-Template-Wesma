@@ -1,1 +1,1 @@
-export let match = [window.matchMedia("(max-width: 1170px)"), window.matchMedia("(max-width: 1300px)"), window.matchMedia("(max-width: 768px)")];
+export let match = [window.matchMedia("(max-width: 1170px)"), window.matchMedia("(max-width: 1300px)"), window.matchMedia("(max-width: 768px)"), window.matchMedia("(max-width: 1850px)")];
