@@ -312,8 +312,22 @@
 	border-bottom: none;
 }
 
+.rating-list__lord-icon {
+	margin-right: 15px;
+	width: 57px;
+	height: 62px;
+}
+
 .rating {
 	position: relative;
+}
+
+.rating-list li:last-child {
+	margin-top: 20px;
+	padding-left: 0;
+	&::before {
+		content: none;
+	}
 }
 
 .rating__block {
@@ -358,7 +372,7 @@
 	display: inline-block;
 	margin: 0 10px;
 	color: $dark;
-	font-size: 11px;
+	font-size: 12px;
 	line-height: 1.5;
 	text-decoration: underline;
 }
@@ -370,7 +384,7 @@
 
 		position: static;
 		width: 210px;
-		padding: 10px;
+		padding: 7px;
 		padding-top: 25px;
 		padding-bottom: 25px;
 	}
@@ -387,6 +401,16 @@
 		width: 35px;
 		height: 49px;
 		margin-top: -23px;
+	}
+
+	.rating-list__lord-icon {
+		margin-right: 0px;
+		width: 35px;
+		height: 49px;
+	}
+
+	.rating-list li:last-child {
+		margin-top: 13px;
 	}
 }
 
@@ -436,7 +460,7 @@
 
 			position: static;
 			width: 210px;
-			padding: 10px;
+			padding: 7px;
 			padding-top: 25px;
 			padding-bottom: 25px;
 		}

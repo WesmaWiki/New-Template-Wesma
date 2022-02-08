@@ -3,17 +3,9 @@ import Swiper from "swiper/bundle";
 document.addEventListener(
 	"DOMContentLoaded",
 	function () {
-		let slidesAll = document.querySelectorAll(".slider-design__slide");
-		let centerSlideEl = 0;
-
-		if (slidesAll.length > 0) {
-			centerSlideEl = Math.floor(slidesAll.length / 2);
-		}
-
 		let prototypeSlider = new Swiper(".slider-design__container", {
 			slidesPerView: "auto",
 			// loop: true,
-			initialSlide: centerSlideEl,
 			centeredSlides: 1,
 			watchSlidesProgress: 1,
 			navigation: {

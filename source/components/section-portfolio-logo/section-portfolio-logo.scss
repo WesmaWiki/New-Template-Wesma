@@ -84,6 +84,7 @@
 
 .logo-slider {
 	&__container {
+		height: 100%;
 		max-height: 680px;
 		&.--not-active {
 			max-height: initial;

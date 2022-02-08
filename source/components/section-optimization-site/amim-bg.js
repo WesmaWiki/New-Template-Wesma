@@ -1514,17 +1514,23 @@ function correctRadius(radius) {
 // 	updatePointerDownData(pointer, -1, posX, posY);
 // });
 
-setTimeout(() => {
-	pointers[0].down = true;
-}, 1000);
+document.addEventListener(
+	"DOMContentLoaded",
+	function () {
+		setTimeout(() => {
+			pointers[0].down = true;
+		}, 1000);
 
-canvas.addEventListener("mousemove", (e) => {
-	let pointer = pointers[0];
-	if (!pointer.down) return;
-	let posX = scaleByPixelRatio(e.offsetX);
-	let posY = scaleByPixelRatio(e.offsetY);
-	updatePointerMoveData(pointer, posX, posY);
-});
+		canvas.addEventListener("mousemove", (e) => {
+			let pointer = pointers[0];
+			if (!pointer.down) return;
+			let posX = scaleByPixelRatio(e.offsetX);
+			let posY = scaleByPixelRatio(e.offsetY);
+			updatePointerMoveData(pointer, posX, posY);
+		});
+	},
+	false
+);
 
 // window.addEventListener("mouseup", () => {
 // 	updatePointerUpData(pointers[0]);

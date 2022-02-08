@@ -3,20 +3,12 @@ import Swiper from "swiper/bundle";
 document.addEventListener(
 	"DOMContentLoaded",
 	function () {
-		let slidesAll = document.querySelectorAll(".mobile-slider__slide");
-		let centerSlideEl = 0;
-
-		if (slidesAll.length > 0) {
-			centerSlideEl = Math.floor(slidesAll.length / 2);
-		}
-
 		let prototypeSlider = new Swiper(".mobile-slider__container", {
 			slidesPerView: "auto",
 			// loop: true,
 			// loopedSlides: 1,
 			watchSlidesProgress: 1,
 			centeredSlides: true,
-			initialSlide: centerSlideEl,
 			navigation: {
 				nextEl: ".mobile-slider__next",
 				prevEl: ".mobile-slider__prev",

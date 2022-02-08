@@ -15,10 +15,10 @@ export function activePlaceholder() {
 			});
 
 			if (type != null && type == "tel") {
-				element.addEventListener("mouseover", (e) => {
+				element.addEventListener("mouseenter", (e) => {
 					element.classList.add("active-placeholder");
 				});
-				element.addEventListener("mouseout", (e) => {
+				element.addEventListener("mouseleave", (e) => {
 					if (element.value.length == 0 && element !== document.activeElement) {
 						element.classList.remove("active-placeholder");
 					}

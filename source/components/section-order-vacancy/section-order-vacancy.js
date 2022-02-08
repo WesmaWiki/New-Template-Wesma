@@ -53,7 +53,10 @@ document.addEventListener(
 				elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
 
 				elts.text1.textContent = texts[textIndex % texts.length];
-				elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+
+				setTimeout(() => {
+					elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+				}, 100);
 			}
 
 			function doCooldown() {

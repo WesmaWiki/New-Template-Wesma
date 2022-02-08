@@ -35,10 +35,31 @@
 	height: 100%;
 }
 
+.main-wrapper__item {
+	& .main-title {
+		& a {
+			position: relative;
+			color: #000;
+			border-bottom: 4px solid #000;
+			z-index: 11;
+			&:hover {
+				color: #43bea2;
+				border-color: #43bea2;
+			}
+		}
+	}
+}
+
 @media (max-width: 1170px) {
 	.main-wrapper__item {
 		&:last-child {
 			margin-top: 100px;
+		}
+
+		& .main-title {
+			& a {
+				border-width: 2px;
+			}
 		}
 	}
 }

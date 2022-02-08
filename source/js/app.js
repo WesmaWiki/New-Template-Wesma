@@ -4,6 +4,8 @@ import "@splidejs/splide/dist/css/splide.min.css";
 
 import "nouislider/dist/nouislider.css";
 
+import "simplebar/dist/simplebar.css";
+
 import floatingMenu from "../components/floating-menu/floating-menu";
 
 import header from "../components/header/header";
@@ -22,7 +24,7 @@ import sectionTeam from "../components/section-team/section-team.js";
 
 import sectionExamplesWorks from "../components/section-examples-works/section-examples-works";
 
-import sectionNewYears from "../components/section-new-years/section-new-years";
+// import sectionNewYears from "../components/section-new-years/section-new-years";
 
 import { tabContainers } from "./module/tab-containers";
 

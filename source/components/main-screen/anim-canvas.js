@@ -208,26 +208,33 @@ if (document.getElementById("canvas") != null) {
 		let timer;
 
 		function disabledAnim() {
+			let mainScreenSect = document.querySelector(".main-screen");
+
 			if (!match[0].matches) {
 				//animation runner
 				loop();
 				timer = setInterval(loop, 1000 / 60);
 
-				canvas.addEventListener("mousemove", mousePosition, false);
+				if (mainScreenSect != null) {
+					mainScreenSect.addEventListener("mousemove", mousePosition, false);
 
-				canvas.addEventListener("touchmove", mousePosition, false);
+					mainScreenSect.addEventListener("touchmove", mousePosition, false);
 
-				canvas.addEventListener("mouseleave", mouseLeaveCnvas, false);
+					mainScreenSect.addEventListener("mouseleave", mouseLeaveCnvas, false);
+				}
 
 				//window resize
 				window.addEventListener("resize", resizeCanvas);
 			} else {
 				clearInterval(timer);
-				canvas.removeEventListener("mousemove", mousePosition, false);
 
-				canvas.removeEventListener("touchmove", mousePosition, false);
+				if (mainScreenSect != null) {
+					mainScreenSect.removeEventListener("mousemove", mousePosition, false);
 
-				canvas.removeEventListener("mouseleave", mouseLeaveCnvas, false);
+					mainScreenSect.removeEventListener("touchmove", mousePosition, false);
+
+					mainScreenSect.removeEventListener("mouseleave", mouseLeaveCnvas, false);
+				}
 
 				c.clearRect(0, 0, canvas.width, canvas.height);
 

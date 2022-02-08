@@ -1,10 +1,9 @@
 .portfolio-team {
-	margin-top: -320px;
 	position: relative;
 	z-index: 3;
 	background: #fff;
 	&__wrap {
-		padding: 350px 0 150px 0;
+		padding: 80px 0 150px 0;
 	}
 
 	&__group-title {
@@ -60,7 +59,7 @@
 @media (max-width: 1170px) {
 	.portfolio-team {
 		&__wrap {
-			padding: 320px 0 100px 0;
+			padding: 80px 0 100px 0;
 		}
 		&__group-title {
 			grid-template-columns: 1fr;
@@ -76,18 +75,16 @@
 
 @media (max-width: 768px) {
 	.portfolio-team {
-		margin-top: -200px;
 		&__wrap {
-			padding: 250px 0 40px 0;
+			padding: 80px 0 40px 0;
 		}
 	}
 }
 
 @media (max-width: 500px) {
 	.portfolio-team {
-		margin-top: -150px;
 		&__wrap {
-			padding: 150px 0 40px 0;
+			padding: 60px 0 40px 0;
 		}
 	}
 }
