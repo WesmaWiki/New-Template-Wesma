@@ -5,6 +5,7 @@ import sectionPortfolioDesign from "../components/section-portfolio-design/secti
 import sectionPortfolioMobile from "../components/section-portfolio-mobile/section-portfolio-mobile";
 import sectionPortfolioAnimation from "../components/section-portfolio-animation/section-portfolio-animation";
 import sectionPortfolioAddedWork from "../components/section-portfolio-added-work/section-portfolio-added-work";
+import sectionPortfolioBtnMusic from "../components/section-portfolio-btn-music/section-portfolio-btn-music";
 import { loadAnimation } from "lottie-web";
 import { defineLordIconElement } from "lord-icon-element";
 

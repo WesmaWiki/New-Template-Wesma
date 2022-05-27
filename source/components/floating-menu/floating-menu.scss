@@ -480,3 +480,25 @@
 		}
 	}
 }
+
+@media (max-height: 780px) {
+	.main-nav-list {
+		margin-bottom: 25px;
+	}
+
+	.service-nav-list {
+		margin-bottom: 25px;
+	}
+
+	.main-menu__item .button {
+		padding: 13px 15px;
+	}
+
+	.main-nav-list__item {
+		margin-bottom: 10px;
+	}
+
+	.service-nav-list__item {
+		margin-bottom: 10px;
+	}
+}

@@ -44,11 +44,14 @@
 	}
 
 	&__content-list {
-		padding-right: 50px;
+		max-height: 360px;
+		min-height: 360px;
+		height: 100%;
 
-		& .simplebar-content {
+		& .os-content {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
+			padding-right: 65px !important;
 			column-gap: 60px;
 			row-gap: 50px;
 			&::before,
@@ -57,23 +60,34 @@
 			}
 		}
 
-		& .simplebar-wrapper {
-			min-height: 360px;
-			max-height: 360px;
+		& .os-scrollbar-vertical {
+			width: 60px;
+			&:hover,
+			&:active,
+			&:focus,
+			&.active {
+				& .os-scrollbar-track > .os-scrollbar-handle {
+					&::before {
+						transform: translate(-50%, -50%) scale(1.8);
+					}
+					opacity: 1;
+					background: #fff !important;
+				}
+			}
 		}
 
-		& .simplebar-track.simplebar-vertical {
-			overflow: initial;
+		& .os-scrollbar-vertical > .os-scrollbar-track {
 			width: 20px;
+			margin: 0 auto;
 			border-radius: 10px;
 			background: #fff;
-			z-index: 6;
 		}
 
-		& .simplebar-track.simplebar-vertical .simplebar-scrollbar {
+		& .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
 			cursor: pointer;
 			left: -20px;
-			width: 60px;
+			width: 60px !important;
+			height: 60px !important;
 			border-radius: 50%;
 			border: 2px solid #e9ebf7;
 			background: #fff;
@@ -89,11 +103,8 @@
 				background: #43bea2;
 				transition: all 0.3s ease;
 			}
-			&.simplebar-hover {
-				&::before {
-					transform: translate(-50%, -50%) scale(1.8);
-				}
-				box-shadow: 0px 0px 15.1px #cacee6;
+			&.active {
+				background: #fff !important;
 			}
 		}
 	}
@@ -107,6 +118,9 @@
 
 	&__equipment-list {
 		& ul {
+			max-height: 360px;
+			min-height: 360px;
+			height: 100%;
 			& li {
 				margin: 0 30px 10px 0;
 				font-weight: 300;
@@ -115,7 +129,7 @@
 				color: #333333;
 			}
 
-			& .simplebar-content {
+			& .os-content {
 				position: relative;
 				display: flex;
 				flex-direction: column;
@@ -123,34 +137,34 @@
 				max-height: 300px;
 			}
 
-			& .simplebar-wrapper {
-				min-height: 360px;
-				max-height: 360px;
-				&::before {
-					content: "";
-					position: absolute;
-					top: 0;
-					right: -1px;
-					width: 20%;
-					height: 100%;
-					background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
-					z-index: 5;
+			& .os-scrollbar-horizontal {
+				height: 60px;
+				&:hover,
+				&:active,
+				&:focus,
+				&.active {
+					& .os-scrollbar-track > .os-scrollbar-handle {
+						&::before {
+							transform: translate(-50%, -50%) scale(1.8);
+						}
+						opacity: 1;
+						background: #fff !important;
+					}
 				}
 			}
 
-			& .simplebar-track.simplebar-horizontal {
-				overflow: initial;
-				bottom: 30px;
+			& .os-scrollbar-horizontal > .os-scrollbar-track {
 				height: 20px;
+				margin: 18px 0 0 0;
 				border-radius: 10px;
 				background: #e9ebf7;
-				z-index: 6;
 			}
 
-			& .simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+			& .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
 				cursor: pointer;
 				top: -20px;
-				height: 60px;
+				width: 60px !important;
+				height: 60px !important;
 				border-radius: 50%;
 				border: 2px solid #e9ebf7;
 				background: #fff;
@@ -166,11 +180,8 @@
 					background: #43bea2;
 					transition: all 0.3s ease;
 				}
-				&.simplebar-hover {
-					box-shadow: 0px 0px 15.1px #cacee6;
-					&::before {
-						transform: translate(-50%, -50%) scale(1.8);
-					}
+				&.active {
+					background: #fff !important;
 				}
 			}
 		}
@@ -185,6 +196,7 @@
 	&__cms-wrap {
 		position: relative;
 		padding: 40px 0px 40px 40px;
+		text-align: center;
 		&::before {
 			content: "";
 			position: absolute;
@@ -354,9 +366,51 @@
 		}
 
 		&__content-list {
-			& .simplebar-content {
+			& .os-content {
+				padding-right: 35px !important;
 				grid-template-columns: 1fr;
 				row-gap: 20px;
+			}
+
+			& .os-scrollbar-vertical {
+				width: 30px;
+			}
+
+			& .os-scrollbar-vertical > .os-scrollbar-track {
+				width: 10px;
+			}
+
+			& .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
+				left: -10px;
+				width: 30px !important;
+				height: 30px !important;
+				&::before {
+					width: 15px;
+					height: 15px;
+				}
+			}
+		}
+
+		&__equipment-list {
+			& ul {
+				& .os-scrollbar-horizontal {
+					height: 30px;
+				}
+
+				& .os-scrollbar-horizontal > .os-scrollbar-track {
+					height: 10px;
+					margin: 8px 0 0 0;
+				}
+
+				& .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
+					top: -10px;
+					width: 30px !important;
+					height: 30px !important;
+					&::before {
+						width: 15px;
+						height: 15px;
+					}
+				}
 			}
 		}
 

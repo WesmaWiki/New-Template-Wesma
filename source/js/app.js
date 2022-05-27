@@ -4,7 +4,9 @@ import "@splidejs/splide/dist/css/splide.min.css";
 
 import "nouislider/dist/nouislider.css";
 
-import "simplebar/dist/simplebar.css";
+// import "simplebar/dist/simplebar.css";
+
+import "overlayscrollbars/css/OverlayScrollbars.css";
 
 import floatingMenu from "../components/floating-menu/floating-menu";
 
@@ -52,6 +54,20 @@ document.addEventListener(
 
 			if (body != null) {
 				body.classList.add("device-apple");
+			}
+		}
+	},
+	false
+);
+
+document.addEventListener(
+	"DOMContentLoaded",
+	function () {
+		if (/iPad/i.test(navigator.userAgent)) {
+			let body = document.querySelector("body");
+
+			if (body != null) {
+				body.classList.add("device-tab");
 			}
 		}
 	},
