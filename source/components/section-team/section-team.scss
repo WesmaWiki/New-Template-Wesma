@@ -15,6 +15,41 @@
 				text-decoration: none;
 			}
 		}
+		& p {
+			font-weight: 300;
+			font-size: 16px;
+			line-height: 200%;
+			color: #000000;
+		}
+
+		& ul {
+			margin-bottom: 20px;
+
+			& li {
+				font-weight: 300;
+				font-size: 16px;
+				line-height: 200%;
+				color: #000000;
+				list-style: disc;
+				list-style-position: inside;
+				&::marker {
+					color: #43bea2;
+				}
+			}
+		}
+
+		& ol {
+			margin-bottom: 20px;
+
+			& li {
+				font-weight: 300;
+				font-size: 16px;
+				line-height: 200%;
+				color: #000000;
+				list-style: auto;
+				list-style-position: inside;
+			}
+		}
 	}
 
 	&__sign {
@@ -210,6 +245,28 @@
 		}
 	}
 }
+
+@media (max-width: 1600px) {
+	.section-team {
+		&__text {
+			& p {
+				@include adaptiv-font(16, 14);
+			}
+			& ul {
+				li {
+					@include adaptiv-font(16, 14);
+				}
+			}
+
+			& ol {
+				li {
+					@include adaptiv-font(16, 14);
+				}
+			}
+		}
+	}
+}
+
 
 @media (min-width: 768px) {
 	.section-team {
