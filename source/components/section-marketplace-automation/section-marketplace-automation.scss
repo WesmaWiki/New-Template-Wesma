@@ -1,0 +1,201 @@
+
+.marketplace-automation {
+    overflow: hidden;
+    &__wrap {
+        padding: 70px 0 140px 0;
+    }
+
+    &__title {
+        margin-bottom: 60px;
+    }
+
+    &__row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 0.8fr;
+        gap: 125px;
+    }
+
+    &__column {
+    }
+
+    &__img {
+        position: relative;
+
+    }
+
+    &__img-paralax {
+        position: absolute !important;
+        &:nth-child(1) {
+            top: 20% !important;
+            left: 10% !important;
+        }
+
+        &:nth-child(2) {
+            top: 15% !important;
+            left: 45% !important;
+        }
+
+        &:nth-child(3) {
+            top: 33% !important;
+            left: 61% !important;
+        }
+
+        &:nth-child(4) {
+            top: 46% !important;
+            left: 25% !important;
+        }
+
+        &:nth-child(5) {
+            top: 62% !important;
+            left: 7% !important;
+        }
+
+        &:nth-child(6) {
+            top: 65% !important;
+            left: 39% !important;
+        }
+
+        &:nth-child(7) {
+            top: 55% !important;
+            left: 76% !important;
+        }
+    }
+
+    &__text {
+        & h1,
+        & h2,
+        & h3,
+        & h4,
+        & h5,
+        & h6 {
+            color: #43BEA2;
+        }
+
+        & p {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 160%;
+            letter-spacing: 0.01em;
+            color: #333333;
+        }
+
+        ul {
+            padding-left: 10px;
+            & li {
+                position: relative;
+                padding-left: 20px;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 160%;
+                letter-spacing: 0.01em;
+                color: #333333;
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 12px;
+                    left: 0;
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50%;
+                    background: #000;
+                }
+            }
+        }
+    }
+
+    &__group {
+        position: relative;
+        margin-top: 120px;
+        margin-bottom: 205px;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: -20%;
+            transform: translate(0, -50%);
+            width: 705px;
+            height: 455px;
+            background: url("../img/marketplace/marketplace-automation-bg.svg") no-repeat center / contain;
+            z-index: 1;
+        }
+    }
+
+    &__price-name {
+        position: relative;
+        margin-bottom: 30px;
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 120%;
+        letter-spacing: 0.01em;
+        color: #000;
+        z-index: 2;
+    }
+
+    &__price {
+        position: relative;
+        font-weight: 600;
+        font-size: 50px;
+        line-height: 120%;
+        letter-spacing: 0.01em;
+        color: #000;
+        z-index: 2;
+    }
+
+    &__tip {
+    }
+}
+
+@media (max-width: 1600px) {
+    .marketplace-automation {
+        &__price {
+            @include adaptiv-font(50, 22);
+        }
+    }
+}
+
+@media (max-width: 1450px) {
+    .marketplace-automation {
+        &__row {
+            gap: 60px;
+        }
+    }
+}
+
+@media (max-width: 1170px) {
+    .marketplace-automation {
+        &__wrap {
+            padding: 40px 0;
+        }
+
+        &__title {
+            margin-bottom: 30px;
+        }
+
+        &__row {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        &__img {
+            text-align: center;
+            & img {
+                max-width: 350px;
+            }
+        }
+
+        &__group {
+            max-width: 350px;
+            margin: 90px auto 120px auto;
+            text-align: center;
+            &::before {
+                left: -8%;
+                width: 450px;
+                height: 300px;
+            }
+        }
+    }
+}

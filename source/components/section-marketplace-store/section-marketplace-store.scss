@@ -1,0 +1,150 @@
+.marketplace-store {
+    overflow: hidden;
+    background: #E9EBF7;
+    &__wrap {
+        padding: 120px 0;
+    }
+
+    &__row {
+        display: grid;
+        grid-template-columns: 0.49fr 1fr;
+        gap: 125px;
+        &:nth-child(1) {
+            & .marketplace-store__column {
+                align-self: center;
+            }
+        }
+    }
+
+    &__column {
+    }
+
+    &__title {
+        margin-bottom: 30px;
+        font-weight: 600;
+    }
+
+    &__manager {
+        margin-bottom: 20px;
+        padding: 25px 20px 35px 20px;
+        text-align: center;
+        border: 1px solid #8087A7;
+        border-radius: 40px;
+    }
+
+    &__name {
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    &__text {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 120%;
+        text-align: center;
+        letter-spacing: 0.01em;
+        color: #8087A7;
+    }
+
+    &__list-team {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 20px;
+        justify-content: space-between;
+        margin-bottom: 60px;
+    }
+
+    &__item-team {
+        color: #000;
+    }
+
+    &__tip {
+        margin-bottom: 40px;
+    }
+
+    &__list-advantages {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 125px;
+        row-gap: 95px;
+    }
+
+    &__item-advantages {
+    }
+
+    &__text-advantages {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 200%;
+        letter-spacing: 0.01em;
+        color: #000000;
+        & span {
+            color: #8087A7;
+        }
+    }
+}
+
+.tip-item {
+    position: relative;
+    padding-left: 35px;
+    color: #8087A7;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+        width: 30px;
+        height: 30px;
+        background: url("../img/icon-tip.svg") no-repeat center / contain;
+    }
+}
+
+@media (max-width: 1450px) {
+    .marketplace-store {
+        &__row {
+            grid-template-columns: 0.6fr 1fr;
+            gap: 60px;
+        }
+
+        &__list-advantages {
+            column-gap: 60px;
+            row-gap: 60px;
+        }
+    }
+}
+
+@media (max-width: 1170px) {
+    .marketplace-store {
+        &__wrap {
+            padding-bottom: 70px;
+        }
+
+        &__title {
+            margin-bottom: 0;
+        }
+
+        &__row {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        &__list-team {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .marketplace-store {
+        &__list-advantages {
+            grid-template-columns: 1fr;
+            column-gap: 30px;
+            row-gap: 70px;
+        }
+
+        &__list-team {
+            grid-template-columns: auto auto;
+        }
+    }
+}

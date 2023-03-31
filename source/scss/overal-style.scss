@@ -23,6 +23,9 @@ canvas {
 	width: 100%;
 	min-height: 100%;
 	overflow: hidden;
+	&.--not-overflow {
+		overflow: initial;
+	}
 }
 .wrapper {
 	width: 100%;
@@ -447,4 +450,36 @@ ul li {
 	.device-apple .portfolio-client__wrap {
 		padding-bottom: 40px;
 	}
+}
+
+.iti {
+	width: 100%;
+	height: 100%;
+}
+
+@import "/node_modules/intl-tel-input/build/css/intlTelInput.css";
+
+.iti__flag {
+	background-image: url("../img/flags.png");
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	.iti__flag {
+		background-image: url("../img/flags@2x.png");
+	}
+}
+
+.iti--separate-dial-code .iti__selected-flag {
+	padding-top: 4px;
+	background-color: transparent;
+}
+
+.iti--allow-dropdown .iti__flag-container:hover .iti__selected-flag {
+	background-color: transparent;
+}
+
+.iti--separate-dial-code .iti__selected-dial-code {
+	color: #000;
+	font-size: 16px;
+	display: none;
 }

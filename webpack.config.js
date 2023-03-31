@@ -38,6 +38,7 @@ module.exports = {
 		"seo-advert": "./source/js/seo-advert.js",
 		"yandex-advert": "./source/js/yandex-advert.js",
 		"contextual-advert": "./source/js/contextual-advert.js",
+		"promotion-marketplace": "./source/js/promotion-marketplace.js",
 	},
 
 	mode: "development",

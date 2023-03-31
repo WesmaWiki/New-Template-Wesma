@@ -28,14 +28,16 @@ document.addEventListener(
 			function lockTopMenuRightBlock() {
 				let documentScroll = pageYOffset;
 				if (documentScroll > 1) {
-					if (menu.querySelector(".main-menu__right-block-icon").classList.contains("active") && cursorCoord > 300) {
+					if (menu.querySelector(".main-menu__right-block-icon").classList.contains("active") && cursorCoord > 320) {
 						menu.querySelector(".button-close").beginElement();
 						menu.querySelector(".main-menu__right-block-icon") ? menu.querySelector(".main-menu__right-block-icon").classList.remove("active") : null;
+						menu.querySelector(".Santa_Climbing_Chimney") ? menu.querySelector(".Santa_Climbing_Chimney").classList.remove("active") : null;
 					}
 					menu.classList.add("locked");
 				} else {
 					if (!menu.querySelector(".main-menu__right-block-icon").classList.contains("active")) {
 						menu.querySelector(".main-menu__right-block-icon") ? menu.querySelector(".main-menu__right-block-icon").classList.add("active") : null;
+						menu.querySelector(".Santa_Climbing_Chimney") ? menu.querySelector(".Santa_Climbing_Chimney").classList.add("active") : null;
 						menu.querySelector(".button-open").beginElement();
 					}
 				}
@@ -45,17 +47,19 @@ document.addEventListener(
 
 			function showMenu(e) {
 				cursorCoord = e.clientX;
-				if (cursorCoord < 300) {
+				if (cursorCoord < 320) {
 					if (!menu.querySelector(".main-menu__right-block-icon").classList.contains("active")) {
 						menu.querySelector(".button-open").beginElement();
 
 						menu.querySelector(".main-menu__right-block-icon") ? menu.querySelector(".main-menu__right-block-icon").classList.add("active") : null;
+						menu.querySelector(".Santa_Climbing_Chimney") ? menu.querySelector(".Santa_Climbing_Chimney").classList.add("active") : null;
 					}
 				} else {
 					if (menu.querySelector(".main-menu__right-block-icon").classList.contains("active") && !window.pageYOffset == 0) {
 						menu.querySelector(".button-close").beginElement();
 
 						menu.querySelector(".main-menu__right-block-icon") ? menu.querySelector(".main-menu__right-block-icon").classList.remove("active") : null;
+						menu.querySelector(".Santa_Climbing_Chimney") ? menu.querySelector(".Santa_Climbing_Chimney").classList.remove("active") : null;
 					}
 				}
 			}

@@ -78,9 +78,22 @@
 	width: 50px;
 }
 
+.iti__flag-container {
+	opacity: 0;
+}
+
+.active-placeholder .iti__flag-container {
+	opacity: 1;
+}
+
+.contact-form__list-input:not(.active-placeholder) .iti .input {
+	color: transparent;
+}
+
 .input.active-placeholder ~ .cut,
 .input:not(:placeholder-shown) ~ .cut,
-.textarea.active-placeholder ~ .cut {
+.textarea.active-placeholder ~ .cut,
+.active-placeholder .cut {
 	transform: translateY(8px);
 }
 
@@ -99,7 +112,8 @@
 
 .input.active-placeholder ~ .placeholder,
 .input:not(:placeholder-shown) ~ .placeholder,
-.textarea.active-placeholder ~ .placeholder {
+.textarea.active-placeholder ~ .placeholder,
+.active-placeholder .placeholder {
 	transform: translateY(-30px) translateX(10px) scale(0.75);
 }
 
@@ -108,12 +122,14 @@
 }
 
 .input.active-placeholder ~ .placeholder,
-.textarea.active-placeholder ~ .placeholder {
+.textarea.active-placeholder ~ .placeholder,
+.active-placeholder .placeholder {
 	color: #fff;
 }
 
 .input.active-placeholder ~ .cut,
-.textarea.active-placeholder ~ .cut {
+.textarea.active-placeholder ~ .cut,
+.active-placeholder .cut {
 	background-color: $green;
 }
 

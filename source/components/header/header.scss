@@ -82,7 +82,10 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 25px 0;
+	// если лого нового года
+	padding: 5px 0 5px 0;
+
+	// padding: 25px 0;
 	transition: all 0.3s ease;
 	&__log-group {
 		display: flex;

@@ -1,0 +1,109 @@
+.marketplace-advantages {
+    overflow: hidden;
+    background: #000000;
+    &__wrap {
+        padding: 120px 0 240px 0;
+    }
+
+    &__title {
+        position: relative;
+        font-weight: 600;
+        color: #FFFFFF;
+        z-index: 2;
+    }
+
+    &__sub-title {
+        position: relative;
+        color: #AAAAAA;
+        z-index: 2;
+        & span {
+            color: #fff;
+        }
+    }
+
+    &__row {
+        margin-top: 60px;
+        display: grid;
+        grid-template-columns: 1fr 0.35fr;
+        gap: 125px;
+    }
+
+    &__column {
+
+    }
+
+    &__text {
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 120%;
+        letter-spacing: 0.01em;
+        color: #FFFFFF;
+    }
+
+    &__sub-text {
+        margin-top: 30px;
+        position: relative;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 120%;
+        letter-spacing: 0.01em;
+        color: #8087A7;
+        z-index: 2;
+    }
+
+    &__group {
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: -30%;
+            transform: translate(0, -50%);
+            width: 740px;
+            height: 496px;
+            background: url("../img/marketplace/marketplace-advantages-bg.svg") no-repeat center / contain;
+            z-index: 1;
+        }
+
+        & .marketplace-advantages__title {
+            color: #000000;
+        }
+
+        & .marketplace-advantages__sub-title {
+            color: #000000;
+        }
+    }
+}
+
+@media (max-width: 1600px) {
+    .marketplace-advantages {
+        &__text {
+            @include adaptiv-font(50, 22);
+        }
+    }
+}
+
+@media (max-width: 1170px) {
+    .marketplace-advantages {
+        &__wrap {
+            padding: 70px 0 220px 0;
+        }
+
+        &__row {
+            margin-top: 70px;
+            grid-template-columns: 1fr;
+            gap: 180px;
+        }
+
+        &__group {
+            max-width: 450px;
+            margin: 0 auto;
+            text-align: center;
+            &::before {
+                left: -10%;
+                width: 550px;
+                height: 375px;
+            }
+        }
+    }
+}

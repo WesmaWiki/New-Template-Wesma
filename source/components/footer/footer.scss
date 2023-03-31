@@ -3,7 +3,7 @@
 	padding: 60px 0;
 	padding-top: 100px;
 	background: #e9ebf7;
-
+    overflow: hidden;
 	&__icon-top {
 		cursor: pointer;
 		position: absolute;
@@ -54,7 +54,7 @@
 
 .footer-inner__item .logo {
 	margin-bottom: 15px;
-	text-align: left;
+	text-align: right;
 }
 
 .footer-inner__title {
@@ -137,6 +137,10 @@
 }
 
 @media (max-width: 900px) {
+	.page-footer {
+		padding-top: 20px;
+	}
+
 	.footer-inner {
 		grid-template-columns: 1fr 1fr;
 		&__item {
@@ -144,6 +148,10 @@
 				justify-self: center;
 				text-align: center;
 				grid-column: span 2;
+			}
+
+			& .logo {
+				text-align: center;
 			}
 		}
 	}
@@ -183,4 +191,15 @@
 
 .privacy-link:hover {
 	text-decoration: none;
+}
+
+// новый год
+.footer-new-years {
+	margin-top: 25px;
+}
+
+@media (max-width: 900px) {
+	.footer-new-years {
+		display: none;
+	}
 }

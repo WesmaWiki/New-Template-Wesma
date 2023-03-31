@@ -1,0 +1,47 @@
+.marketplace-list {
+    overflow: hidden;
+    &__wrap {
+        padding: 25px 0 140px 0;
+    }
+
+    &__title {
+        margin-bottom: 25px;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        align-items: center;
+        gap: 85px;
+    }
+
+    &__item {
+    }
+}
+
+@media (max-width: 1450px) {
+    .marketplace-list {
+        &__list {
+            gap: 40px;
+        }
+    }
+}
+
+@media (max-width: 1170px) {
+    .marketplace-list {
+        &__wrap {
+            padding: 20px 0 70px 0;
+        }
+        &__list {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .marketplace-list {
+        &__list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
