@@ -1,0 +1,115 @@
+.section-privileges {
+  border-top: 1px solid #e9ebf7;
+  border-bottom: 1px solid #e9ebf7;
+  background: url("../img/bg-line.svg") no-repeat 100%/100% 100%;
+}
+
+.section-privileges__wrap {
+  padding: 50px 0;
+}
+
+.section-privileges__row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 0.4fr;
+      grid-template-columns: 1fr 0.4fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 160px;
+}
+
+.section-privileges__list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 1fr;
+  grid-gap: 60px;
+}
+
+.section-privileges__name {
+  margin-bottom: 30px;
+  font-size: 24px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #333;
+}
+
+.section-privileges__text {
+  margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 29px;
+  color: #333;
+}
+
+.card-privileges {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 300px;
+  padding: 30px 15px;
+  text-align: center;
+  border: 1px solid #e9ebf7;
+  border-radius: 40px;
+  background: #fff;
+}
+
+.card-privileges__name {
+  margin-bottom: 15px;
+  font-size: 24px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #333;
+}
+
+.card-privileges__name span {
+  color: #43bea2;
+}
+
+.card-privileges__subname {
+  margin-bottom: 15px;
+}
+
+.card-privileges__text {
+  color: #333;
+}
+
+@media (max-width: 1300px) {
+  .section-privileges__row {
+    grid-gap: 30px;
+  }
+  .section-privileges__list {
+    grid-gap: 30px;
+  }
+}
+
+@media (max-width: 1170px) {
+  .section-privileges__row {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .section-privileges__column {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-privileges__list {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .card-privileges {
+    min-height: 200px;
+  }
+}

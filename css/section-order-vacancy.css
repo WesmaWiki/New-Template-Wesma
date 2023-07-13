@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
+.section-order-vacancy__wrap {
+  position: relative;
+  width: 100%;
+  padding: 90px 120px;
+  max-width: 1525px;
+  margin: 0 auto;
+  margin-top: -50px;
+  margin-bottom: -50px;
+  background-color: #fff;
+  border-radius: 50px;
+  z-index: 2;
+}
+
+.section-order-vacancy__title {
+  margin-bottom: 60px;
+}
+
+.section-order-vacancy__row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 25px;
+}
+
+.section-order-vacancy__column:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.section-order-vacancy__image {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  min-height: 350px;
+  max-height: 350px;
+  position: relative;
+  overflow: hidden;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+}
+
+.section-order-vacancy__text {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-size: 14px;
+  line-height: 22px;
+  color: #000;
+  text-align: center;
+  max-width: 455px;
+  margin: 0 auto;
+}
+
+.form-order-vacancy {
+  position: relative;
+}
+
+.form-order-vacancy__list-input {
+  position: relative;
+  height: 50px;
+  margin-bottom: 35px;
+}
+
+.form-order-vacancy__list-input:last-child {
+  margin-bottom: 0;
+}
+
+.form-order-vacancy__list-input textarea {
+  height: 50px;
+}
+
+.form-order-vacancy__file {
+  max-width: 265px;
+}
+
+.form-order-vacancy__privacy {
+  max-width: 550px;
+}
+
+.form-order-vacancy__btutton-wrap {
+  text-align: center;
+}
+
+.form-order-vacancy__btutton {
+  display: inline-block;
+}
+
+@media (max-width: 1600px) {
+  .section-order-vacancy__wrap {
+    padding: 70px 100px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .section-order-vacancy__wrap {
+    padding: 70px 60px;
+  }
+}
+
+@media (max-width: 1170px) {
+  .section-order-vacancy__row {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .section-order-vacancy__image {
+    min-height: 300px;
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .section-order-vacancy__title {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-order-vacancy__wrap {
+    padding: 50px 0px;
+    margin-top: -30px;
+    margin-bottom: -30px;
+  }
+  .section-order-vacancy__image {
+    min-height: 150px;
+    max-height: 150px;
+  }
+  .form-order-vacancy__list-input {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .section-order-vacancy__image {
+    min-height: 100px;
+    max-height: 100px;
+  }
+}
+
+/* Explanation in JS tab */
+/* Cool font from Google Fonts! */
+.section-order-vacancy__container {
+  /* Center the text in the viewport. */
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  height: 80pt;
+  top: 0;
+  bottom: 0;
+  /* This filter is a lot of the magic, try commenting it out to see how the morphing works! */
+  -webkit-filter: url(#threshold);
+          filter: url(#threshold);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* Your average text styling */
+.section-order-vacancy__text1,
+.section-order-vacancy__text2 {
+  position: absolute;
+  width: 100%;
+  display: inline-block;
+  font-family: "Raleway", sans-serif;
+  line-height: 1;
+  font-size: 30pt;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #43bea2;
+}
+
+@media (min-width: 1171px) and (max-width: 1300px) {
+  .section-order-vacancy__text1,
+  .section-order-vacancy__text2 {
+    font-size: 25pt;
+  }
+}
+
+@media (min-width: 950px) and (max-width: 1170px) {
+  .section-order-vacancy__text1,
+  .section-order-vacancy__text2 {
+    font-size: 40pt;
+  }
+}
+
+@media (max-width: 1170px) {
+  .section-order-vacancy__image {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 800px) {
+  .section-order-vacancy__image {
+    min-height: 100px;
+  }
+}
+
+@media (max-width: 320px) {
+  .section-order-vacancy__text1,
+  .section-order-vacancy__text2 {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,67 @@
+.marketplace-privileges {
+  overflow: hidden;
+}
+
+.marketplace-privileges__wrap {
+  padding: 140px 0 90px 0;
+}
+
+.marketplace-privileges__title {
+  margin-bottom: 60px;
+}
+
+.marketplace-privileges__row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  gap: 125px;
+}
+
+.marketplace-privileges__sub-title {
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 120%;
+  letter-spacing: 0.01em;
+  color: #000;
+}
+
+.marketplace-privileges__text {
+  margin-bottom: 50px;
+}
+
+.marketplace-privileges__card {
+  height: 100%;
+}
+
+@media (max-width: 1450px) {
+  .marketplace-privileges__row {
+    gap: 60px;
+  }
+}
+
+@media (max-width: 1170px) {
+  .marketplace-privileges__wrap {
+    padding: 40px 0 20px 0;
+  }
+  .marketplace-privileges__row {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  .marketplace-privileges__column:first-child {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .marketplace-privileges__row {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .marketplace-privileges__column:first-child {
+    grid-column: span 1;
+  }
+}

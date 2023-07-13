@@ -1,0 +1,105 @@
+.section-advertisement-main {
+  position: relative;
+}
+
+.section-advertisement-main__canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  contain: initial;
+}
+
+.section-advertisement-main__wrap {
+  padding-bottom: 100px;
+}
+
+.section-advertisement-main .main-title {
+  position: relative;
+  z-index: 11;
+  pointer-events: none;
+}
+
+.section-advertisement-main .tagline {
+  position: relative;
+  z-index: 11;
+  pointer-events: none;
+}
+
+.section-advertisement-main .breadcrumbs {
+  pointer-events: none;
+}
+
+.section-advertisement-main .breadcrumbs .breadcrumbs__item a {
+  pointer-events: all;
+}
+
+.section-advertisement-main .breadcrumbs .breadcrumbs__item span {
+  pointer-events: all;
+}
+
+.section-advertisement-main__text {
+  position: relative;
+  max-width: 700px;
+  margin-top: 60px;
+  margin-bottom: 35px;
+  font-size: 20px;
+  color: #333333;
+  line-height: 120%;
+  z-index: 11;
+  pointer-events: none;
+}
+
+.section-advertisement-main__group {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 11;
+  pointer-events: none;
+}
+
+.section-advertisement-main__group .btn-magic-wrapper {
+  pointer-events: all;
+}
+
+.section-advertisement-main__subtext {
+  position: relative;
+  max-width: 430px;
+  margin-left: 60px;
+  z-index: 11;
+  pointer-events: none;
+}
+
+@media (max-width: 1170px) {
+  .section-advertisement-main__text {
+    margin: 60px auto 35px auto;
+    text-align: center;
+  }
+  .section-advertisement-main__group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .section-advertisement-main__subtext {
+    margin-left: 0;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-advertisement-main__wrap {
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 500px) {
+  .section-advertisement-main__text {
+    margin: 35px auto 35px auto;
+  }
+}

@@ -4,7 +4,8 @@
 	"description": "",
 	"scripts": {
 		"build": "webpack --mode=production",
-		"start": "webpack serve --open"
+		"dev": "webpack --mode=development",
+		"start": "webpack serve --open --hot"
 	},
 	"author": "",
 	"license": "ISC",
@@ -52,4 +53,5 @@
 		"vanta": "^0.5.24",
 		"webfontloader": "^1.6.28"
 	}
+	
 }

@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:900");
+.numbers-portfolio {
+  display: inline-block;
+  font-family: "Lato";
+  font-weight: 900;
+  font-size: 110px;
+  line-height: 100%;
+  position: relative;
+  color: #43bea2;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 400;
+          perspective: 400;
+  z-index: 1;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.numbers-portfolio:before, .numbers-portfolio:after {
+  position: absolute;
+  content: attr(data-letter);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.numbers-portfolio:before {
+  color: #fff;
+  text-shadow: -1px 0px 1px rgba(255, 255, 255, 0.8), 1px 0px 1px rgba(0, 0, 0, 0.8);
+  z-index: 3;
+  -webkit-transform: rotateX(0deg) rotateY(-15deg) rotateZ(0deg);
+          transform: rotateX(0deg) rotateY(-15deg) rotateZ(0deg);
+}
+
+.numbers-portfolio:after {
+  color: rgba(0, 0, 0, 0.11);
+  z-index: 2;
+  -webkit-transform: scale(1.08, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 1deg);
+          transform: scale(1.08, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 1deg);
+}
+
+.js-section-numbers.--show-number .numbers-portfolio:before {
+  color: #fafafa;
+  -webkit-transform: rotateX(0deg) rotateY(-40deg) rotateZ(0deg);
+          transform: rotateX(0deg) rotateY(-40deg) rotateZ(0deg);
+}
+
+.js-section-numbers.--show-number .numbers-portfolio:after {
+  -webkit-transform: scale(1.08, 1) rotateX(0deg) rotateY(40deg) rotateZ(0deg) skew(0deg, 22deg);
+          transform: scale(1.08, 1) rotateX(0deg) rotateY(40deg) rotateZ(0deg) skew(0deg, 22deg);
+}

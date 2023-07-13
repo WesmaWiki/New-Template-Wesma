@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const webpack = require('webpack');
 const fs = require("fs");
 
 function generateHtmlPlugins(templateDir) {
@@ -101,8 +102,11 @@ module.exports = {
 	},
 
 	devServer: {
-		contentBase: path.join(__dirname, "build"),
-		port: 7777,
+		contentBase: path.join(__dirname, "build"),  
+		port: 7777,   
+		writeToDisk: true, // чтобы генерилась папочка билд и были статические ассеты (картинки и т.д.)   
+		// openPage: 'cpc.html', 
+		publicPath: '/build/' // указываем путь серверу к статическим ассетам
 	},
 
 	output: {
@@ -112,6 +116,7 @@ module.exports = {
 	},
 
 	plugins: [
+		new CleanWebpackPlugin(),
 		new MiniCssExtractPlugin({
 			filename: "css/app.css",
 			// chunkFilename: "[id].css",
@@ -133,6 +138,6 @@ module.exports = {
 			],
 		}),
 
-		new CleanWebpackPlugin(),
+		new webpack.HotModuleReplacementPlugin(),
 	].concat(htmlPlugins),
 };

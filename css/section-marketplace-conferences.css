@@ -1,0 +1,42 @@
+.marketplace-conferences__wrap {
+  position: relative;
+  max-width: 1180px;
+  margin: -60px auto -60px auto;
+  padding: 95px 0;
+  background: #FFFFFF;
+  border-radius: 60px;
+  z-index: 5;
+}
+
+.marketplace-conferences__title {
+  font-weight: 500;
+  max-width: 715px;
+  margin: 0 auto 60px auto;
+  text-align: center;
+}
+
+.marketplace-conferences__list {
+  max-width: 930px;
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+@media (max-width: 1170px) {
+  .marketplace-conferences__wrap {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .marketplace-conferences__list {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  .marketplace-conferences__item {
+    text-align: center;
+  }
+}

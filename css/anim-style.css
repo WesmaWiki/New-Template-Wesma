@@ -1,0 +1,56 @@
+#webgl {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  -webkit-clip-path: ellipse(50% 35% at 50% 50%);
+          clip-path: ellipse(50% 35% at 50% 50%);
+}
+
+#webgl canvas {
+  width: 100%;
+  height: 100%;
+}
+
+#webgl2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  outline: none;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+#webgl2 canvas {
+  width: 100%;
+  height: 100%;
+}
+
+#bg-box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+#bg-box svg {
+  width: 100%;
+  height: 100%;
+}
+
+.svg-box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+.svg-box #robot {
+  cursor: pointer;
+}
+
+.svg-box svg {
+  width: 100%;
+  height: 100%;
+}

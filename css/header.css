@@ -1,0 +1,208 @@
+.page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1040;
+  background: #fff;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.page-header.--fixed .pc-menu {
+  padding: 7px 0;
+}
+
+.page-header.--fixed .btn-magic-wrapper .button {
+  padding: 11px 15px;
+}
+
+.page-header.main-page .pc-menu {
+  display: none;
+}
+
+.page-header.main-page + .page-main {
+  margin-top: 0;
+}
+
+.page-header + .page-main {
+  margin-top: 113px;
+}
+
+.mobmenu {
+  display: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px 0;
+}
+
+.mobmenu__burger {
+  width: 45px;
+  height: 30px;
+}
+
+.mobmenu .logo {
+  margin-bottom: 0;
+}
+
+.mobmenu .logo img {
+  max-block-size: 35px;
+}
+
+.mobmenu__phone a {
+  display: block;
+  color: #000000;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+  font-weight: 700;
+}
+
+@media (max-width: 1170px) {
+  .mobmenu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  .mobmenu .logo {
+    display: none;
+  }
+}
+
+.pc-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px 0 5px 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.pc-menu__log-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pc-menu__log-group .logo {
+  margin-bottom: 0;
+  margin-right: 100px;
+}
+
+.pc-menu__log-group .name {
+  margin-bottom: 0;
+}
+
+.ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: -webkit-transform 400ms;
+  transition: -webkit-transform 400ms;
+  transition: transform 400ms;
+  transition: transform 400ms, -webkit-transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.hamRotate.active {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.hamRotate180.active {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.line-ham {
+  fill: none;
+  -webkit-transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: #000;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+}
+
+.ham8 .top {
+  stroke-dasharray: 40 160;
+}
+
+.ham8 .middle {
+  stroke-dasharray: 40 142;
+  -webkit-transform-origin: 50%;
+          transform-origin: 50%;
+  -webkit-transition: -webkit-transform 400ms;
+  transition: -webkit-transform 400ms;
+  transition: transform 400ms;
+  transition: transform 400ms, -webkit-transform 400ms;
+}
+
+.ham8 .bottom {
+  stroke-dasharray: 40 85;
+  -webkit-transform-origin: 50%;
+          transform-origin: 50%;
+  -webkit-transition: stroke-dashoffset 400ms, -webkit-transform 400ms;
+  transition: stroke-dashoffset 400ms, -webkit-transform 400ms;
+  transition: transform 400ms, stroke-dashoffset 400ms;
+  transition: transform 400ms, stroke-dashoffset 400ms, -webkit-transform 400ms;
+}
+
+.ham8.active .top {
+  stroke-dashoffset: -64px;
+}
+
+.ham8.active .middle {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.ham8.active .bottom {
+  stroke-dashoffset: -64px;
+}
+
+@media (max-width: 1170px) {
+  .page-header {
+    border-bottom: 1px solid #000;
+  }
+  .page-header + .page-main {
+    margin-top: 0;
+  }
+  .pc-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 1850px) {
+  .device-ipad .mobmenu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .device-ipad .page-header {
+    border-bottom: 1px solid #000;
+  }
+  .device-ipad .page-header + .page-main {
+    padding-top: 61px;
+    margin-top: 0;
+  }
+  .device-ipad .pc-menu {
+    display: none;
+  }
+}

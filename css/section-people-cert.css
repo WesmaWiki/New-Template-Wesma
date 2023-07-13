@@ -1,0 +1,124 @@
+.section-people-cert__wrap {
+  padding: 50px 0;
+}
+
+.section-people-cert__lsit {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: 60px;
+}
+
+.card-people-cert {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card-people-cert__column:first-child {
+  margin-right: 20px;
+}
+
+.card-people-cert__number {
+  font-size: 100px;
+  line-height: 120%;
+  color: #000000;
+  font-weight: 700;
+}
+
+.card-people-cert__text {
+  font-style: 16px;
+  line-height: 120%;
+  color: #000000;
+  font-weight: 700;
+}
+
+.card-people-cert__name {
+  margin-bottom: 15px;
+  font-size: 14px;
+  line-height: 120%;
+  color: #000000;
+}
+
+.card-people-cert__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.card-people-cert__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-right: 10px;
+  max-width: 100px;
+}
+
+.card-people-cert__item:last-child {
+  margin-right: 0;
+}
+
+.card-people-cert__image {
+  margin-right: 10px;
+}
+
+.card-people-cert__image img {
+  width: 100%;
+  min-width: 25px;
+  max-width: 25px;
+  height: 45px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+
+.card-people-cert__sign {
+  font-size: 12px;
+  line-height: 120%;
+}
+
+@media (max-width: 1300px) {
+  .section-people-cert__lsit {
+    grid-gap: 30px;
+  }
+}
+
+@media (max-width: 1170px) {
+  .section-people-cert__lsit {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+  .card-people-cert {
+    display: block;
+    text-align: center;
+  }
+  .card-people-cert__column:first-child {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  .card-people-cert__group {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-people-cert__lsit {
+    grid-gap: 15px;
+  }
+  .card-people-cert__number {
+    font-size: 60px;
+  }
+}

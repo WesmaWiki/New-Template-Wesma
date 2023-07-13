@@ -1,0 +1,27 @@
+.section-certificate__wrap {
+  padding: 50px 0;
+}
+
+.section-certificate__container {
+  position: relative;
+  margin-top: 75px;
+  padding: 0 100px;
+}
+
+.section-certificate__slider {
+  z-index: 1002;
+}
+
+.section-certificate__image img {
+  height: 250px;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .section-certificate__container {
+    margin-top: 40px;
+    padding: 0 50px;
+  }
+}
