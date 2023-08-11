@@ -42,20 +42,21 @@ const sliderInit = () => {
 }
 
 const tabsInit = () => {
-	const slides = document.querySelectorAll('.section-solution__slide.swiper-slide'); // Все слайды
+	const slides = document.querySelectorAll('.section-solution__slide.swiper-slide');	
 
 	for (let i = 0; i < slides.length; i++) {
-		let buttonsTabMenu = slides[i].querySelectorAll('.tab-input'); // ищем в слайдах кнопки
-		let sectionTabContent = slides[i].querySelectorAll('.tab-content'); // ищем в слайдах табы
+		let buttonsTabMenu = slides[i].querySelectorAll('.tab-btn'); 
+		let sectionTabContent = slides[i].querySelectorAll('.tab-content'); 
 
-		let activeTabId = 0; // активный элемент секции
-		sectionTabContent[activeTabId].classList.add('visible'); // отображение нулевого элемента по умолчанию
-	
+		let activeTabId = 0;
+		sectionTabContent[activeTabId].classList.add('visible'); 
 		for (let j = 0; j < buttonsTabMenu.length; j++) {
 			buttonsTabMenu[j].addEventListener('click', () => { 
 				sectionTabContent[activeTabId].classList.remove('visible');
+				buttonsTabMenu[activeTabId].classList.remove('tab-active');
 				activeTabId = j;
 				sectionTabContent[activeTabId].classList.add('visible');
+				buttonsTabMenu[activeTabId].classList.add('tab-active');
 			})
 		}
 	}
@@ -74,8 +75,8 @@ const blockID = document.getElementById('anchorLink')
 
 for (let anchor of anchorLinks) {
 	anchor.addEventListener('click', function (e) {
-	  e.preventDefault()	  
-	 console.log(blockID);
+	  e.preventDefault();  
+	
 	  blockID.scrollIntoView({
 		behavior: 'smooth',
 		block: 'start'
