@@ -135,6 +135,7 @@ document.addEventListener("click", function (e) {
 			id = targetElement.getAttribute("data-rid"),
 			tarif = targetElement.getAttribute("data-tarif"),
 			type = targetElement.getAttribute("data-type"),
+			alt_params = targetElement.getAttribute("data-alt_params"),
 			sendData = {},
 			ajaxFormScriptPath = "/assets/components/ajaxform/",
 			ajaxFormScripts = [ajaxFormScriptPath + "js/lib/jquery.form.min.js", ajaxFormScriptPath + "js/lib/jquery.jgrowl.min.js", ajaxFormScriptPath + "js/default.js"];
@@ -147,6 +148,9 @@ document.addEventListener("click", function (e) {
 			}
 			if (tarif != null) {
 				sendData.tarif = tarif;
+			}
+			if (alt_params != null) {
+				sendData.alt_params = alt_params;
 			}
 			$.ajax({
 				url: path_to_file,

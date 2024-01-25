@@ -55,6 +55,15 @@
 		justify-content: space-between;
 	}
 
+	.flex-container__tab--text {
+	    width: 75%;
+	    column-count: 2;
+	}
+
+	.flex-container__tab--name {
+	    position: absolute;
+	}
+
 	.flex-item-image {
 		flex: 1;
 		display: flex;
@@ -279,7 +288,8 @@
 				margin-right: 10px;
 			}
 
-			.col-3 {
+			.col-3,
+			.flex-container__tab--price {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
@@ -311,9 +321,12 @@
 
 	.flex-container__tab-content-3 {
 		display: flex;
+		flex-wrap: wrap;
 
 		.column-flex-item {
-			flex: 1;
+			/*flex: 1;*/
+			width: 50%;
+    		margin-bottom: 20px;
 
 			.row {
 				margin-top: 40px;
@@ -326,17 +339,24 @@
 	.flex-container__tab-content-4 {
 		display: flex;
 		justify-content: center;
-		gap: 45px;
+		/*gap: 45px;*/
+		flex-direction: column;
+
+		& p {
+	      margin-bottom: 15px;
+	    }
 
 		.tab-content-4__list-wrap {
 			width: 420px;
 			font-weight: 400;
 			font-size: 14px;
 			line-height: 17px;
+			column-count: 2;
+        	width: 100%;
 		}
-		.tab-content-4__list-wrap:last-child {
+		/*.tab-content-4__list-wrap:last-child {
 			margin-top: 5%;
-		}
+		}*/
 	}
 }
 
@@ -410,6 +430,15 @@
 
 @media (max-width: 867px) {
 	.section-solution {
+		.flex-container__tab--name {
+		    position: relative;
+		    text-align: center;
+		}
+		.flex-container__tab--text {
+		    width: 100%;
+		    column-count: 1;
+		    text-align: center;
+		}
 		&__title-company {
 			text-align: center;
 		}
@@ -457,6 +486,7 @@
 		.flex-container__tab-content-2 {
 			padding: 0;
 			padding-bottom: 5%;
+			flex-direction: column;
 	
 			.flex-item-row {
 				flex-direction: column;
@@ -465,7 +495,8 @@
 				.col-1 {
 					margin-left: -2%;
 				}
-				.col-3 {
+				.col-3,
+				.flex-container__tab--price {
 					width: 140px;
 					height: 140px;
 				}
@@ -531,10 +562,11 @@
 	
 			.tab-content-4__list-wrap {
 				width: 90%;
+				column-count: 1;
 	
-				&:last-child {
+				/*&:last-child {
 					margin-top: 0;
-				}
+				}*/
 			}		
 		}
 	}		
@@ -550,7 +582,8 @@
 			} 
 		}
 		.flex-container__tab-content-2 {
-			.flex-item-row .col-3 {
+			.flex-item-row .col-3,
+			.flex-container__tab--price {
 				width: 140px;
 				height: 140px;
 			}

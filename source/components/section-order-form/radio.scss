@@ -11,6 +11,7 @@
 	color: #000;
 	cursor: pointer;
 	transition: color 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+	white-space: nowrap;
 }
 .radio-label:not(:last-of-type) {
 	margin-bottom: 1.5em;
@@ -369,3 +370,21 @@
 		transform: translateX(-1.5em);
 	}
 }
+
+.radio:nth-of-type(6):checked ~ .worm .worm__segment {
+	transform: translateY(17.2em);
+}
+.radio:nth-of-type(6):checked ~ .worm .worm__segment:before {
+	animation-name: hop6;
+}
+
+@keyframes hop6 {
+	from,
+	to {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(-1.5em);
+	}
+}
+

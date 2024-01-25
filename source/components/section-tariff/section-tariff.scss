@@ -1,6 +1,14 @@
 .tariff {
 	background: url("../img/image-bg-tariff.png") no-repeat center bottom;
 
+	& .card-dev-all__list {
+		margin-bottom: 20px;
+
+		& li {
+			margin-bottom: 10px;
+		}
+	}
+
 	&.--optimization {
 		background: none;
 
@@ -25,6 +33,112 @@
 	}
 
 	&__item {
+
+		  // tumbler:
+
+		  & .card-dev-all__wrap {
+			z-index: 10;
+		  }
+
+		  & .card-dev-all__item-title {		
+			font-size: 20px;					
+			margin-bottom: 5px;
+			text-align: center;
+		  }
+
+		  & .card-dev-all__tumbler {
+            height: 45px;
+            border-radius: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 14px 0 22px;
+            list-style: none;
+            position: relative;
+			z-index: 10;
+			text-align: center;
+        }
+
+		& .card-dev-all__tumbler::after {
+			content: '';
+			background: #F3F3F3;
+			border-radius: 15px;
+			position: absolute;
+			height: 12px;
+			width: 100%;
+			left: 0;
+			right: 0;
+			top: 17px;	
+		}
+
+        & .card-dev-all__hours:first-child {
+            text-align: left;
+            flex: 0 0 20%;
+        }
+
+		& .card-dev-all__hours:last-child {
+            text-align: right;
+            flex: 0 0 20%;
+        }
+
+        & .card-dev-all__hours {
+            flex: 0 0 30%;
+            height: 25px;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            transition: height 0.25s ease 0s;
+        }
+		
+        & .card-dev-all__hours-inner {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            font-size: 10px;
+            line-height: 25px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: .3s all;
+            color: #757575;
+            background: #F3F3F3; 
+        }
+
+		& .card-dev-all__hours.--is-active {
+			height: 45px;
+		}
+
+        & .card-dev-all__hours:hover .card-dev-all__hours-inner,
+        & .card-dev-all__hours.--is-active .card-dev-all__hours-inner {
+            background: #43bea2;
+            color: #fff;
+        }
+
+        & .card-dev-all__hours.--is-active .card-dev-all__hours-inner {
+            font-size: 18px;
+            line-height: 21px;
+            font-weight: bold;
+            width: 45px;
+            height: 45px;
+            box-shadow: 0px 3px 10px rgba(157, 3, 3, 0.1), 0px 7px 25px rgba(67, 190, 162, 0.60);
+        }	
+
+		& .is-tumbler {
+			display: none;
+		}	
+
+		& .--grey {
+			background: #f3f3f3;
+		    padding: 10px;
+		    border-radius: 10px;
+		    margin-bottom: 20px;
+		}
+
+		& .--is-active {
+			display: block;
+		}
+
+		// tumbler (up)
 	}
 
 	&__sign {
